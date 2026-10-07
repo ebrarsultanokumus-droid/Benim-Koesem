@@ -120,10 +120,7 @@ svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.9;stroke
 .clk-t{font-family:var(--fh);font-size:68px;font-weight:700;line-height:1;letter-spacing:-.02em;margin:2px 0}
 .clk.sz-S .clk-t{font-size:42px}
 .clk-d{font-size:15px;font-weight:500}
-.qt{font-family:var(--fh);font-style:italic;font-size:21px;line-height:1.28;display:block;width:100%}
-.widget.sz-S .qt{font-size:16px}
-.qa{margin-top:10px;font-size:13px;color:var(--cardInk2);display:block}
-.wt-photo,.wt-strip,.wt-mood{padding:0}
+.wt-photo,.wt-strip{padding:0}
 .wt-strip{padding:6px}
 .ph{display:block;width:100%;background-size:cover;background-position:center;background-color:var(--chip);position:relative;border-radius:calc(var(--radius) * .75);overflow:hidden;color:var(--cardInk2);font-size:13px;text-align:center}
 .wt-photo .ph{border-radius:0;aspect-ratio:1}
@@ -132,9 +129,6 @@ svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.9;stroke
 .cap{position:absolute;left:0;right:0;bottom:0;padding:22px 14px 12px;background:linear-gradient(transparent,rgba(0,0,0,.55));color:#fff;font-style:normal;font-family:var(--fh);font-size:16px;text-align:left}
 .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
 .strip .ph{aspect-ratio:3/4;border-radius:calc(var(--radius) * .6)}
-.mood{display:grid;gap:3px;width:100%}
-.mood.c3{grid-template-columns:repeat(3,1fr)}.mood.c4{grid-template-columns:1fr 1fr}.mood.c6{grid-template-columns:repeat(3,1fr)}
-.mood .ph{aspect-ratio:1;border-radius:0}
 .wedit{position:absolute;inset:0;z-index:5;background:rgba(0,0,0,.42);display:flex;align-items:flex-start;justify-content:space-between;padding:8px;gap:6px;color:#fff;font-weight:600;font-size:13px}
 .wedit>span{align-self:center;text-align:center;flex:1}
 .wedit button{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.94);color:#222;display:grid;place-items:center}
@@ -175,71 +169,49 @@ svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.9;stroke
 .catrow .l span:last-child{color:var(--cardInk2);font-weight:500}
 .amt{font-weight:700;white-space:nowrap}.amt.in{color:var(--ok)}
 
-/* Notes, know, board, quotes */
-.ngrid{columns:2;column-gap:10px}
-.nc{break-inside:avoid;margin-bottom:10px;border-radius:calc(var(--radius) * .8);padding:14px;background:var(--nbg,var(--card));color:var(--cardInk);display:block;width:100%;cursor:pointer}
+/* Notes */
 .nc.pastel{--cardInk:#2A2420;--cardInk2:rgba(42,36,32,.62);--line:rgba(42,36,32,.3)}
 .nc h4{margin:0 0 5px;font-family:var(--fh);font-size:18px;font-weight:700;line-height:1.2}
 .nc p{margin:0;font-size:13.5px;color:var(--cardInk2);white-space:pre-wrap;word-break:break-word;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;overflow:hidden}
 .nc .it{display:flex;gap:8px;align-items:center;font-size:13.5px;padding:3px 0}
 .nc .meta{font-size:12px;color:var(--cardInk2);margin-top:6px}
-.kc{display:block;width:100%;margin-bottom:10px;padding:16px}
-.kc h4{margin:0 0 6px;font-family:var(--fh);font-size:21px;line-height:1.15}
-.kc p{margin:0;color:var(--cardInk2);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;white-space:pre-wrap}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-.tg{font-size:12.5px;font-weight:600;padding:3px 10px;border-radius:99px;background:var(--chip);color:var(--cardInk)}
-.thumbs{display:flex;gap:6px;margin-top:10px;overflow-x:auto}
-.thumbs .ph{width:64px;height:64px;flex:none;border-radius:12px}
-.qc{display:block;width:100%;margin-bottom:10px;padding:22px 20px}
-.qc q{display:block;font-family:var(--fh);font-style:italic;font-size:22px;line-height:1.3;quotes:none}
-.qc span{display:block;margin-top:10px;font-size:13.5px;color:var(--cardInk2)}
-.masonry{columns:2;column-gap:8px}
-.mp{display:block;width:100%;break-inside:avoid;margin-bottom:8px;border-radius:calc(var(--radius) * .6);overflow:hidden;background:var(--card);position:relative}
-.mp .ph{border-radius:0;aspect-ratio:var(--ar,1)}
-.mp em{display:block;position:absolute;left:0;right:0;bottom:0;padding:18px 10px 8px;background:linear-gradient(transparent,rgba(0,0,0,.55));color:#fff;font-size:12.5px;font-style:normal}
-.bigimg{width:100%;border-radius:18px;display:block;margin-bottom:10px}
 
 /* Birthdays */
 .av{width:44px;height:44px;border-radius:50%;background:var(--c,var(--accent));color:#fff;display:grid;place-items:center;font-family:var(--fh);font-weight:700;font-size:19px;flex:none;background-size:cover;background-position:center}
 .bhero{display:flex;gap:14px;align-items:center}
 .bhero b{font-family:var(--fh);font-size:26px;display:block;line-height:1.1}
 
-/* Blog */
-.bhead{border-radius:var(--radius);overflow:hidden;background:var(--card);color:var(--cardInk);position:relative;-webkit-backdrop-filter:blur(var(--blur));backdrop-filter:blur(var(--blur))}
-.bban{height:130px;background-size:cover;background-position:center;background-color:var(--chip)}
-.bmeta{padding:0 18px 16px;margin-top:-30px;position:relative}
-.bmeta .av{width:68px;height:68px;font-size:28px;border:4px solid var(--sbg);}
-.bmeta h2{font-family:var(--fh);font-size:26px;margin:8px 0 2px}
-.comp{margin-top:14px}
-.comp-r{display:flex;gap:12px}
-.cta{flex:1;background:transparent;border:0;outline:none;resize:none;color:var(--cardInk);font-size:16.5px;line-height:1.45;min-height:70px}
-.comp-b{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
-.tools{display:flex;gap:2px}
-.tools button{width:40px;height:40px;display:grid;place-items:center;border-radius:50%;color:var(--accent)}
-.tools button.on{background:var(--chip)}
 .btn.sm{display:inline-block;width:auto;padding:10px 20px;margin:0;font-size:14.5px}
 .att{display:flex;gap:8px;overflow-x:auto;margin:8px 0}
-.att .ph{width:84px;height:84px;flex:none;border-radius:14px}
-.att .ph button{position:absolute;top:4px;right:4px;width:24px;height:24px;border-radius:50%;background:rgba(0,0,0,.65);color:#fff;display:grid;place-items:center}
-.att .ph button svg{width:14px;height:14px}
-.post{margin-top:14px;padding:0;overflow:hidden}
-.post header{display:flex;gap:12px;align-items:center;padding:14px 16px 10px}
-.post header b{display:block;font-family:var(--fh);font-size:17px}
-.pmedia{display:grid;gap:3px;grid-template-columns:1fr 1fr}
-.pmedia>*:only-child,.pmedia>*:nth-child(odd):last-child{grid-column:span 2}
-.pmedia img,.pmedia video{width:100%;display:block;object-fit:cover;max-height:520px;background:var(--chip)}
-.pmedia.multi img,.pmedia.multi video{aspect-ratio:1}
-.ptxt{padding:12px 16px 4px;white-space:pre-wrap;word-break:break-word;font-size:16px;line-height:1.5}
-.ptxt a{color:var(--accent);text-decoration:underline}
-.ptxt .tag{color:var(--accent);font-weight:600}
-.pmeta{display:flex;flex-wrap:wrap;gap:8px;padding:8px 16px 0}
-.pm{display:inline-flex;gap:6px;align-items:center;font-size:13.5px;font-weight:600;padding:5px 12px;border-radius:99px;background:var(--chip)}
-.pm svg{width:15px;height:15px}
-.post footer{display:flex;justify-content:space-between;align-items:center;padding:6px 8px 8px 16px;color:var(--cardInk2);font-size:13px}
-.post footer .ac{display:flex;gap:2px}
-.post footer button{width:40px;height:40px;display:grid;place-items:center;border-radius:50%}
-.post footer button.fav{color:var(--danger)}
-.post footer button.fav svg{fill:var(--danger)}
+
+/* Geburtstags-Widget */
+.bdl{display:flex;flex-direction:column;gap:6px}
+.bdr{display:flex;align-items:center;gap:10px;width:100%;min-width:0;padding:2px 0}
+.bdr .av{width:32px;height:32px;font-size:14px}
+.bdr .mx b{display:block;font-weight:650;font-size:14.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bdr .rs{font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bdw{flex:none;font-size:12px;font-weight:700;padding:3px 9px;border-radius:99px;background:var(--chip)}
+.bdr.td .bdw{background:var(--accent);color:var(--accentInk)}
+.widget.sz-S .bdr .av{display:none}
+/* Stundenplan */
+.ttwrap{padding:10px 8px 12px;overflow:hidden}
+.ttg{display:grid;grid-template-columns:24px repeat(var(--n),minmax(0,1fr));column-gap:3px}
+.tth{text-align:center;font-size:12px;color:var(--cardInk2);padding:2px 0 8px;line-height:1.2}
+.tth b{display:block;color:var(--cardInk);font-size:13px}
+.tth.today b,.tth.today span{color:var(--accent);font-weight:700}
+.tthrs{position:relative}
+.tthrs span{position:absolute;right:3px;font-size:10px;color:var(--cardInk2);transform:translateY(-6px)}
+.ttc{position:relative;border-radius:10px;background:repeating-linear-gradient(to bottom,var(--line) 0 1px,transparent 1px 52px)}
+.ttc.today{background-color:var(--chip)}
+.ttb{position:absolute;border-radius:9px;padding:4px 5px;background:var(--c);color:#fff;overflow:hidden;font-size:10.5px;line-height:1.2;display:flex;flex-direction:column;gap:1px;text-align:left;box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.ttb b{font-size:11px;font-weight:700;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;-webkit-hyphens:auto;hyphens:auto;overflow-wrap:normal;word-break:normal}
+.ttb span{opacity:.9;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ttb.off{opacity:.3;background:transparent;color:var(--cardInk);box-shadow:inset 0 0 0 1.5px var(--c)}
+.ttnow{position:absolute;left:-2px;right:-2px;height:2px;background:var(--danger);border-radius:2px;z-index:2}
+.ttnow::before{content:"";position:absolute;left:-3px;top:-3px;width:8px;height:8px;border-radius:50%;background:var(--danger)}
+.row.past{opacity:.55}
+.btn svg{width:18px;height:18px;vertical-align:-3px;margin-right:4px}
+.btn[disabled]{opacity:.6}
 
 /* Sheet & studio */
 #veil{position:fixed;inset:0;background:rgba(10,8,8,.55);opacity:0;pointer-events:none;transition:opacity .25s;z-index:30}
@@ -281,7 +253,6 @@ textarea.fld{resize:none;line-height:1.45}
 .addli{color:var(--accent);font-weight:650;padding:8px 2px;display:block}
 .slot{display:flex;gap:12px;align-items:center;margin:6px 0}
 .slot .thumb{width:64px;height:64px;border-radius:14px;background:var(--chip) center/cover no-repeat;flex:none}
-.moodg{display:flex;flex-wrap:wrap;gap:8px}
 
 /* Namaz & Zikir */
 .ar{font-family:'Amiri','Geeza Pro','Noto Naskh Arabic',serif;direction:rtl;text-align:center;font-size:34px;line-height:1.6}
@@ -445,8 +416,10 @@ const I = {
   study:'<svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>',
   budget:'<svg viewBox="0 0 24 24"><path d="M20 7H5a2 2 0 0 1 0-4h13v4"/><path d="M3 5v14a2 2 0 0 0 2 2h15V7"/><circle cx="16.5" cy="14" r="1.2"/></svg>',
   notes:'<svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>',
+  play:'<svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg>',
+  clock:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
+  dots:'<svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="19" cy="12" r="1.3"/></svg>',
   bulb:'<svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.8.8 1 1.5 1 2.5h6c0-1 .2-1.7 1-2.5A6 6 0 0 0 12 3z"/></svg>',
-  quote:'<svg viewBox="0 0 24 24"><path d="M9 7c-3 0-4 2-4 5v5h5v-5H7c0-2 1-3 2-3zM19 7c-3 0-4 2-4 5v5h5v-5h-3c0-2 1-3 2-3z"/></svg>',
   image:'<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="1.8"/><path d="M21 16l-5-5-9 9"/></svg>',
   pen:'<svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>',
   sun:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>',
@@ -472,8 +445,7 @@ const I = {
 /* ================= Constants ================= */
 const TOOLDEF = {
   home:{n:'Start',i:'home'}, cal:{n:'Kalender',i:'cal'}, todo:{n:'Aufgaben',i:'todo'}, bday:{n:'Geburtstage',i:'gift'},
-  study:{n:'Lernen',i:'study'}, budget:{n:'Budget',i:'budget'}, notes:{n:'Notizen',i:'notes'}, know:{n:'Gedankenpalast',i:'bulb'},
-  quotes:{n:'Zitate',i:'quote'}, board:{n:'Moodboard',i:'image'}, blog:{n:'Blog',i:'pen'},
+  study:{n:'Lernen',i:'study'}, budget:{n:'Budget',i:'budget'}, notes:{n:'Notizen',i:'notes'},
   prayer:{n:'Namaz',i:'moon'}, zikir:{n:'Zikirmatik',i:'beads'}
 };
 const FONTS = [
@@ -503,7 +475,6 @@ const CATS_OUT = [
 const CATS_IN = [{n:'Gehalt',c:'#16A34A'},{n:'Nebenjob',c:'#22C55E'},{n:'Unterstützung',c:'#4ADE80'},{n:'Sonstiges',c:'#84CC16'}];
 const catColor = n => ([...CATS_OUT, ...CATS_IN].find(c => c.n === n) || {c:'#94A3B8'}).c;
 const REPEATS = [['none','Nie'],['daily','Täglich'],['weekdays','Montag bis Freitag'],['weekly','Jede Woche'],['biweekly','Alle 2 Wochen']];
-const MOODS = [['😊','fröhlich'],['🥰','verliebt'],['😌','entspannt'],['🤩','begeistert'],['😴','müde'],['😢','traurig'],['😤','genervt'],['😰','gestresst'],['🥳','feierlaune'],['🤔','nachdenklich'],['💪','motiviert'],['😎','cool']];
 const BDC = '#E58EB5';
 
 /* ---- Namaz & Zikir: Konstanten ---- */
@@ -548,23 +519,23 @@ const CITIES = CITY_DATA.flatMap(([tz, land, arr]) => arr.map(([n, la, lo]) => (
 /* ================= State ================= */
 const KEY = 'alltag.v1';
 const defaults = () => ({
-  ver:3, events:[], todos:[], tx:[], notes:[], subjects:[], sessions:[], bdays:[], quotes:[], know:[], board:[],
+  ver:4, events:[], todos:[], tx:[], notes:[], subjects:[], sessions:[], bdays:[], tt:[], exams:[],
   cats:[{id:'vorlesung',name:'Vorlesung',color:'#6F9BD1'},{id:'pruefung',name:'Prüfung',color:'#D96B5F'},{id:'meeting',name:'Meeting',color:'#A585C9'},{id:'arbeit',name:'Arbeit',color:'#5FB3A1'},{id:'privat',name:'Privat',color:'#E3A857'}],
   groups:[{id:'g_uni',name:'Uni',color:'#6F9BD1'},{id:'g_arbeit',name:'Arbeit',color:'#5FB3A1'},{id:'g_privat',name:'Privat',color:'#E3A857'}],
   prios:[{lvl:1,name:'Sofort',color:'#D96B5F'},{lvl:2,name:'Wichtig',color:'#E3A857'},{lvl:3,name:'Normal',color:'#6F9BD1'},{lvl:4,name:'Später',color:'#5FB3A1'},{lvl:5,name:'Irgendwann',color:'#9A948E'}],
-  blog:{title:'Mein Blog', desc:'Nur für mich.', avatar:'', banner:'', posts:[]},
   home:[
     {id:uid(),type:'clock',size:'M',style:'glass',cfg:{seconds:false}},
     {id:uid(),type:'prayer',size:'M',style:'dark',cfg:{}},
     {id:uid(),type:'strip',size:'M',style:'dark',cfg:{mids:['','','']}},
     {id:uid(),type:'todos',size:'S',style:'dark',cfg:{group:'all',max:4}},
-    {id:uid(),type:'bday',size:'S',style:'light',cfg:{onlyToday:false}},
+    {id:uid(),type:'bday',size:'S',style:'light',cfg:{count:3}},
     {id:uid(),type:'today',size:'M',style:'card',cfg:{}},
-    {id:uid(),type:'quote',size:'M',style:'glass',cfg:{}}
+    {id:uid(),type:'tt',size:'M',style:'card',cfg:{}}
   ],
   tools:Object.keys(TOOLDEF).map(id => ({id, label:TOOLDEF[id].n, on:true, emoji:'', accent:'', bg:'', fh:''})),
   pray:{loc:null, adj:{fajr:0, sunrise:0, dhuhr:0, asr:0, maghrib:0, isha:0}, hanafi:false, extras:[], log:{}, hijri:0},
   zikir:{sel:'z_subhan', items:clone(ZK_PRESETS), log:{}},
+  study:{tab:'tt', sem:{from:'', to:'', inCal:true}, timer:null},
   theme:baseTheme('cocoa'),
   settings:{name:'', budget:0, greet:'mix', logo:'dunkel', splash:true}
 });
@@ -576,20 +547,29 @@ function load(){
       const o = JSON.parse(r);
       const s = Object.assign(d, o);
       s.settings = Object.assign(defaults().settings, o.settings || {});
-      s.blog = Object.assign(defaults().blog, o.blog || {});
       s.theme = Object.assign(baseTheme('cocoa'), o.theme || {});
-      if (o.ver !== 2 && o.ver !== 3){ // Migration von Version 1
+      if (!o.ver || o.ver < 2){ // Migration von Version 1
         s.todos = (s.todos || []).map(t => ({...t, prio: t.prio === 2 ? 1 : t.prio === 1 ? 2 : 0, group: t.group || ''}));
         s.home = defaults().home; s.theme = baseTheme('cocoa');
       } else if (o.ver === 2){ // Version 2: Gebetszeiten-Widget ergänzen
         s.home = [...(s.home || [])]; s.home.splice(Math.min(1, s.home.length), 0, {id:uid(), type:'prayer', size:'M', style:'dark', cfg:{}});
       }
-      s.ver = 3;
+      if (!o.ver || o.ver < 4){ // Version 4: Blog, Moodboard, Zitate, Gedankenpalast entfernt; Prüfungsplan
+        s.exams = s.exams || [];
+        (s.subjects || []).forEach(sb => { if (sb.exam && !s.exams.some(x => x.sid === sb.id)) s.exams.push({id:uid(), sid:sb.id, title:sb.name, kind:'Klausur', date:sb.exam, start:'', end:'', room:'', reg:'', ects:'', status:'offen', grade:'', note:''}); });
+      }
+      ['quotes', 'know', 'board', 'blog', 'qoff', 'mail'].forEach(k => delete s[k]);
+      s.home = (s.home || []).filter(w => !['quote', 'mood', 'mail'].includes(w.type));
+      s.home.forEach(w => { if (w.type === 'bday'){ delete w.cfg.onlyToday; if (!w.cfg.count) w.cfg.count = 3; } });
+      s.tt = s.tt || []; s.exams = s.exams || [];
+      s.ver = 4;
       const dd = defaults();
+      s.study = Object.assign(dd.study, o.study || {}); s.study.sem = Object.assign(dd.study.sem, (o.study || {}).sem || {});
       s.pray = Object.assign(dd.pray, o.pray || {}); s.pray.adj = Object.assign(dd.pray.adj, (o.pray || {}).adj || {});
       s.zikir = Object.assign(dd.zikir, o.zikir || {}); if (!s.zikir.items || !s.zikir.items.length) s.zikir.items = clone(ZK_PRESETS);
-      const have = new Set((s.tools || []).map(t => t.id));
-      s.tools = [...(s.tools || []), ...Object.keys(TOOLDEF).filter(id => !have.has(id)).map(id => ({id, label:TOOLDEF[id].n, on:true, emoji:'', accent:'', bg:'', fh:''}))];
+      s.tools = (s.tools || []).filter(t => TOOLDEF[t.id]);
+      const have = new Set(s.tools.map(t => t.id)), mk = id => ({id, label:TOOLDEF[id].n, on:true, emoji:'', accent:'', bg:'', fh:''});
+      s.tools = [...s.tools, ...Object.keys(TOOLDEF).filter(id => !have.has(id)).map(mk)];
       return s;
     }
   } catch(e) {}
@@ -598,7 +578,7 @@ function load(){
 let S = load();
 function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch(e) {} }
 const V = {view:'home', edit:false, cm:new Date(new Date().getFullYear(), new Date().getMonth(), 1), sel:today(), bm:new Date(new Date().getFullYear(), new Date().getMonth(), 1),
-  tf:'open', tg:'all', nf:'all', nq:'', kq:'', kt:'', bd:'', bf:'all', btag:'', qoff:0, shuf:0, draft:{text:'', media:[], mood:null, loc:''}};
+  tf:'open', tg:'all', nf:'all', nq:'', shuf:0, ttw:0};
 let F = {}, T = null;
 const getF = p => p.split('.').reduce((o,k) => o == null ? o : o[k], F);
 const setF = (p, v) => { const a = p.split('.'); let o = F; while (a.length > 1) o = o[a.shift()]; o[a[0]] = v; };
@@ -701,9 +681,33 @@ function occurs(e, d){
   }
   return false;
 }
+/* ---- Stundenplan & Prüfungen ---- */
+const TT_KINDS = ['Vorlesung', 'Übung', 'Seminar', 'Tutorium', 'Praktikum', 'Sprachkurs', 'Sonstiges'];
+const EX_KINDS = ['Klausur', 'Mündlich', 'Hausarbeit', 'Referat', 'Abgabe', 'Projekt', 'Sonstiges'];
+const EX_STATUS = [{v:'offen', n:'Offen'}, {v:'angemeldet', n:'Angemeldet'}, {v:'bestanden', n:'Bestanden'}, {v:'nb', n:'Nicht bestanden'}];
+function isoWeek(s){ const d = pd(s); d.setDate(d.getDate() + 3 - wdIdx(d)); const w1 = new Date(d.getFullYear(), 0, 4); return 1 + Math.round(((d - w1) / 86400000 - 3 + wdIdx(w1)) / 7); }
+const examColor = () => S.cats.find(c => c.id === 'pruefung')?.color || '#D96B5F';
+const lectColor = () => S.cats.find(c => c.id === 'vorlesung')?.color || '#6F9BD1';
+function ttOn(t, d){
+  if (String(wdIdx(pd(d))) !== String(t.wd)) return false;
+  const sem = S.study.sem;
+  if (sem.from && d < sem.from) return false;
+  if (sem.to && d > sem.to) return false;
+  if ((t.skip || []).includes(d)) return false;
+  if (t.rhythm === 'even' && isoWeek(d) % 2) return false;
+  if (t.rhythm === 'odd' && !(isoWeek(d) % 2)) return false;
+  return true;
+}
+const ttDay = d => S.tt.filter(t => ttOn(t, d)).sort((a,b) => (a.start || '').localeCompare(b.start || ''));
+const ttColor = t => t.color || (t.sid && (S.subjects.find(x => x.id === t.sid) || {}).color) || lectColor();
+const exSorted = () => [...S.exams].sort((a,b) => (a.date || '9999').localeCompare(b.date || '9999') || (a.start || '').localeCompare(b.start || ''));
 function dayItems(d, withBd){
   const out = S.events.filter(e => occurs(e, d)).map(e => ({...e, vd:d}));
-  S.subjects.forEach(s => { if (s.exam === d) out.push({id:'x'+s.id, sid:s.id, title:s.name + ' Prüfung', type:'pruefung', color:S.cats.find(c => c.id === 'pruefung')?.color || '#D96B5F', derived:true, vd:d}); });
+  if (S.study.sem.inCal !== false) ttDay(d).forEach(t => out.push({id:'t'+t.id, tid:t.id, tt:true, derived:true, title:t.title, type:'vorlesung', color:ttColor(t), start:t.start, end:t.end, place:t.room, kind:t.kind, vd:d}));
+  S.exams.forEach(x => {
+    if (x.date === d) out.push({id:'x'+x.id, xid:x.id, exam:true, derived:true, title:x.title + (x.kind && x.kind !== 'Klausur' ? ' (' + x.kind + ')' : ' Prüfung'), type:'pruefung', color:examColor(), start:x.start || '', end:x.end || '', place:x.room, vd:d});
+    if (x.reg && x.reg === d && x.status === 'offen') out.push({id:'r'+x.id, xid:x.id, exam:true, derived:true, title:'Anmeldeschluss: ' + x.title, type:'pruefung', color:examColor(), start:'', vd:d});
+  });
   if (withBd){
     const x = pd(d);
     S.bdays.filter(b => b.m === x.getMonth() + 1 && b.d === x.getDate()).forEach(b => out.push({id:'b'+b.id, bid:b.id, title:`${b.name} hat Geburtstag`, type:'bday', bday:true, vd:d}));
@@ -711,9 +715,8 @@ function dayItems(d, withBd){
   return out.sort((a,b) => (a.start || '') < (b.start || '') ? -1 : (a.start || '') > (b.start || '') ? 1 : 0);
 }
 function nextExam(){
-  const t = today();
-  for (let i = 0; i <= 150; i++){ const d = addDays(t, i); const x = dayItems(d).find(e => e.type === 'pruefung'); if (x) return {d, e:x}; }
-  return null;
+  const t = today(), x = exSorted().find(e => e.date && e.date >= t && !['bestanden', 'nb'].includes(e.status));
+  return x ? {d:x.date, e:{title:x.title + (x.kind && x.kind !== 'Klausur' ? ' (' + x.kind + ')' : ''), x}} : null;
 }
 function nextBday(b){
   const t = new Date(), y = t.getFullYear(), td = new Date(y, t.getMonth(), t.getDate());
@@ -763,9 +766,9 @@ const thumbs = ids => ids.length ? `<div class="thumbs">${ids.map(i => `<div cla
 /* ================= Rows ================= */
 function evRow(e){
   const time = e.start ? `<b>${e.start}</b>${e.end ? `<span>${e.end}</span>` : ''}` : '<b>Ganztag</b>';
-  const act = e.bday ? 'editBd' : e.derived ? 'editSub' : 'editEv';
-  const id = e.bday ? e.bid : e.derived ? e.sid : e.id;
-  const label = e.bday ? 'Geburtstag' : catOf(e.type).name;
+  const act = e.bday ? 'editBd' : e.tt ? 'editTT' : e.exam ? 'editExam' : 'editEv';
+  const id = e.bday ? e.bid : e.tt ? e.tid : e.exam ? e.xid : e.id;
+  const label = e.bday ? 'Geburtstag' : e.tt ? (e.kind || 'Stundenplan') : catOf(e.type).name;
   return `<button class="row" style="--c:${colorOf(e)}" data-act="${act}" data-id="${id}" data-d="${e.vd}">
     <span class="bar"></span><span class="rtime">${e.bday ? '<b>🎂</b>' : time}</span>
     <span class="rbody"><span class="rt">${esc(e.title)}</span><span class="rs">${esc(label)}${e.place ? ', ' + esc(e.place) : ''}${e.repeat && e.repeat !== 'none' ? ', wiederholt' : ''}</span></span></button>`;
@@ -780,7 +783,7 @@ function todoRow(x, showGroup){
 function sesRow(s){
   const sub = S.subjects.find(x => x.id === s.sid); if (!sub) return '';
   return `<div class="row" style="--c:${sub.color}"><button class="chk ${s.done ? 'on' : ''}" data-act="tgSes" data-id="${s.id}" aria-label="Erledigt">${I.check}</button>
-    <button class="rbody" data-act="editSes" data-id="${s.id}"><span class="rt ${s.done ? 'done' : ''}">${esc(sub.name)}${s.topic ? ': ' + esc(s.topic) : ''}</span><span class="rs">${fmtMin(s.min)}</span></button><span class="sw"></span></div>`;
+    <button class="rbody" data-act="editSes" data-id="${s.id}"><span class="rt ${s.done ? 'done' : ''}">${esc(sub.name)}${s.topic ? ': ' + esc(s.topic) : ''}</span><span class="rs">${fmtMin(s.min)}</span></button>${!s.done && s.date <= today() ? `<button class="x" style="color:var(--c)" data-act="sesGo" data-id="${s.id}" aria-label="Fokuszeit starten">${I.play}</button>` : '<span class="sw"></span>'}</div>`;
 }
 
 /* ================= Widgets ================= */
@@ -796,13 +799,31 @@ const WT = {
         ? rows.slice(0, 5).map(r => `<div class="mi"><i style="background:${r.c}"></i><span class="mt">${esc(r.time)}</span><span class="mx">${esc(r.title)}</span></div>`).join('') + (rows.length > 5 ? `<div class="rs">und ${rows.length - 5} weitere</div>` : '')
         : '<div class="rs">Heute ist nichts geplant.</div>');
     }},
-  bday:{n:'Geburtstage', d:'Wer heute oder als Nächstes Geburtstag hat', size:'S', style:'light', cfg:{onlyToday:false},
+  bday:{n:'Geburtstage', d:'Die nächsten Geburtstage, auch wenn heute keiner ist', size:'S', style:'light', cfg:{count:3},
     r:w => {
-      const list = S.bdays.map(b => ({b, n:bdDays(b)})).sort((a,b) => a.n - b.n), td = list.filter(x => x.n === 0);
-      if (td.length) return wHead('bday', 'Heute', '🎂') + td.map(x => `<div class="bd"><b>${esc(x.b.name)}</b>${bdAge(x.b) ? `<span class="rs">wird ${bdAge(x.b)}</span>` : ''}</div>`).join('');
-      if (w.cfg.onlyToday) return null;
-      if (!list.length) return wHead('bday', 'Geburtstage', '') + '<div class="rs">Noch keine eingetragen.</div>';
-      return wHead('bday', 'Als Nächstes', '') + list.slice(0, 2).map(x => `<div class="bd"><b>${esc(x.b.name)}</b><span class="rs">${x.n === 1 ? 'morgen' : 'in ' + x.n + ' Tagen'}, ${x.b.d}. ${MS[x.b.m - 1]}</span></div>`).join('');
+      const list = S.bdays.map(b => ({b, n:bdDays(b)})).sort((a,b) => a.n - b.n);
+      if (!list.length) return wHead('bday', 'Geburtstage', '') + '<div class="rs">Noch keine eingetragen. Tippe hier, um welche hinzuzufügen.</div>';
+      const td = list.filter(x => x.n === 0), cnt = Math.max(td.length, w.size === 'S' ? Math.min(2, Number(w.cfg.count) || 3) : (Number(w.cfg.count) || 3));
+      const when = n => n === 0 ? 'Heute' : n === 1 ? 'Morgen' : n < 7 ? WDL[wdIdx(pd(addDays(today(), n)))].slice(0, 2) + '.' : 'in ' + n + ' T.';
+      return wHead('bday', td.length ? 'Heute Geburtstag 🎂' : 'Geburtstage', '') + `<div class="bdl">` + list.slice(0, cnt).map(x => {
+        const age = bdAge(x.b), date = `${x.b.d}. ${MS[x.b.m - 1]}`;
+        return `<button class="bdr ${x.n === 0 ? 'td' : ''}" data-act="tab" data-v="bday"><span class="av" style="--c:${BDC}">${esc(x.b.name.slice(0, 1).toUpperCase())}</span><span class="mx"><b>${esc(x.b.name)}</b><span class="rs">${x.n === 0 ? (age ? 'wird heute ' + age : 'hat heute Geburtstag') : date + (age ? ', wird ' + age : '')}</span></span><span class="bdw">${when(x.n)}</span></button>`;
+      }).join('') + `</div>`;
+    }},
+  tt:{n:'Stundenplan', d:'Was heute an der Uni ansteht, mit der nächsten Veranstaltung', size:'M', style:'card', cfg:{},
+    r:w => {
+      const t = today(), arr = ttDay(t), now = new Date(), hm = `${pad(now.getHours())}:${pad(now.getMinutes())}`;
+      if (!S.tt.length) return wHead('study', 'Stundenplan', '') + '<div class="rs">Trage deinen Stundenplan im Bereich Lernen ein.</div>';
+      const cur = arr.find(x => x.start <= hm && (x.end || x.start) > hm), nx = arr.find(x => x.start > hm);
+      let top = '';
+      if (cur) top = `<div class="rs">Jetzt, bis ${cur.end}</div><div class="bd"><b>${esc(cur.title)}</b>${cur.room ? `<span class="rs">${esc(cur.room)}</span>` : ''}</div>`;
+      else if (nx) top = `<div class="rs">Als Nächstes um ${nx.start}</div><div class="bd"><b>${esc(nx.title)}</b>${nx.room ? `<span class="rs">${esc(nx.room)}</span>` : ''}</div>`;
+      else {
+        let d = t, f = null; for (let i = 1; i < 8 && !f; i++){ d = addDays(t, i); f = ttDay(d)[0]; }
+        top = f ? `<div class="rs">Heute nichts mehr. ${dueLabel(d)} um ${f.start}:</div><div class="bd"><b>${esc(f.title)}</b></div>` : '<div class="rs">Diese Woche keine Veranstaltungen.</div>';
+      }
+      const rest = w.size === 'S' ? '' : arr.filter(x => x !== cur && x !== nx && x.start > hm).slice(0, 3).map(x => `<div class="mi"><i style="background:${ttColor(x)}"></i><span class="mt">${x.start}</span><span class="mx">${esc(x.title)}</span></div>`).join('');
+      return wHead('study', 'Stundenplan heute', arr.length || '') + top + rest;
     }},
   todos:{n:'To-Do-Liste', d:'Offene Aufgaben, auch pro Gruppe', size:'S', style:'dark', cfg:{group:'all', max:4},
     r:w => {
@@ -813,27 +834,20 @@ const WT = {
         ? arr.slice(0, w.cfg.max || 4).map(x => `<div class="mi"><button class="chk sm" data-act="tgTodo" data-id="${x.id}" aria-label="Erledigt">${I.check}</button><span class="mx">${esc(x.title)}</span></div>`).join('')
         : '<div class="rs">Alles erledigt.</div>');
     }},
-  quote:{n:'Zitat', d:'Ein Zitat aus deiner Sammlung, Tippen für das nächste', size:'M', style:'glass', cfg:{},
-    r:w => {
-      if (!S.quotes.length) return `<button class="qt" data-act="tab" data-v="quotes">Füge in deiner Zitate-Sammlung dein erstes Zitat hinzu.</button>`;
-      const q = S.quotes[Math.abs(daySeed() + V.qoff) % S.quotes.length];
-      return `<button class="qt" data-act="qNext">${esc(q.text)}</button>${q.author ? `<span class="qa">${esc(q.author)}</span>` : ''}`;
-    }},
   photo:{n:'Foto', d:'Ein Bild deiner Wahl', size:'M', style:'dark', cfg:{mid:'', caption:''},
     r:w => `<button class="ph" ${w.cfg.mid ? `data-mid="${w.cfg.mid}" data-act="none"` : `data-act="wCfg" data-id="${w.id}"`}>${w.cfg.mid ? '' : '<span>Bild hinzufügen</span>'}${w.cfg.caption ? `<em class="cap">${esc(w.cfg.caption)}</em>` : ''}</button>`},
   strip:{n:'Fotostreifen', d:'Drei Bilder nebeneinander', size:'M', style:'dark', cfg:{mids:['','','']},
     r:w => `<div class="strip">${[0,1,2].map(i => { const m = (w.cfg.mids || [])[i]; return `<button class="ph" ${m ? `data-mid="${m}" data-act="none"` : `data-act="wCfg" data-id="${w.id}"`}>${m ? '' : '<span>+</span>'}</button>`; }).join('')}</div>`},
-  mood:{n:'Moodboard-Auszug', d:'Zufällige Bilder aus deinem Moodboard', size:'M', style:'dark', cfg:{count:3},
-    r:w => {
-      const n = Number(w.cfg.count) || 3;
-      if (!S.board.length) return `<button class="qt" style="padding:16px" data-act="tab" data-v="board">Speichere Bilder im Moodboard, dann erscheinen sie hier.</button>`;
-      const pick = seeded(S.board, daySeed() + 7).slice(0, n);
-      return `<button class="mood c${n}" data-act="tab" data-v="board">${pick.map(b => `<span class="ph" data-mid="${b.mid}"></span>`).join('')}</button>`;
-    }},
   study:{n:'Lernen', d:'Nächste Prüfung und Lernen heute', size:'S', style:'card', cfg:{},
     r:w => {
       const ex = nextExam(), t = today(), ses = S.sessions.filter(s => s.date === t && !s.done);
       return wHead('study', 'Lernen', ses.length || '') + (ex ? `<div class="rs">${esc(ex.e.title)}</div><div class="bd"><b>${countdown(ex.d)}</b></div>` : '<div class="rs">Keine Prüfung in Sicht.</div>') + (ses.length ? `<div class="rs">${fmtMin(ses.reduce((a,s) => a + s.min, 0))} heute</div>` : '');
+    }},
+  exams:{n:'Prüfungsplan', d:'Die nächsten Prüfungen mit Countdown', size:'M', style:'card', cfg:{count:3},
+    r:w => {
+      const t = today(), up = exSorted().filter(x => x.date && x.date >= t && !['bestanden', 'nb'].includes(x.status));
+      if (!up.length) return wHead('study', 'Prüfungen', '') + '<div class="rs">Keine anstehenden Prüfungen.</div>';
+      return wHead('study', 'Prüfungen', up.length) + up.slice(0, w.size === 'S' ? 2 : (Number(w.cfg.count) || 3)).map(x => `<div class="mi"><i style="background:${examColor()}"></i><span class="mx">${esc(x.title)}</span><span class="mt" style="text-align:right">${countdown(x.date)}</span></div>`).join('');
     }},
   budget:{n:'Budget', d:'Monatsübersicht', size:'S', style:'card', cfg:{},
     r:w => {
@@ -966,26 +980,123 @@ function vBday(){
   return html;
 }
 
+const toMin = s => { const [h, m] = String(s || '0:0').split(':').map(Number); return (h || 0) * 60 + (m || 0); };
+const fmtGrade = n => n.toFixed(2).replace(/0$/, '').replace('.', ',');
 function vStudy(){
+  const tab = S.study.tab || 'tt';
+  const seg = `<div class="seg"><button class="${tab === 'tt' ? 'on' : ''}" data-act="stTab" data-v="tt">Stundenplan</button><button class="${tab === 'ex' ? 'on' : ''}" data-act="stTab" data-v="ex">Prüfungen</button><button class="${tab === 'plan' ? 'on' : ''}" data-act="stTab" data-v="plan">Lernplan</button></div>`;
+  const sub = {tt:'Deine Woche an der Uni', ex:'Termine, Anmeldungen und Noten', plan:'Fächer, Lernstoff und feste Lernzeiten'}[tab];
+  return head('study', sub) + seg + (tab === 'tt' ? vTT() : tab === 'ex' ? vExams() : vPlan());
+}
+
+/* ---- Stundenplan ---- */
+function vTT(){
+  const t = today(), sem = S.study.sem;
+  if (!S.tt.length) return `<div class="card"><p style="margin:0 0 6px;font-weight:650;font-size:17px">Dein Stundenplan</p>
+    <p class="hint" style="margin:0 0 14px">Trage deine Vorlesungen, Übungen und Seminare einmal ein. Sie erscheinen dann jede Woche hier, im Kalender und auf der Startseite. Für Veranstaltungen, die nur alle zwei Wochen stattfinden, kannst du gerade oder ungerade Kalenderwochen wählen.</p>
+    <button class="btn" style="margin:0" data-act="fab">Erste Veranstaltung eintragen</button><button class="btn ghost" data-act="semSheet">Semesterzeitraum festlegen</button></div>`;
+  const mon = addDays(t, -wdIdx(pd(t)) + V.ttw * 7), kw = isoWeek(mon);
+  const used = new Set(S.tt.map(x => Number(x.wd)));
+  const days = [0, 1, 2, 3, 4, 5, 6].filter(i => i < 5 || used.has(i));
+  let h0 = 24, h1 = 0;
+  S.tt.forEach(x => { h0 = Math.min(h0, Math.floor(toMin(x.start) / 60)); h1 = Math.max(h1, Math.ceil(toMin(x.end || x.start) / 60)); });
+  h0 = Math.min(h0, 8); h1 = Math.max(h1, h0 + 8, 16);
+  const PX = 52, H = (h1 - h0) * PX, now = new Date(), nowMin = now.getHours() * 60 + now.getMinutes();
+  const cols = days.map(i => {
+    const d = addDays(mon, i), all = S.tt.filter(x => Number(x.wd) === i).sort((a,b) => toMin(a.start) - toMin(b.start));
+    const lanes = []; const pos = all.map(x => { let l = lanes.findIndex(e => e <= toMin(x.start)); if (l < 0){ l = lanes.length; lanes.push(0); } lanes[l] = toMin(x.end || x.start) || toMin(x.start) + 90; return l; });
+    const blocks = all.map((x, k) => {
+      const on = ttOn(x, d), top = (toMin(x.start) - h0 * 60) / 60 * PX, ht = Math.max(26, ((toMin(x.end) || toMin(x.start) + 90) - toMin(x.start)) / 60 * PX - 3);
+      const w = 100 / lanes.length;
+      return `<button class="ttb ${on ? '' : 'off'}" style="top:${top}px;height:${ht}px;left:calc(${pos[k] * w}% + 1px);width:calc(${w}% - 2px);--c:${ttColor(x)}" data-act="editTT" data-id="${x.id}" data-d="${d}"><b>${esc(x.title)}</b><span>${x.start}${x.room ? ' · ' + esc(x.room) : ''}</span></button>`;
+    }).join('');
+    const nowLine = d === t && nowMin >= h0 * 60 && nowMin <= h1 * 60 ? `<i class="ttnow" style="top:${(nowMin - h0 * 60) / 60 * PX}px"></i>` : '';
+    return `<div class="ttc ${d === t ? 'today' : ''}" style="height:${H}px">${blocks}${nowLine}</div>`;
+  }).join('');
+  const heads = days.map(i => { const d = addDays(mon, i); return `<div class="tth ${d === t ? 'today' : ''}"><b>${WD[i]}</b><span>${pd(d).getDate()}.</span></div>`; }).join('');
+  const hrs = Array.from({length:h1 - h0}, (_, k) => `<span style="top:${k * PX}px">${h0 + k}</span>`).join('');
+  const grid = `<div class="card ttwrap"><div class="ttg" style="--n:${days.length}"><div></div>${heads}<div class="tthrs" style="height:${H}px">${hrs}</div>${cols}</div></div>`;
+  const nav = `<div class="dnav" style="margin-top:4px"><button class="iconbtn" data-act="ttw" data-v="-1" aria-label="Vorherige Woche">${I.left}</button><b>${V.ttw === 0 ? 'Diese Woche' : V.ttw === 1 ? 'Nächste Woche' : V.ttw === -1 ? 'Letzte Woche' : shortDate(mon) + ' bis ' + shortDate(addDays(mon, 6))}<small style="display:block;font:500 13px var(--fb);color:var(--pageInk2)">KW ${kw}, ${kw % 2 ? 'ungerade' : 'gerade'} Woche</small></b><button class="iconbtn" data-act="ttw" data-v="1" aria-label="Nächste Woche">${I.right}</button></div>`;
+  const tl = ttDay(t), hm = `${pad(now.getHours())}:${pad(now.getMinutes())}`;
+  let todayHtml = '';
+  if (V.ttw === 0){
+    todayHtml = `<div class="sec">Heute<small>${tl.length ? plural(tl.length, 'Termin', 'Termine') : 'frei'}</small></div>` + (tl.length ? tl.map(x => {
+      const cur = x.start <= hm && (x.end || x.start) > hm, past = (x.end || x.start) <= hm;
+      return `<button class="row ${past ? 'past' : ''}" style="--c:${ttColor(x)}${cur ? ';box-shadow:inset 0 0 0 2px var(--accent)' : ''}" data-act="editTT" data-id="${x.id}" data-d="${t}"><span class="bar"></span><span class="rtime"><b>${x.start}</b><span>${x.end || ''}</span></span><span class="rbody"><span class="rt">${esc(x.title)}</span><span class="rs">${[cur ? 'läuft gerade' : '', x.kind, x.room, x.who].filter(Boolean).map(esc).join(', ')}</span></span></button>`;
+    }).join('') : '<div class="empty" style="padding:14px">Heute keine Veranstaltungen.</div>');
+  }
+  const semTxt = sem.from || sem.to ? `Semester ${sem.from ? shortDate(sem.from) : '…'} bis ${sem.to ? shortDate(sem.to) : '…'}` : 'Kein Semesterzeitraum festgelegt';
+  return nav + grid + todayHtml + `<button class="btn ghost" data-act="semSheet" style="margin-top:16px">${esc(semTxt)}${sem.inCal !== false ? ', im Kalender sichtbar' : ''}</button>
+    <p class="hint" style="margin-top:10px;color:var(--pageInk2)">Tippe auf eine Veranstaltung, um sie zu ändern oder einen einzelnen Termin ausfallen zu lassen. Blasse Kästchen finden in dieser Woche nicht statt.</p>`;
+}
+
+/* ---- Prüfungen ---- */
+function examRow(x){
+  const t = today(), n = x.date ? diffDays(t, x.date) : null, fin = ['bestanden', 'nb'].includes(x.status);
+  const sb = x.sid ? S.subjects.find(s => s.id === x.sid) : null;
+  const meta = [x.kind, x.date ? longDate(x.date) + (x.start ? ', ' + x.start + (x.end ? '–' + x.end : '') : '') : 'Datum offen', x.room].filter(Boolean).map(esc).join(' · ');
+  const regWarn = x.reg && x.status === 'offen' && x.reg >= t ? `<span class="rs ${diffDays(t, x.reg) <= 7 ? 'bad' : ''}">Anmeldung bis ${shortDate(x.reg)}${diffDays(t, x.reg) <= 7 ? ' (' + countdown(x.reg) + ')' : ''}</span>` : x.reg && x.status === 'offen' && x.reg < t ? '<span class="rs bad">Anmeldefrist vorbei, noch nicht angemeldet?</span>' : '';
+  const right = fin ? `<span class="pill ${x.status === 'nb' ? 'red' : ''}">${x.status === 'nb' ? 'n. b.' : (x.grade ? esc(x.grade) : '✓')}</span>`
+    : n === null ? '' : `<span class="pill ${n >= 0 && n <= 7 ? 'red' : ''}" style="${n > 7 ? 'background:var(--chip);color:var(--cardInk)' : ''}">${n < 0 ? 'vorbei' : countdown(x.date)}</span>`;
+  return `<button class="row" style="--c:${sb ? sb.color : examColor()}" data-act="editExam" data-id="${x.id}"><span class="bar"></span><span class="rbody"><span class="rt wrap">${esc(x.title)}</span><span class="rs">${meta}</span>${x.status === 'angemeldet' && !fin ? '<span class="rs" style="color:var(--ok)">Angemeldet</span>' : ''}${regWarn}${x.ects ? `<span class="rs">${esc(String(x.ects))} ECTS${x.attempt > 1 ? ', ' + x.attempt + '. Versuch' : ''}</span>` : ''}</span>${right}</button>`;
+}
+function vExams(){
+  const t = today(), all = exSorted();
+  if (!all.length) return `<div class="card"><p style="margin:0 0 6px;font-weight:650;font-size:17px">Dein Prüfungsplan</p>
+    <p class="hint" style="margin:0 0 14px">Trage Klausuren, mündliche Prüfungen, Hausarbeiten und Abgaben ein, mit Anmeldefrist, Raum und ECTS. Nach der Prüfung kannst du die Note eintragen, dann rechnet die App deinen Schnitt aus. Auf Wunsch entsteht direkt ein Lernplan bis zum Termin.</p>
+    <button class="btn" style="margin:0" data-act="fab">Erste Prüfung eintragen</button></div>`;
+  const up = all.filter(x => !['bestanden', 'nb'].includes(x.status) && x.date && x.date >= t);
+  const nodate = all.filter(x => !['bestanden', 'nb'].includes(x.status) && !x.date);
+  const past = all.filter(x => ['bestanden', 'nb'].includes(x.status) || (x.date && x.date < t)).reverse();
+  const graded = all.filter(x => x.status === 'bestanden' && parseFloat(String(x.grade).replace(',', '.')) > 0);
+  let wsum = 0, gsum = 0; graded.forEach(x => { const w = parseFloat(String(x.ects).replace(',', '.')) || 1; wsum += w; gsum += w * parseFloat(String(x.grade).replace(',', '.')); });
+  const ects = all.filter(x => x.status === 'bestanden').reduce((a, x) => a + (parseFloat(String(x.ects).replace(',', '.')) || 0), 0);
+  const nx = up[0], regs = up.filter(x => x.reg && x.status === 'offen' && x.reg >= t && diffDays(t, x.reg) <= 14);
+  let html = `<div class="card"><div class="two"><div><b>${nx ? countdown(nx.date) : '–'}</b><span>${nx ? 'bis ' + esc(nx.title) : 'keine Prüfung geplant'}</span></div><div><b>${graded.length ? fmtGrade(gsum / wsum) : '–'}</b><span>${graded.length ? 'Notenschnitt' + (ects ? ', ' + String(ects).replace('.', ',') + ' ECTS' : '') : 'Schnitt erscheint mit der ersten Note'}</span></div></div>
+    ${regs.length ? `<p class="hint" style="margin:12px 0 0;color:var(--danger)">Bald Anmeldeschluss: ${regs.map(x => esc(x.title) + ' (' + shortDate(x.reg) + ')').join(', ')}</p>` : ''}</div>`;
+  html += `<div class="sec">Anstehend<small>${up.length}</small></div>` + (up.length ? up.map(examRow).join('') : '<div class="empty" style="padding:14px">Nichts anstehend.</div>');
+  if (nodate.length) html += `<div class="sec">Ohne Datum<small>${nodate.length}</small></div>` + nodate.map(examRow).join('');
+  if (past.length) html += `<div class="sec">Vergangen und benotet<small>${past.length}</small></div>` + past.map(examRow).join('');
+  return html;
+}
+
+/* ---- Lernplan ---- */
+function timerCard(){
+  const tm = S.study.timer; if (!tm) return '';
+  const s = S.sessions.find(x => x.id === tm.ses); if (!s){ S.study.timer = null; return ''; }
+  const sb = S.subjects.find(x => x.id === s.sid) || {}, left = tm.end - Date.now(), frac = Math.min(1, Math.max(0, 1 - left / (tm.dur * 60000)));
+  return `<div class="card" style="margin-bottom:12px;text-align:center"><span class="rs">Fokuszeit, ${esc(sb.name || '')}${s.topic ? ': ' + esc(s.topic) : ''}</span>
+    ${left > 0 ? `<div class="clk-t" style="font-size:54px;margin:6px 0 10px" data-cd="${tm.end}" data-cdf="big"></div>` : `<div class="pn big" style="margin:8px 0 10px">Geschafft! 🎉</div>`}
+    <div class="prog" style="--c:${sb.color || 'var(--accent)'}"><i style="width:${(frac * 100).toFixed(1)}%"></i></div>
+    <div class="chips" style="justify-content:center;margin-top:14px"><button class="chip on" data-act="tmDone">Abhaken</button>${left > 0 ? '<button class="chip" data-act="tmMore">+5 Min.</button>' : ''}<button class="chip" data-act="tmStop">${left > 0 ? 'Abbrechen' : 'Schließen'}</button></div></div>`;
+}
+function vPlan(){
   const t = today(), end = addDays(t, 6);
-  let html = head('study', 'Fächer, Prüfungen und feste Lernzeiten');
-  if (!S.subjects.length) return html + `<div class="card" style="margin-top:18px"><p style="margin:0 0 6px;font-weight:650;font-size:17px">So startest du</p>
-      <p class="hint" style="margin:0 0 14px">Lege ein Fach mit Prüfungsdatum an, wähle deine Lerntage und die Dauer pro Einheit. Der Plan wird automatisch bis zur Prüfung erstellt und erscheint im Kalender.</p>
+  let html = timerCard();
+  if (!S.subjects.length) return html + `<div class="card"><p style="margin:0 0 6px;font-weight:650;font-size:17px">So startest du</p>
+      <p class="hint" style="margin:0 0 14px">Lege ein Fach mit Prüfungsdatum an, wähle deine Lerntage und die Dauer pro Einheit. Der Plan wird automatisch bis zur Prüfung erstellt und erscheint im Kalender. Den Lernstoff kannst du als Themenliste abhaken.</p>
       <button class="btn" style="margin:0" data-act="fab">Erstes Fach anlegen</button></div>`;
-  html += `<div style="margin-top:16px">` + S.subjects.map(s => {
+  const mon = addDays(t, -wdIdx(pd(t))), sun = addDays(mon, 6), wk = S.sessions.filter(s => s.date >= mon && s.date <= sun);
+  const wkAll = wk.reduce((a, s) => a + s.min, 0), wkDone = wk.filter(s => s.done).reduce((a, s) => a + s.min, 0);
+  if (wkAll) html += `<div class="card" style="margin-bottom:12px"><div class="top"><span class="rt" style="font-weight:650">Diese Woche</span><span class="rs">${fmtMin(wkDone)} von ${fmtMin(wkAll)}</span></div><div class="prog" style="margin-top:10px"><i style="width:${wkDone / wkAll * 100}%"></i></div></div>`;
+  html += S.subjects.map(s => {
     const mine = S.sessions.filter(x => x.sid === s.id), total = mine.reduce((a,x) => a + x.min, 0), dn = mine.filter(x => x.done).reduce((a,x) => a + x.min, 0);
     const nxt = mine.filter(x => !x.done && x.date >= t).sort((a,b) => a.date.localeCompare(b.date))[0];
+    const tp = s.topics || [], tpd = tp.filter(x => x.done).length;
+    const ex = S.exams.filter(x => x.sid === s.id && x.date && x.date >= t).sort((a,b) => a.date.localeCompare(b.date))[0];
+    const exd = ex ? ex.date : s.exam;
     return `<div class="card" style="margin-bottom:12px;--c:${s.color}">
-      <div class="top"><div style="min-width:0"><div class="rt wrap" style="font-family:var(--fh);font-size:22px;font-weight:700">${esc(s.name)}</div><div class="rs">${s.exam ? 'Prüfung am ' + shortDate(s.exam) : 'Kein Prüfungsdatum'}</div></div>
-      ${s.exam ? `<span class="pill ${diffDays(t, s.exam) >= 0 && diffDays(t, s.exam) <= 7 ? 'red' : ''}">${countdown(s.exam)}</span>` : ''}</div>
-      <div class="prog" style="margin:14px 0 6px"><i style="width:${total ? dn / total * 100 : 0}%"></i></div>
-      <div class="rs">${total ? `${fmtMin(dn)} von ${fmtMin(total)} geschafft` : 'Noch keine Lerneinheiten geplant'}</div>
+      <div class="top"><div style="min-width:0"><div class="rt wrap" style="font-family:var(--fh);font-size:22px;font-weight:700"><i class="cdot" style="display:inline-block;width:11px;height:11px;border-radius:50%;background:${s.color};margin-right:8px;vertical-align:2px"></i>${esc(s.name)}</div><div class="rs">${exd ? 'Prüfung am ' + shortDate(exd) : 'Kein Prüfungsdatum'}</div></div>
+      ${exd && exd >= t ? `<span class="pill ${diffDays(t, exd) <= 7 ? 'red' : ''}">${countdown(exd)}</span>` : ''}</div>
+      <div class="prog" style="margin:14px 0 6px;--c:${s.color}"><i style="width:${total ? dn / total * 100 : 0}%"></i></div>
+      <div class="rs">${total ? `${fmtMin(dn)} von ${fmtMin(total)} gelernt` : 'Noch keine Lerneinheiten geplant'}${tp.length ? `, ${tpd} von ${tp.length} Themen` : ''}</div>
       ${nxt ? `<div class="rs" style="margin-top:2px">Nächste Einheit: ${dueLabel(nxt.date)}, ${fmtMin(nxt.min)}</div>` : ''}
-      <div class="chips" style="margin-top:14px"><button class="chip on" data-act="addSes" data-id="${s.id}">Einheit hinzufügen</button><button class="chip" data-act="editSub" data-id="${s.id}" style="background:var(--chip)">Bearbeiten</button></div></div>`;
-  }).join('') + `</div>`;
+      ${tp.length ? `<div style="margin-top:10px">${tp.slice(0, 5).map((x, i) => `<div class="mi"><button class="chk sm ${x.done ? 'on' : ''}" data-act="tpTg" data-id="${s.id}" data-i="${i}" aria-label="Abhaken">${I.check}</button><span class="mx ${x.done ? 'done' : ''}">${esc(x.t)}</span></div>`).join('')}${tp.length > 5 ? `<div class="rs">und ${tp.length - 5} weitere</div>` : ''}</div>` : ''}
+      <div class="chips" style="margin-top:14px"><button class="chip on" data-act="addSes" data-id="${s.id}">Einheit</button><button class="chip" data-act="editSub" data-id="${s.id}" style="background:var(--chip)">Bearbeiten & Themen</button></div></div>`;
+  }).join('');
   const late = S.sessions.filter(s => !s.done && s.date < t).sort((a,b) => a.date.localeCompare(b.date));
   if (late.length) html += `<div class="sec">Nachzuholen<small>${late.length}</small></div>` + late.slice(0, 8).map(s => `<div class="dayh bad">${dueLabel(s.date)}</div>` + sesRow(s)).join('');
-  html += `<div class="sec">Diese Woche</div>`;
+  html += `<div class="sec">Die nächsten 7 Tage</div>`;
   let any = false;
   for (let d = t; d <= end; d = addDays(d, 1)){
     const arr = S.sessions.filter(s => s.date === d);
@@ -1041,62 +1152,6 @@ function vNotes(){
     const pc = NOTE_PASTEL[n.color || 0];
     return `<div class="nc ${pc ? 'pastel' : ''}" style="${pc ? '--nbg:' + pc : ''}" data-act="editNote" data-id="${n.id}"><h4>${n.pin ? I.pin + ' ' : ''}${esc(n.title)}</h4>${body}</div>`;
   }).join('') + `</div>`;
-}
-
-function vKnow(){
-  const q = V.kq.trim().toLowerCase();
-  const alltags = [...new Set(S.know.flatMap(k => k.tags || []))].sort();
-  let arr = S.know.filter(k => (!V.kt || (k.tags || []).includes(V.kt)) && (!q || (k.title + ' ' + k.body + ' ' + (k.source || '') + ' ' + (k.tags || []).join(' ')).toLowerCase().includes(q)));
-  arr.sort((a,b) => (b.pin ? 1 : 0) - (a.pin ? 1 : 0) || (b.ts || 0) - (a.ts || 0));
-  let html = head('know', 'Recherchen, Fakten und Quellen, die du dir merken willst') + `<input class="search" data-q="kq" type="search" placeholder="Im ${esc(tl('know'))} suchen" value="${esc(V.kq)}">`;
-  if (alltags.length) html += `<div class="chips" style="margin-bottom:14px"><button class="chip ${!V.kt ? 'on' : ''}" data-act="kTag" data-v="">Alle</button>${alltags.map(t => `<button class="chip ${V.kt === t ? 'on' : ''}" data-act="kTag" data-v="${esc(t)}">#${esc(t)}</button>`).join('')}</div>`;
-  if (!arr.length) return html + `<div class="empty">${S.know.length ? 'Keine Treffer.' : 'Noch leer. Halte hier fest, was du bei Recherchen herausfindest, samt Quelle und Bildern.'}</div>`;
-  return html + arr.map(k => `<button class="card kc" data-act="viewKnow" data-id="${k.id}"><h4>${k.pin ? I.pin + ' ' : ''}${esc(k.title)}</h4>${k.body ? `<p>${esc(k.body)}</p>` : ''}${thumbs((k.imgs || []).slice(0, 4))}${(k.tags || []).length ? `<div class="tags">${k.tags.map(t => `<span class="tg">#${esc(t)}</span>`).join('')}</div>` : ''}</button>`).join('');
-}
-
-function vQuotes(){
-  let html = head('quotes', S.quotes.length ? plural(S.quotes.length, 'Zitat', 'Zitate') + ', eines davon erscheint auf deiner Startseite' : 'Sammle Sätze, die dich begleiten');
-  if (!S.quotes.length) return html + '<div class="empty">Noch keine Zitate. Tippe auf das Plus.</div>';
-  return html + `<div style="margin-top:14px">` + S.quotes.map(q => `<button class="card qc" data-act="editQuote" data-id="${q.id}"><q>${esc(q.text)}</q>${q.author ? `<span>${esc(q.author)}</span>` : ''}</button>`).join('') + `</div>`;
-}
-
-function vBoard(){
-  const boards = [...new Set(S.board.map(b => b.board).filter(Boolean))];
-  const arr = S.board.filter(b => !V.bd || b.board === V.bd).sort((a,b) => (b.ts || 0) - (a.ts || 0));
-  let html = head('board', 'Bilder und Inspiration, zum Beispiel von Pinterest') + `<p class="hint" style="margin-top:8px;color:var(--pageInk2)">Tipp: Speichere ein Bild bei Pinterest in deine Fotos und füge es hier mit dem Plus hinzu.</p>`;
-  if (boards.length) html += `<div class="chips" style="margin-bottom:14px"><button class="chip ${!V.bd ? 'on' : ''}" data-act="bdf" data-v="">Alle</button>${boards.map(b => `<button class="chip ${V.bd === b ? 'on' : ''}" data-act="bdf" data-v="${esc(b)}">${esc(b)}</button>`).join('')}</div>`;
-  if (!arr.length) return html + '<div class="empty">Noch keine Bilder. Tippe auf das Plus.</div>';
-  return html + `<div class="masonry">${arr.map(b => `<button class="mp" data-act="boardOpen" data-id="${b.id}"><span class="ph" style="--ar:${b.ar || 1}" data-mid="${b.mid}"></span>${b.cap ? `<em>${esc(b.cap)}</em>` : ''}</button>`).join('')}</div>`;
-}
-
-function richText(t){
-  let h = esc(t);
-  h = h.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>');
-  h = h.replace(/(^|[\s>])#([\p{L}\d_]+)/gu, '$1<button class="tag" data-act="blogTag" data-t="$2">#$2</button>');
-  return h;
-}
-function vBlog(){
-  const B = S.blog, d = V.draft;
-  const hashtags = t => [...(t || '').matchAll(/(?:^|\s)#([\p{L}\d_]+)/gu)].map(m => m[1].toLowerCase());
-  let posts = B.posts.filter(p => (V.bf === 'all') || (V.bf === 'photo' && p.media.some(m => m.kind === 'image')) || (V.bf === 'video' && p.media.some(m => m.kind === 'video')) || (V.bf === 'fav' && p.fav));
-  if (V.btag) posts = posts.filter(p => hashtags(p.text).includes(V.btag.toLowerCase()));
-  const f = (v, n) => `<button class="chip ${V.bf === v ? 'on' : ''}" data-act="bf" data-v="${v}">${n}</button>`;
-  const av = (extra = '') => `<span class="av" ${B.avatar ? `data-mid="${B.avatar}"` : ''} style="${extra}">${B.avatar ? '' : esc((B.title || 'B').slice(0,1).toUpperCase())}</span>`;
-  let html = `<div class="bhead"><div class="bban" ${B.banner ? `data-mid="${B.banner}"` : ''}></div><div class="bmeta">${av()}
-      <div class="top"><div><h2>${esc(B.title)}</h2><div class="rs">${esc(B.desc)}</div><div class="rs" style="margin-top:4px">${plural(B.posts.length, 'Post', 'Posts')}</div></div><button class="chip" data-act="blogSet" style="margin-top:8px">Anpassen</button></div></div></div>
-    <div class="card comp"><div class="comp-r">${av('width:42px;height:42px;font-size:17px;border:0')}<textarea class="cta" data-d="text" placeholder="Was beschäftigt dich gerade? Mit #Hashtags kannst du Posts ordnen.">${esc(d.text)}</textarea></div>
-      ${d.media.length ? `<div class="att">${d.media.map((m, i) => `<div class="ph" ${m.kind === 'image' ? `data-mid="${m.id}"` : 'style="display:grid;place-items:center"'}>${m.kind === 'video' ? I.video : ''}<button data-act="dmDel" data-i="${i}" aria-label="Entfernen">${I.x}</button></div>`).join('')}</div>` : ''}
-      ${d.mood || d.loc ? `<div class="pmeta" style="padding:0 0 6px">${d.mood ? `<span class="pm">${esc(d.mood.e)} ${esc(d.mood.w)}</span>` : ''}${d.loc ? `<span class="pm">${I.mappin}${esc(d.loc)}</span>` : ''}</div>` : ''}
-      <div class="comp-b"><div class="tools"><button data-act="dmPhoto" aria-label="Foto">${I.image}</button><button data-act="dmVideo" aria-label="Video">${I.video}</button><button class="${d.mood ? 'on' : ''}" data-act="dmMood" aria-label="Stimmung">${I.smile}</button><button class="${d.loc ? 'on' : ''}" data-act="dmLoc" aria-label="Standort">${I.mappin}</button></div><button class="btn sm" data-act="post">Posten</button></div></div>
-    <div class="chips" style="margin-top:14px">${f('all','Alle')}${f('photo','Fotos')}${f('video','Videos')}${f('fav','Favoriten')}${V.btag ? `<button class="chip on" data-act="blogTag" data-t="">#${esc(V.btag)} ${I.x}</button>` : ''}</div>`;
-  if (!posts.length) return html + `<div class="empty">${B.posts.length ? 'Keine passenden Posts.' : 'Dein erster Post wartet. Schreib etwas oder füge ein Bild hinzu.'}</div>`;
-  return html + posts.map(p => {
-    const media = p.media.length ? `<div class="pmedia ${p.media.length > 1 ? 'multi' : ''}">${p.media.map(m => m.kind === 'video' ? `<video controls playsinline preload="metadata" data-mid="${m.id}"></video>` : `<img alt="" data-mid="${m.id}">`).join('')}</div>` : '';
-    return `<article class="card post"><header>${av('width:40px;height:40px;font-size:16px;border:0')}<div><b>${esc(B.title)}</b><span class="rs">${fmtTs(p.ts)}</span></div></header>${media}
-      ${p.text ? `<div class="ptxt">${richText(p.text)}</div>` : ''}
-      ${p.mood || p.loc ? `<div class="pmeta">${p.mood ? `<span class="pm">${esc(p.mood.e)} ${esc(p.mood.w)}</span>` : ''}${p.loc ? `<span class="pm">${I.mappin}${esc(p.loc)}</span>` : ''}</div>` : ''}
-      <footer><span></span><div class="ac"><button class="${p.fav ? 'fav' : ''}" data-act="favPost" data-id="${p.id}" aria-label="Favorit">${I.heart}</button><button data-act="editPost" data-id="${p.id}" aria-label="Bearbeiten">${I.pen}</button></div></footer></article>`;
-  }).join('');
 }
 
 
@@ -1273,7 +1328,7 @@ function vZikir(){
     <p class="hint" style="margin-top:12px;color:var(--pageInk2)">Tippe auf den großen Kreis, um zu zählen. Ist das Ziel erreicht, beginnt eine neue Runde.</p>`;
 }
 
-const views = {prayer:vPrayer, zikir:vZikir, home:vHome, cal:vCal, todo:vTodo, bday:vBday, study:vStudy, budget:vBudget, notes:vNotes, know:vKnow, quotes:vQuotes, board:vBoard, blog:vBlog};
+const views = {prayer:vPrayer, zikir:vZikir, home:vHome, cal:vCal, todo:vTodo, bday:vBday, study:vStudy, budget:vBudget, notes:vNotes};
 function effTheme(){
   const t = {...S.theme}, o = S.tools.find(x => x.id === V.view);
   if (o){ if (o.accent) t.accent = o.accent; if (o.bg){ t.bg = o.bg; t.bgImg = ''; } if (o.fh) t.fh = o.fh; }
@@ -1292,13 +1347,14 @@ function renderDock(){
 function render(){
   if (!S.tools.some(t => t.id === V.view && (t.on || t.id === 'home'))) V.view = 'home';
   if (!$('#studio').classList.contains('open')) applyTheme(effTheme());
+  const ae = document.activeElement, aid = ae && ae.id && $('#main').contains(ae) ? ae.id : '', apos = aid ? ae.selectionStart : 0;
   $('#main').innerHTML = views[V.view]();
   hydrate($('#main')); tick(); renderDock();
-  $('#fab').style.display = (V.view === 'home' || V.view === 'blog' || V.view === 'prayer') ? 'none' : 'grid';
+  if (aid){ const n = document.getElementById(aid); if (n){ n.focus({preventScroll:true}); try { n.setSelectionRange(apos, apos); } catch(_) {} } }
+  $('#fab').style.display = (V.view === 'home' || V.view === 'prayer') ? 'none' : 'grid';
   if (V.view === 'home' && V.edit) initSort($('#wgrid'), '.widget', ids => { S.home = ids.map(id => S.home.find(w => w.id === id)).filter(Boolean); save(); });
-  document.querySelectorAll('textarea.cta').forEach(autosize);
 }
-const autosize = t => { t.style.height = 'auto'; t.style.height = Math.max(70, t.scrollHeight) + 'px'; };
+const autosize = t => { t.style.height = 'auto'; t.style.height = Math.max(120, t.scrollHeight + 4) + 'px'; };
 
 /* ================= Drag & drop sorting ================= */
 function initSort(box, sel, done){
@@ -1375,7 +1431,8 @@ function bdSheet(id){
 }
 function subSheet(id){
   const s = id ? S.subjects.find(x => x.id === id) : null;
-  F = s ? {...s, days:[...(s.days || [])], regen:false} : {color:SUBJ_COLORS[S.subjects.length % SUBJ_COLORS.length], days:['0','2'], min:60, regen:true, exam:''};
+  F = s ? {...s, days:[...(s.days || [])], regen:false, items:clone(s.topics || [])} : {color:SUBJ_COLORS[S.subjects.length % SUBJ_COLORS.length], days:['0','2'], min:60, regen:true, exam:'', items:[]};
+  if (!F.items.length) F.items.push({t:'', done:false});
   sheet(`<h2 class="sh">${s ? 'Fach bearbeiten' : 'Neues Fach'}</h2>
     ${field('name','Name des Fachs','text','placeholder="z. B. Mikroökonomie"')}
     <label class="lab">Farbe</label><div class="chips">${SUBJ_COLORS.map(c => `<button class="chip round ${F.color === c ? 'on' : ''}" style="--cc:${c}" data-act="chip" data-f="color" data-v="${c}" aria-label="Farbe"></button>`).join('')}</div>
@@ -1383,7 +1440,8 @@ function subSheet(id){
     <label class="lab">An diesen Tagen lernen</label>${chips('days', WD.map((w,i) => ({v:String(i), n:w})), true)}
     ${field('min','Minuten pro Einheit','number','inputmode="numeric" min="10" step="5"')}
     ${toggle('regen', s ? 'Lernplan neu erstellen (ersetzt offene automatische Einheiten)' : 'Lernplan automatisch erstellen', F.regen)}
-    <p class="hint">Der Plan läuft ab heute bis zum Tag vor der Prüfung. Ohne Datum plant die App 4 Wochen.</p>
+    <p class="hint">Der Plan läuft ab heute bis zum Tag vor der Prüfung. Ohne Datum plant die App 4 Wochen. Das Prüfungsdatum erscheint auch im Prüfungsplan.</p>
+    <label class="lab">Lernstoff, Themen zum Abhaken</label><div id="tbody">${topicsBody()}</div>
     <button class="btn" data-act="saveSub">Speichern</button>
     ${s ? `<button class="btn danger" data-act="delSub">Fach samt Plan löschen</button>` : ''}`);
 }
@@ -1398,6 +1456,54 @@ function sesSheet(id, sid){
     <button class="btn" data-act="saveSes" style="margin-top:20px">Speichern</button>
     ${s ? `<button class="btn danger" data-act="delSes">Löschen</button>` : ''}`);
 }
+function ttSheet(id, vd){
+  const x = id ? S.tt.find(t => t.id === id) : null;
+  F = x ? {...clone(x), vd:vd || ''} : {title:'', kind:'Vorlesung', wd:String(Math.min(4, wdIdx(new Date()))), start:'10:00', end:'11:30', room:'', who:'', rhythm:'weekly', color:'', sid:'', skip:[]};
+  F.wd = String(F.wd);
+  const skips = (F.skip || []).filter(d => d >= today()).sort();
+  sheet(`<h2 class="sh">${x ? 'Veranstaltung bearbeiten' : 'Neue Veranstaltung'}</h2>
+    ${field('title','Name','text','placeholder="z. B. Statistik I" enterkeyhint="done"')}
+    <label class="lab">Art</label>${chips('kind', TT_KINDS.map(k => ({v:k, n:k})))}
+    <label class="lab">Wochentag</label>${chips('wd', WD.map((w, i) => ({v:String(i), n:w})))}
+    <div class="grid2"><div>${field('start','Beginn','time')}</div><div>${field('end','Ende','time')}</div></div>
+    ${field('room','Raum (optional)','text','placeholder="z. B. HS 1, Gebäude B"')}
+    ${field('who','Dozent:in (optional)','text','placeholder="z. B. Prof. Yılmaz"')}
+    <label class="lab">Wie oft?</label>${chips('rhythm', [{v:'weekly', n:'Jede Woche'}, {v:'even', n:'Gerade KW'}, {v:'odd', n:'Ungerade KW'}])}
+    ${S.subjects.length ? `<label class="lab">Gehört zum Fach (optional, übernimmt die Farbe)</label>${chips('sid', [{v:'', n:'Keins'}, ...S.subjects.map(s => ({v:s.id, n:s.name, dot:s.color}))])}` : ''}
+    <label class="lab">Eigene Farbe (optional)</label><div class="chips"><button class="chip ${!F.color ? 'on' : ''}" data-act="chip" data-f="color" data-v="">Automatisch</button>${SUBJ_COLORS.map(c => `<button class="chip round ${F.color === c ? 'on' : ''}" style="--cc:${c}" data-act="chip" data-f="color" data-v="${c}" aria-label="Farbe"></button>`).join('')}</div>
+    ${skips.length ? `<label class="lab">Fällt aus am</label><div class="chips">${skips.map(d => `<button class="chip" data-act="ttUnskip" data-d="${d}">${shortDate(d)} ${I.x}</button>`).join('')}</div>` : ''}
+    <button class="btn" data-act="saveTT" style="margin-top:20px">Speichern</button>
+    ${x && F.vd ? `<button class="btn ghost" data-act="ttSkip">Fällt am ${shortDate(F.vd)} aus</button>` : ''}
+    ${x ? `<button class="btn danger" data-act="delTT">Löschen</button>` : ''}`);
+}
+function semSheet(){
+  F = {...S.study.sem};
+  sheet(`<h2 class="sh">Semester</h2><p class="hint">Außerhalb dieses Zeitraums wird der Stundenplan nicht angezeigt, zum Beispiel in den Semesterferien. Leer lassen, wenn er immer gelten soll.</p>
+    <div class="grid2"><div>${field('from','Vorlesungsbeginn','date')}</div><div>${field('to','Vorlesungsende','date')}</div></div>
+    ${toggle('inCal', 'Stundenplan im Kalender und im Heute-Widget zeigen', F.inCal !== false)}
+    <button class="btn" data-act="saveSem" style="margin-top:14px">Speichern</button>`);
+}
+function examSheet(id){
+  const x = id ? S.exams.find(e => e.id === id) : null;
+  F = x ? {...clone(x), plan:false} : {title:'', kind:'Klausur', date:'', start:'', end:'', room:'', reg:'', ects:'', status:'offen', grade:'', attempt:1, note:'', sid:'', plan:!S.subjects.length};
+  sheet(`<h2 class="sh">${x ? 'Prüfung bearbeiten' : 'Neue Prüfung'}</h2>
+    ${field('title','Fach oder Titel','text','placeholder="z. B. Mikroökonomie"')}
+    <label class="lab">Art</label>${chips('kind', EX_KINDS.map(k => ({v:k, n:k})))}
+    ${field('date','Datum (bei Abgaben: Abgabetag)','date')}
+    <div class="grid2"><div>${field('start','Beginn (optional)','time')}</div><div>${field('end','Ende (optional)','time')}</div></div>
+    ${field('room','Raum oder Ort (optional)','text','placeholder="z. B. Audimax"')}
+    ${field('reg','Anmeldeschluss (optional)','date')}
+    <label class="lab">Status</label>${chips('status', EX_STATUS)}
+    <div class="grid2"><div>${field('ects','ECTS (optional)','text','inputmode="decimal" placeholder="z. B. 6"')}</div><div>${field('grade','Note (optional)','text','inputmode="decimal" placeholder="z. B. 1,7"')}</div></div>
+    <label class="lab">Versuch</label>${chips('attempt', [1, 2, 3].map(n => ({v:n, n:n + '.'})))}
+    ${S.subjects.length ? `<label class="lab">Lernplan-Fach</label>${chips('sid', [{v:'', n:'Keins'}, ...S.subjects.map(s => ({v:s.id, n:s.name, dot:s.color}))])}` : ''}
+    ${!x || !x.sid ? toggle('plan', 'Neues Fach mit Lernplan bis zu diesem Termin anlegen', F.plan) : ''}
+    <label class="lab">Notiz</label><textarea class="fld" rows="3" data-f="note" placeholder="z. B. erlaubte Hilfsmittel, Themen">${esc(F.note || '')}</textarea>
+    <button class="btn" data-act="saveExam" style="margin-top:20px">Speichern</button>
+    ${x ? `<button class="btn danger" data-act="delExam">Löschen</button>` : ''}`);
+}
+const relist = () => { if ($('#nbody')) $('#nbody').innerHTML = noteBody(); if ($('#tbody')) $('#tbody').innerHTML = topicsBody(); };
+const topicsBody = () => F.items.map((it, i) => `<div class="li"><button class="chk ${it.done ? 'on' : ''}" data-act="liTg" data-i="${i}" aria-label="Abhaken">${I.check}</button><input class="li-in" data-li="${i}" value="${esc(it.t)}" placeholder="Thema, z. B. Kapitel 3" enterkeyhint="next"><button class="x" data-act="liDel" data-i="${i}" aria-label="Entfernen">${I.x}</button></div>`).join('') + `<button class="addli" data-act="liAdd">+ Thema hinzufügen</button>`;
 const txCats = () => (F.type === 'in' ? CATS_IN : CATS_OUT).map(c => ({v:c.n, n:c.n, dot:c.c}));
 function txSheet(id){
   const t = id ? S.tx.find(x => x.id === id) : null;
@@ -1439,49 +1545,6 @@ function imgSlot(path, label){
   const id = getF(path);
   return `<div class="slot"><div class="thumb" ${id ? `data-mid="${id}"` : ''}></div><div class="chips"><button class="chip on" data-act="pickImg" data-k="${path}">${esc(label)}</button>${id ? `<button class="chip" data-act="clrImg" data-k="${path}">Entfernen</button>` : ''}</div></div>`;
 }
-function knowSheet(id){
-  const k = id ? S.know.find(x => x.id === id) : null;
-  F = k ? {...clone(k), tagStr:(k.tags || []).join(', ')} : {title:'', body:'', source:'', tagStr:'', imgs:[], pin:false};
-  sheet(`<h2 class="sh">${k ? 'Eintrag bearbeiten' : 'Neuer Eintrag'}</h2>
-    ${field('title','Titel','text','placeholder="Worum geht es?"')}
-    <label class="lab">Was willst du dir merken?</label><textarea class="fld" rows="8" data-f="body">${esc(F.body || '')}</textarea>
-    ${field('source','Quelle oder Link (optional)','text','placeholder="https://…" autocapitalize="off"')}
-    ${field('tagStr','Stichworte, mit Komma getrennt','text','placeholder="z. B. Psychologie, Klausur"')}
-    <label class="lab">Bilder</label><div id="kimgs">${kImgs()}</div>
-    <button class="addli" data-act="kAddImg">+ Bilder hinzufügen</button>
-    ${toggle('pin','Oben anpinnen', F.pin)}
-    <button class="btn" data-act="saveKnow">Speichern</button>
-    ${k ? `<button class="btn danger" data-act="delKnow">Löschen</button>` : ''}`);
-}
-const kImgs = () => F.imgs.length ? `<div class="att">${F.imgs.map((m, i) => `<div class="ph" data-mid="${m}"><button data-act="kDelImg" data-i="${i}" aria-label="Entfernen">${I.x}</button></div>`).join('')}</div>` : '<div class="hint">Noch keine Bilder.</div>';
-function viewKnow(id){
-  const k = S.know.find(x => x.id === id); if (!k) return;
-  const link = /^https?:\/\//i.test(k.source || '');
-  sheet(`<h2 class="sh">${esc(k.title)}</h2>
-    ${(k.imgs || []).map(m => `<img class="bigimg" alt="" data-mid="${m}">`).join('')}
-    <div style="white-space:pre-wrap;word-break:break-word;font-size:16px;line-height:1.55;color:var(--sink)">${esc(k.body)}</div>
-    ${k.source ? `<div class="lab">Quelle</div>${link ? `<a style="color:var(--accent);word-break:break-all" href="${esc(k.source)}" target="_blank" rel="noopener noreferrer">${esc(k.source)}</a>` : `<div>${esc(k.source)}</div>`}` : ''}
-    ${(k.tags || []).length ? `<div class="tags">${k.tags.map(t => `<span class="tg">#${esc(t)}</span>`).join('')}</div>` : ''}
-    <button class="btn ghost" style="margin-top:18px" data-act="editKnow" data-id="${k.id}">Bearbeiten</button>`);
-}
-function quoteSheet(id){
-  const q = id ? S.quotes.find(x => x.id === id) : null;
-  F = q ? {...q} : {text:'', author:''};
-  sheet(`<h2 class="sh">${q ? 'Zitat bearbeiten' : 'Neues Zitat'}</h2>
-    <label class="lab">Zitat</label><textarea class="fld" rows="5" data-f="text" placeholder="Der Satz, der dich begleitet">${esc(F.text)}</textarea>
-    ${field('author','Von (optional)','text','placeholder="z. B. Maya Angelou"')}
-    <button class="btn" data-act="saveQuote" style="margin-top:20px">Speichern</button>
-    ${q ? `<button class="btn danger" data-act="delQuote">Löschen</button>` : ''}`);
-}
-function boardSheet(id){
-  const b = S.board.find(x => x.id === id); if (!b) return;
-  F = {...b};
-  sheet(`<img class="bigimg" alt="" data-mid="${b.mid}">
-    ${field('cap','Beschriftung (optional)','text')}${field('board','Board (z. B. Outfits, Zimmer, Reisen)','text','placeholder="Wohin gehört das Bild?"')}
-    <button class="btn" data-act="saveBoard">Speichern</button>
-    <button class="btn ghost" data-act="boardHome">Auf die Startseite legen</button>
-    <button class="btn danger" data-act="delBoard">Löschen</button>`);
-}
 function manageSheet(kind){
   const cfg = {cats:{t:'Kalender-Kategorien', h:'Lege fest, welche Arten von Terminen du hast, welche Farbe sie bekommen und in welcher Reihenfolge sie erscheinen.', add:true},
     groups:{t:'Gruppen für Aufgaben', h:'Zum Beispiel Uni, Arbeit oder Haushalt. Die Reihenfolge bestimmst du mit den Pfeilen.', add:true},
@@ -1505,10 +1568,10 @@ function wCfg(){
   switch (F.type){
     case 'clock': return toggle('cfg.seconds', 'Sekunden anzeigen', c.seconds);
     case 'todos': return `<label class="lab">Welche Aufgaben?</label>${chips('cfg.group',[{v:'all',n:'Alle'}, ...S.groups.map(g => ({v:g.id, n:g.name, dot:g.color}))])}<label class="lab">Wie viele zeigen?</label>${chips('cfg.max',[3,4,6,8].map(n => ({v:n, n:String(n)})))}`;
-    case 'bday': return toggle('cfg.onlyToday', 'Nur anzeigen, wenn heute jemand Geburtstag hat', c.onlyToday);
+    case 'bday': return `<label class="lab">Wie viele Geburtstage zeigen? (beim kleinen Widget höchstens 2)</label>${chips('cfg.count',[1,2,3,4,5,6].map(n => ({v:n, n:String(n)})))}<p class="hint" style="margin-top:10px">Das Widget zeigt immer die nächsten Geburtstage, egal ob heute einer ist.</p>`;
+    case 'exams': return `<label class="lab">Wie viele Einträge zeigen?</label>${chips('cfg.count',[2,3,4,5].map(n => ({v:n, n:String(n)})))}`;
     case 'photo': return `<label class="lab">Bild</label>${imgSlot('cfg.mid', 'Bild wählen')}${field('cfg.caption', 'Beschriftung (optional)', 'text')}`;
     case 'strip': return `<label class="lab">Bilder</label>${[0,1,2].map(i => imgSlot('cfg.mids.' + i, `Bild ${i+1} wählen`)).join('')}`;
-    case 'mood': return `<label class="lab">Anzahl Bilder</label>${chips('cfg.count',[3,4,6].map(n => ({v:n, n:String(n)})))}`;
     case 'text': return `${field('cfg.title','Titel','text')}<label class="lab">Text</label><textarea class="fld" rows="5" data-f="cfg.body">${esc(c.body || '')}</textarea>`;
     default: return '<p class="hint" style="margin-top:14px">Dieses Widget braucht keine weiteren Einstellungen.</p>';
   }
@@ -1549,32 +1612,6 @@ function settingsSheet(){
     <button class="btn ghost" data-act="importBackup">Wiederherstellen</button>
     <button class="btn danger" data-act="wipe" style="margin-top:12px">Alle Daten löschen</button>`);
 }
-/* Blog sheets */
-function moodPicker(){
-  return `<label class="lab">Stimmung</label><div class="moodg">${MOODS.map(m => `<button class="chip ${F.me === m[0] ? 'on' : ''}" data-act="moodPick" data-e="${m[0]}" data-w="${m[1]}">${m[0]} ${m[1]}</button>`).join('')}</div>
-    <div class="grid2"><div>${field('me','Emoji','text','placeholder="😊"')}</div><div>${field('mw','Begriff','text','placeholder="z. B. fröhlich"')}</div></div>`;
-}
-function dmMoodSheet(){ F = {me:V.draft.mood?.e || '', mw:V.draft.mood?.w || ''}; sheet(`<h2 class="sh">Wie fühlst du dich?</h2>${moodPicker()}<button class="btn" data-act="moodApply">Übernehmen</button><button class="btn danger" data-act="moodClear">Stimmung entfernen</button>`); }
-function dmLocSheet(){ F = {loc:V.draft.loc || ''}; sheet(`<h2 class="sh">Standort</h2>${field('loc','Wo bist du?','text','placeholder="z. B. Café am Markt"')}<button class="btn ghost" data-act="geo">Aktuellen Standort einfügen</button><button class="btn" data-act="locApply">Übernehmen</button><button class="btn danger" data-act="locClear">Standort entfernen</button>`); }
-function blogSetSheet(keep){
-  F = keep || {title:S.blog.title, desc:S.blog.desc, avatar:S.blog.avatar, banner:S.blog.banner};
-  sheet(`<h2 class="sh">Blog anpassen</h2>${field('title','Name des Blogs','text')}${field('desc','Beschreibung','text')}
-    <label class="lab">Profilbild</label>${imgSlot('avatar','Bild wählen')}<label class="lab">Titelbild</label>${imgSlot('banner','Bild wählen')}
-    <button class="btn" data-act="saveBlogSet" style="margin-top:20px">Speichern</button>`);
-}
-const pmediaHTML = () => F.media.map((m, i) => `<div class="ph" ${m.kind === 'image' ? `data-mid="${m.id}"` : 'style="display:grid;place-items:center"'}>${m.kind === 'video' ? I.video : ''}<button data-act="pmDel" data-i="${i}" aria-label="Entfernen">${I.x}</button></div>`).join('');
-function postSheet(id){
-  const p = S.blog.posts.find(x => x.id === id); if (!p) return;
-  F = {...clone(p), me:p.mood?.e || '', mw:p.mood?.w || ''};
-  sheet(`<h2 class="sh">Post bearbeiten</h2>
-    <label class="lab">Text</label><textarea class="fld" rows="6" data-f="text">${esc(F.text)}</textarea>
-    ${moodPicker()}${field('loc','Standort','text','placeholder="optional"')}
-    ${F.media.length ? `<label class="lab">Medien</label><div class="att" id="pmedia">${pmediaHTML()}</div>` : ''}
-    <button class="btn" data-act="savePost" style="margin-top:20px">Speichern</button>
-    <button class="btn danger" data-act="delPost">Post löschen</button>`);
-}
-
-
 function citySheet(){ sheet(`<h2 class="sh">Stadt wählen</h2><input class="search" style="margin-top:6px" data-cq placeholder="Suchen, z. B. Hamburg oder Amed" autocomplete="off"><div id="clist">${cityList('')}</div>`); }
 function prayAdjSheet(){
   F = {adj:{...S.pray.adj}, hanafi:S.pray.hanafi, hijri:S.pray.hijri || 0, extras:[...S.pray.extras]};
@@ -1648,11 +1685,11 @@ const A = {
   close(){ closeSheet(); },
   none(){},
   tab(d){ V.view = d.v; V.edit = false; if (d.v === 'prayer'){ V.pd = ''; autoLoc(); } render(); scrollTo(0, 0); },
-  fab(){ ({cal:() => evSheet(null, V.sel), todo:() => todoSheet(), bday:() => bdSheet(), study:() => subSheet(), budget:() => txSheet(), notes:() => noteSheet(), know:() => knowSheet(), quotes:() => quoteSheet(), board:() => A.boardAdd(), zikir:() => zikirSheet()})[V.view]?.(); },
+  fab(){ ({cal:() => evSheet(null, V.sel), todo:() => todoSheet(), bday:() => bdSheet(), study:() => ({tt:() => ttSheet(), ex:() => examSheet(), plan:() => subSheet()})[S.study.tab || 'tt'](), budget:() => txSheet(), notes:() => noteSheet(), zikir:() => zikirSheet()})[V.view]?.(); },
   chip(d, el){
     if (d.m){ const a = getF(d.f) || []; const i = a.indexOf(d.v); i >= 0 ? a.splice(i, 1) : a.push(d.v); setF(d.f, a); el.classList.toggle('on'); }
     else {
-      const num = ['prio', 'cfg.max', 'cfg.count', 'hijri'].includes(d.f);
+      const num = ['prio', 'cfg.max', 'cfg.count', 'hijri', 'attempt'].includes(d.f);
       setF(d.f, num ? Number(d.v) : d.v);
       el.parentElement.querySelectorAll('.chip').forEach(c => c.classList.toggle('on', c === el));
       refreshPrev();
@@ -1662,7 +1699,6 @@ const A = {
   /* Home */
   homeEdit(){ V.edit = !V.edit; render(); },
   qEv(){ evSheet(null, today()); }, qTodo(){ todoSheet(); }, qTx(){ txSheet(); }, qNote(){ noteSheet(); },
-  qNext(){ V.qoff++; render(); },
   wCfg(d){ wSheet(d.id); },
   wDel(d){ S.home = S.home.filter(w => w.id !== d.id); save(); render(); toast('Widget entfernt'); },
   wAdd(){ wAddSheet(); },
@@ -1742,12 +1778,55 @@ const A = {
   tgSes(d){ const s = S.sessions.find(x => x.id === d.id); if (s){ s.done = !s.done; save(); render(); } },
   saveSub(){
     if (!(F.name || '').trim()) return toast('Bitte einen Namen eingeben');
-    const o = {id:F.id || uid(), name:F.name.trim(), color:F.color, exam:F.exam || '', days:F.days || [], min:Math.max(10, Number(F.min) || 60)};
+    const old = S.subjects.find(x => x.id === F.id);
+    const o = {id:F.id || uid(), name:F.name.trim(), color:F.color, exam:F.exam || '', days:F.days || [], min:Math.max(10, Number(F.min) || 60), topics:(F.items || []).filter(i => i.t.trim()).map(i => ({t:i.t.trim(), done:!!i.done}))};
     upsert(S.subjects, o); let msg = 'Gespeichert';
+    if (o.exam){
+      const lk = S.exams.find(x => x.sid === o.id && (!old || x.date === old.exam || !x.date));
+      if (lk) lk.date = o.exam;
+      else if (!S.exams.some(x => x.sid === o.id && x.date === o.exam)) S.exams.push({id:uid(), sid:o.id, title:o.name, kind:'Klausur', date:o.exam, start:'', end:'', room:'', reg:'', ects:'', status:'offen', grade:'', attempt:1, note:''});
+    }
     if (F.regen && o.days.length){ msg = `${plural(genPlan(o, today()), 'Lerneinheit', 'Lerneinheiten')} geplant`; }
     save(); closeSheet(); render(); toast(msg);
   },
-  delSub(){ S.subjects = S.subjects.filter(x => x.id !== F.id); S.sessions = S.sessions.filter(x => x.sid !== F.id); save(); closeSheet(); render(); toast('Gelöscht'); },
+  delSub(){ S.subjects = S.subjects.filter(x => x.id !== F.id); S.sessions = S.sessions.filter(x => x.sid !== F.id); S.exams.forEach(x => { if (x.sid === F.id) x.sid = ''; }); S.tt.forEach(x => { if (x.sid === F.id) x.sid = ''; }); if (S.study.timer && !S.sessions.some(x => x.id === S.study.timer.ses)) S.study.timer = null; save(); closeSheet(); render(); toast('Gelöscht'); },
+  stTab(d){ S.study.tab = d.v; save(); render(); },
+  ttw(d){ V.ttw += Number(d.v); render(); },
+  editTT(d){ ttSheet(d.id, d.d); }, editExam(d){ examSheet(d.id); },
+  semSheet(){ semSheet(); },
+  saveSem(){ S.study.sem = {from:F.from || '', to:F.to || '', inCal:F.inCal !== false}; save(); closeSheet(); render(); toast('Gespeichert'); },
+  saveTT(){
+    if (!(F.title || '').trim()) return toast('Bitte einen Namen eingeben');
+    if (!F.start) return toast('Bitte eine Uhrzeit wählen');
+    if (F.end && F.end <= F.start) return toast('Das Ende liegt vor dem Beginn');
+    upsert(S.tt, {id:F.id || uid(), title:F.title.trim(), kind:F.kind || '', wd:String(F.wd), start:F.start, end:F.end || '', room:(F.room || '').trim(), who:(F.who || '').trim(), rhythm:F.rhythm || 'weekly', color:F.color || '', sid:F.sid || '', skip:F.skip || []});
+    save(); closeSheet(); render(); toast('Gespeichert');
+  },
+  ttSkip(){ const x = S.tt.find(t => t.id === F.id); if (x){ x.skip = [...new Set([...(x.skip || []), F.vd])]; save(); closeSheet(); render(); toast('Fällt am ' + shortDate(F.vd) + ' aus'); } },
+  ttUnskip(d, el){ F.skip = (F.skip || []).filter(x => x !== d.d); el.remove(); },
+  delTT(){ S.tt = S.tt.filter(x => x.id !== F.id); save(); closeSheet(); render(); toast('Gelöscht'); },
+  saveExam(){
+    if (!(F.title || '').trim()) return toast('Bitte einen Titel eingeben');
+    const old = S.exams.find(x => x.id === F.id);
+    const o = {id:F.id || uid(), title:F.title.trim(), kind:F.kind || 'Klausur', date:F.date || '', start:F.start || '', end:F.end || '', room:(F.room || '').trim(), reg:F.reg || '', ects:String(F.ects || '').trim(), status:F.status || 'offen', grade:String(F.grade || '').trim(), attempt:Number(F.attempt) || 1, note:F.note || '', sid:F.sid || ''};
+    if (o.grade && o.status !== 'nb') o.status = 'bestanden';
+    let msg = 'Gespeichert';
+    if (!o.sid && F.plan){
+      const sb = {id:uid(), name:o.title, color:SUBJ_COLORS[S.subjects.length % SUBJ_COLORS.length], exam:o.date, days:['0','2','4'], min:60, topics:[]};
+      S.subjects.push(sb); o.sid = sb.id;
+      if (o.date && o.date > today()) msg = `${plural(genPlan(sb, today()), 'Lerneinheit', 'Lerneinheiten')} geplant (Mo, Mi, Fr)`;
+    } else if (o.sid){
+      const sb = S.subjects.find(x => x.id === o.sid);
+      if (sb && o.date && (!sb.exam || (old && sb.exam === old.date))) sb.exam = o.date;
+    }
+    upsert(S.exams, o); save(); closeSheet(); render(); toast(msg);
+  },
+  delExam(){ S.exams = S.exams.filter(x => x.id !== F.id); save(); closeSheet(); render(); toast('Gelöscht'); },
+  tpTg(d){ const sb = S.subjects.find(x => x.id === d.id); if (sb && sb.topics && sb.topics[d.i]){ sb.topics[d.i].done = !sb.topics[d.i].done; save(); render(); } },
+  sesGo(d){ const s = S.sessions.find(x => x.id === d.id); if (!s) return; S.study.timer = {ses:s.id, end:Date.now() + s.min * 60000, dur:s.min}; S.study.tab = 'plan'; save(); if (V.view !== 'study'){ V.view = 'study'; } render(); scrollTo(0, 0); toast('Viel Erfolg! ' + fmtMin(s.min)); },
+  tmDone(){ const tm = S.study.timer, s = tm && S.sessions.find(x => x.id === tm.ses); if (s) s.done = true; S.study.timer = null; save(); render(); toast('Einheit abgehakt'); },
+  tmMore(){ if (S.study.timer){ S.study.timer.end += 5 * 60000; S.study.timer.dur += 5; save(); render(); } },
+  tmStop(){ S.study.timer = null; save(); render(); },
   saveSes(){
     if (!F.date) return toast('Bitte ein Datum wählen');
     upsert(S.sessions, {id:F.id || uid(), sid:F.sid, date:F.date, min:Math.max(5, Number(F.min) || 60), topic:(F.topic || '').trim(), done:!!F.done, auto:false});
@@ -1775,10 +1854,10 @@ const A = {
   cardTg(d){ const n = S.notes.find(x => x.id === d.id); if (n && n.items[d.i]){ n.items[d.i].done = !n.items[d.i].done; save(); render(); } },
   noteKind(d, el){ F.kind = d.v; if (F.kind === 'list' && !F.items.length) F.items = [{t:'', done:false}]; el.parentElement.querySelectorAll('button').forEach(b => b.classList.toggle('on', b === el)); $('#nbody').innerHTML = noteBody(); },
   noteColor(d, el){ F.color = Number(d.v); el.parentElement.querySelectorAll('.chip').forEach(c => c.classList.toggle('on', c === el)); },
-  liTg(d){ F.items[d.i].done = !F.items[d.i].done; $('#nbody').innerHTML = noteBody(); },
-  liDel(d){ F.items.splice(d.i, 1); if (!F.items.length) F.items.push({t:'', done:false}); $('#nbody').innerHTML = noteBody(); },
-  liAdd(){ F.items.push({t:'', done:false}); $('#nbody').innerHTML = noteBody(); const a = document.querySelectorAll('.li-in'); a[a.length - 1]?.focus(); },
-  liClean(){ F.items = F.items.filter(i => !i.done); if (!F.items.length) F.items.push({t:'', done:false}); $('#nbody').innerHTML = noteBody(); },
+  liTg(d){ F.items[d.i].done = !F.items[d.i].done; relist(); },
+  liDel(d){ F.items.splice(d.i, 1); if (!F.items.length) F.items.push({t:'', done:false}); relist(); },
+  liAdd(){ F.items.push({t:'', done:false}); relist(); const a = document.querySelectorAll('#sheet .li-in'); a[a.length - 1]?.focus(); },
+  liClean(){ F.items = F.items.filter(i => !i.done); if (!F.items.length) F.items.push({t:'', done:false}); relist(); },
   saveNote(){
     const items = (F.items || []).filter(i => i.t.trim());
     let title = (F.title || '').trim();
@@ -1789,86 +1868,6 @@ const A = {
     save(); closeSheet(); render(); toast('Gespeichert');
   },
   delNote(){ S.notes = S.notes.filter(x => x.id !== F.id); save(); closeSheet(); render(); toast('Gelöscht'); },
-  /* Gedankenpalast */
-  kTag(d){ V.kt = d.v; render(); },
-  viewKnow(d){ viewKnow(d.id); },
-  editKnow(d){ knowSheet(d.id); },
-  async kAddImg(){
-    const files = await pickFiles('image/*', true); if (!files.length) return;
-    toast('Bilder werden gespeichert…');
-    try { for (const f of files){ F.imgs.push((await saveImage(f, 1400)).id); } $('#kimgs').innerHTML = kImgs(); hydrate($('#kimgs')); } catch(e) { toast('Ein Bild konnte nicht gespeichert werden'); }
-  },
-  kDelImg(d){ F.imgs.splice(Number(d.i), 1); $('#kimgs').innerHTML = kImgs(); hydrate($('#kimgs')); },
-  saveKnow(){
-    if (!(F.title || '').trim()) return toast('Bitte einen Titel eingeben');
-    const tags = [...new Set((F.tagStr || '').split(/[,\s]+/).map(t => t.replace(/^#/, '').trim()).filter(Boolean))];
-    upsert(S.know, {id:F.id || uid(), title:F.title.trim(), body:F.body || '', source:(F.source || '').trim(), tags, imgs:F.imgs || [], pin:!!F.pin, ts:F.ts || Date.now()});
-    save(); closeSheet(); render(); toast('Gespeichert');
-  },
-  delKnow(){ S.know = S.know.filter(x => x.id !== F.id); save(); closeSheet(); render(); toast('Gelöscht'); },
-  /* Zitate */
-  editQuote(d){ quoteSheet(d.id); },
-  saveQuote(){
-    if (!(F.text || '').trim()) return toast('Bitte ein Zitat eingeben');
-    upsert(S.quotes, {id:F.id || uid(), text:F.text.trim(), author:(F.author || '').trim()}); save(); closeSheet(); render(); toast('Gespeichert');
-  },
-  delQuote(){ S.quotes = S.quotes.filter(x => x.id !== F.id); save(); closeSheet(); render(); toast('Gelöscht'); },
-  /* Moodboard */
-  bdf(d){ V.bd = d.v; render(); },
-  async boardAdd(){
-    const files = await pickFiles('image/*', true); if (!files.length) return;
-    toast('Bilder werden gespeichert…'); let n = 0;
-    try { for (const f of files){ const r = await saveImage(f, 1400); S.board.push({id:uid(), mid:r.id, ar:r.ar, cap:'', board:V.bd || '', ts:Date.now() + n}); n++; } } catch(e) {}
-    save(); render(); toast(n ? plural(n, 'Bild', 'Bilder') + ' hinzugefügt' : 'Das Bild konnte nicht gespeichert werden');
-  },
-  boardOpen(d){ boardSheet(d.id); },
-  saveBoard(){ const b = S.board.find(x => x.id === F.id); if (b){ b.cap = (F.cap || '').trim(); b.board = (F.board || '').trim(); } save(); closeSheet(); render(); toast('Gespeichert'); },
-  boardHome(){ const b = S.board.find(x => x.id === F.id); if (!b) return; S.home.push({id:uid(), type:'photo', size:'M', style:'dark', cfg:{mid:b.mid, caption:b.cap || ''}}); save(); closeSheet(); toast('Als Foto-Widget auf der Startseite'); },
-  delBoard(){ const b = S.board.find(x => x.id === F.id); if (b && !S.home.some(w => JSON.stringify(w.cfg).includes(b.mid))) mDel(b.mid); S.board = S.board.filter(x => x.id !== F.id); save(); closeSheet(); render(); toast('Gelöscht'); },
-  /* Blog */
-  bf(d){ V.bf = d.v; render(); },
-  blogTag(d){ V.btag = d.t === V.btag ? '' : d.t; render(); scrollTo(0, 0); },
-  async dmPhoto(){
-    const files = await pickFiles('image/*', true); if (!files.length) return;
-    toast('Bilder werden gespeichert…');
-    try { for (const f of files){ const r = await saveImage(f, 1600); V.draft.media.push({id:r.id, kind:'image'}); } } catch(e) { toast('Ein Bild konnte nicht gespeichert werden'); }
-    render();
-  },
-  async dmVideo(){
-    const files = await pickFiles('video/*', false); if (!files[0]) return;
-    toast('Video wird gespeichert…');
-    try { const id = uid(); await mPut(id, files[0]); V.draft.media.push({id, kind:'video'}); } catch(e) { toast('Das Video konnte nicht gespeichert werden'); }
-    render();
-  },
-  dmDel(d){ const m = V.draft.media.splice(Number(d.i), 1)[0]; if (m) mDel(m.id); render(); },
-  dmMood(){ dmMoodSheet(); },
-  dmLoc(){ dmLocSheet(); },
-  moodPick(d, el){ F.me = d.e; F.mw = d.w; el.parentElement.querySelectorAll('.chip').forEach(c => c.classList.toggle('on', c === el)); const a = $('[data-f=me]'), b = $('[data-f=mw]'); if (a) a.value = F.me; if (b) b.value = F.mw; },
-  moodApply(){ V.draft.mood = (F.me || F.mw) ? {e:F.me || '🙂', w:(F.mw || '').trim()} : null; closeSheet(); render(); },
-  moodClear(){ V.draft.mood = null; closeSheet(); render(); },
-  geo(){
-    if (!navigator.geolocation) return toast('Standort ist hier nicht verfügbar');
-    navigator.geolocation.getCurrentPosition(p => { F.loc = `${p.coords.latitude.toFixed(3)}, ${p.coords.longitude.toFixed(3)}`; const i = $('[data-f=loc]'); if (i) i.value = F.loc; toast('Eingefügt, du kannst den Ort noch umbenennen'); }, () => toast('Standort nicht verfügbar. Gib ihn von Hand ein.'), {timeout:8000});
-  },
-  locApply(){ V.draft.loc = (F.loc || '').trim(); closeSheet(); render(); },
-  locClear(){ V.draft.loc = ''; closeSheet(); render(); },
-  post(){
-    const d = V.draft;
-    if (!d.text.trim() && !d.media.length) return toast('Schreib etwas oder füge ein Bild hinzu');
-    S.blog.posts.unshift({id:uid(), text:d.text.trim(), media:d.media, mood:d.mood, loc:d.loc, ts:Date.now(), fav:false});
-    V.draft = {text:'', media:[], mood:null, loc:''}; save(); render(); toast('Gepostet');
-  },
-  favPost(d){ const p = S.blog.posts.find(x => x.id === d.id); if (p){ p.fav = !p.fav; save(); render(); } },
-  editPost(d){ postSheet(d.id); },
-  pmDel(d){ const m = F.media.splice(Number(d.i), 1)[0]; if (m) mDel(m.id); const p = S.blog.posts.find(x => x.id === F.id); if (p){ p.media = clone(F.media); save(); } const box = $('#pmedia'); if (box){ box.innerHTML = pmediaHTML(); hydrate(box); } },
-  savePost(){
-    const p = S.blog.posts.find(x => x.id === F.id); if (!p) return;
-    p.text = (F.text || '').trim(); p.loc = (F.loc || '').trim(); p.mood = (F.me || F.mw) ? {e:F.me || '🙂', w:(F.mw || '').trim()} : null;
-    save(); closeSheet(); render(); toast('Gespeichert');
-  },
-  delPost(){ const p = S.blog.posts.find(x => x.id === F.id); if (p) p.media.forEach(m => mDel(m.id)); S.blog.posts = S.blog.posts.filter(x => x.id !== F.id); save(); closeSheet(); render(); toast('Post gelöscht'); },
-  blogSet(){ blogSetSheet(); },
-  saveBlogSet(){ Object.assign(S.blog, {title:(F.title || '').trim() || 'Mein Blog', desc:F.desc || '', avatar:F.avatar, banner:F.banner}); save(); closeSheet(); render(); toast('Gespeichert'); },
   /* Namaz */
   gps(){ locate(false); },
   cityPick(){ citySheet(); },
@@ -1945,7 +1944,6 @@ const A = {
 const refreshPrev = () => { const p = $('#tprev'); if (p) p.innerHTML = toolPrev(); };
 function refreshSlots(){
   if ($('#wcfg') && F.cfg){ $('#wcfg').innerHTML = wCfg(); hydrate($('#wcfg')); }
-  else blogSetSheet(F);
 }
 
 /* ================= Events ================= */
@@ -1965,7 +1963,6 @@ const onField = e => {
   else if (t.dataset.mi !== undefined){ F.items[Number(t.dataset.mi)][t.dataset.mf] = t.value; if (t.dataset.mf === 'color') t.parentElement.style.setProperty('--cc', t.value); }
   else if (t.dataset.tl){ const x = F.tools.find(o => o.id === t.dataset.tl); if (x) x.label = t.value; }
   else if (t.dataset.cq !== undefined){ if (e.type === 'input'){ const c = $('#clist'); if (c) c.innerHTML = cityList(t.value); } }
-  else if (t.dataset.d){ V.draft[t.dataset.d] = t.value; if (t.classList.contains('cta')) autosize(t); }
   else if (t.dataset.q && e.type === 'input'){ V[t.dataset.q] = t.value; const k = t.dataset.q, pos = t.selectionStart; render(); const n = document.querySelector(`[data-q=${k}]`); if (n){ n.focus(); try { n.setSelectionRange(pos, pos); } catch(_) {} } }
 };
 document.addEventListener('input', onField);
@@ -1977,7 +1974,7 @@ document.addEventListener('keydown', e => {
     S.todos.push({id:uid(), title:t.value.trim(), due:'', prio:0, group:V.tg !== 'all' ? V.tg : '', done:false, ts:Date.now()}); save(); render(); $('#qt').focus();
   } else if (t.dataset.li !== undefined){
     e.preventDefault(); const i = Number(t.dataset.li);
-    F.items.splice(i + 1, 0, {t:'', done:false}); $('#nbody').innerHTML = noteBody(); document.querySelectorAll('.li-in')[i + 1]?.focus();
+    F.items.splice(i + 1, 0, {t:'', done:false}); relist(); document.querySelectorAll('#sheet .li-in')[i + 1]?.focus();
   }
 });
 let sx = 0, sy = 0;
