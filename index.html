@@ -115,7 +115,7 @@ svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.9;stroke
 .clk-t{font-family:var(--fh);font-size:68px;font-weight:700;line-height:1;letter-spacing:-.02em;margin:2px 0}
 .clk.sz-S .clk-t{font-size:42px}
 .clk-d{font-size:15px;font-weight:500}
-.qt{font-family:var(--fh);font-style:italic;font-size:21px;line-height:1.28;display:block;width:100%}
+.qt{font-family:var(--fh);font-style:italic;font-size:21px;line-height:1.28;display:block;width:100%;white-space:pre-wrap;word-break:break-word}
 .widget.sz-S .qt{font-size:16px}
 .qa{margin-top:10px;font-size:13px;color:var(--cardInk2);display:block}
 .wt-photo,.wt-strip,.wt-mood{padding:0}
@@ -186,7 +186,7 @@ svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.9;stroke
 .thumbs{display:flex;gap:6px;margin-top:10px;overflow-x:auto}
 .thumbs .ph{width:64px;height:64px;flex:none;border-radius:12px}
 .qc{display:block;width:100%;margin-bottom:10px;padding:22px 20px}
-.qc q{display:block;font-family:var(--fh);font-style:italic;font-size:22px;line-height:1.3;quotes:none}
+.qc q{display:block;font-family:var(--fh);font-style:italic;font-size:22px;line-height:1.3;quotes:none;white-space:pre-wrap;word-break:break-word}
 .qc span{display:block;margin-top:10px;font-size:13.5px;color:var(--cardInk2)}
 .masonry{columns:2;column-gap:8px}
 .mp{display:block;width:100%;break-inside:avoid;margin-bottom:8px;border-radius:calc(var(--radius) * .6);overflow:hidden;background:var(--card);position:relative}
@@ -380,6 +380,33 @@ svg.hl-word{height:14px;width:auto}
 .lopt .ck svg{width:12px;height:12px;stroke-width:3}
 /* ===== Neu: Seitenleiste, Assistent, Handschrift, Farben, Hinweise ===== */
 #sheet,#studio,#ink{color-scheme:var(--sscheme,light)}
+.ut{white-space:pre-wrap;word-break:break-word}
+.vstats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;text-align:center;margin-top:12px;padding:14px 8px}
+.vstats b{display:block;font-family:var(--fh);font-size:26px;line-height:1.1;font-variant-numeric:tabular-nums}
+.vstats span{font-size:12px;color:var(--cardInk2);font-weight:600}
+.vcard{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:220px;width:100%;padding:28px 20px;border-radius:var(--radius);background:var(--card);color:var(--cardInk);box-shadow:var(--shadow);text-align:center;cursor:pointer}
+.vcard.back{box-shadow:var(--shadow),inset 0 0 0 2px var(--accent)}
+.vq{font-family:var(--fh);font-size:32px;font-weight:700;line-height:1.2;word-break:break-word}
+.va{font-size:21px;font-weight:600;color:var(--accent)}
+.vex{font-size:15px;color:var(--cardInk2);font-style:italic}
+.vspk{position:absolute;top:10px;right:10px;width:38px;height:38px;border-radius:50%;background:var(--chip);display:grid;place-items:center;font-size:17px}
+.vrate{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.vrate .btn{margin-top:12px}
+.vopts{margin-top:12px}
+.vopt.ok{box-shadow:inset 0 0 0 2px var(--ok)}.vopt.bad{box-shadow:inset 0 0 0 2px var(--danger)}
+.vbox{font-size:9px;letter-spacing:1px;color:var(--accent);flex:none;width:52px}
+.fbar{margin-top:8px;padding:10px;border-radius:14px;background:var(--card);color:var(--cardInk);display:flex;flex-direction:column;gap:8px}
+.fb-row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.fb-row .lbl{font-size:12px;font-weight:700;color:var(--cardInk2);margin-right:2px;min-width:74px}
+.fb-b{min-width:34px;height:32px;padding:0 9px;border-radius:9px;background:var(--chip);font-size:13.5px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:4px}
+.fb-b.on{background:var(--accent);color:var(--accentInk)}
+.fb-b svg{width:16px;height:16px}
+.fb-c{width:24px;height:24px;border-radius:50%;background:var(--cc);box-shadow:inset 0 0 0 1px rgba(127,127,127,.45)}
+.fb-c.on{box-shadow:0 0 0 2px var(--sbg),0 0 0 4px var(--accent)}
+.fbar select.fld{min-height:38px;padding:6px 10px;font-size:15px;flex:1}
+.fpv{margin-top:8px;padding:12px 14px;border-radius:12px;border:1.5px dashed var(--line);font-size:16px;line-height:1.5;color:var(--sink)}
+.fpv:empty{display:none}
+.fpv-l{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--sink2);margin-top:10px}
 .sidebrand,.sidefoot{display:none}
 .hbtn{height:42px;padding:0 14px;border-radius:99px;background:var(--card);color:var(--cardInk);display:inline-flex;align-items:center;gap:8px;font-weight:650;font-size:14px;box-shadow:var(--shadow)}
 .hbtn svg{width:19px;height:19px}
@@ -496,13 +523,13 @@ const today = () => ds(new Date());
 const addDays = (s,n) => { const d = pd(s); d.setDate(d.getDate()+n); return ds(d); };
 const diffDays = (a,b) => Math.round((pd(b) - pd(a)) / 86400000);
 const wdIdx = d => (d.getDay() + 6) % 7;
-const MONTHS = ['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
-const MS = ['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'];
-const WD = ['Mo','Di','Mi','Do','Fr','Sa','So'];
-const WDL = ['Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag','Sonntag'];
-const longDate = s => { const x = pd(s); return `${WDL[wdIdx(x)]}, ${x.getDate()}. ${MONTHS[x.getMonth()]}`; };
-const shortDate = s => { const x = pd(s); return `${x.getDate()}. ${MS[x.getMonth()]}`; };
-const fmtTs = t => { const d = new Date(t); return `${d.getDate()}. ${MS[d.getMonth()]} ${d.getFullYear()}, ${pad(d.getHours())}:${pad(d.getMinutes())}`; };
+let MONTHS = ['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
+let MS = ['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'];
+let WD = ['Mo','Di','Mi','Do','Fr','Sa','So'];
+let WDL = ['Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag','Sonntag'];
+const longDate = s => { const x = pd(s); return isTr() ? `${x.getDate()} ${MONTHS[x.getMonth()]} ${WDL[wdIdx(x)]}` : `${WDL[wdIdx(x)]}, ${x.getDate()}. ${MONTHS[x.getMonth()]}`; };
+const shortDate = s => { const x = pd(s); return `${x.getDate()}${isTr() ? '' : '.'} ${MS[x.getMonth()]}`; };
+const fmtTs = t => { const d = new Date(t); return `${d.getDate()}${isTr() ? '' : '.'} ${MS[d.getMonth()]} ${d.getFullYear()}, ${pad(d.getHours())}:${pad(d.getMinutes())}`; };
 const EUR = new Intl.NumberFormat('de-DE', {style:'currency', currency:'EUR'});
 const fmtE = n => EUR.format(n);
 const fmtMin = m => m < 60 ? `${m} Min.` : `${(m/60).toFixed(1).replace('.0','').replace('.',',')} Std.`;
@@ -525,8 +552,196 @@ function seeded(arr, seed){
   return a;
 }
 
+
+const TR = {
+// Navigation und Kategorien
+'Start':'Ana sayfa','Assistent':'Asistan','Kalender':'Takvim','Aufgaben':'Görevler','Geburtstage':'Doğum günleri','Lernen':'Ders çalışma','Budget':'Bütçe','Notizen':'Notlar','Gedankenpalast':'Fikir sarayı','Zitate':'Alıntılar','Moodboard':'Moodboard','Blog':'Blog','Namaz':'Namaz','Zikirmatik':'Zikirmatik','Sprache':'Dil','Einstellungen':'Ayarlar','Kategorie':'Kategori',
+'Vorlesung':'Ders','Prüfung':'Sınav','Meeting':'Toplantı','Arbeit':'İş','Privat':'Özel','Uni':'Üniversite','Apple Kalender':'Apple Takvim',
+'Sofort':'Hemen','Wichtig':'Önemli','Normal':'Normal','Später':'Sonra','Irgendwann':'Bir ara','Ohne Gruppe':'Grupsuz','Ohne Kategorie':'Kategorisiz',
+'Essen & Trinken':'Yeme & İçme','Wohnen':'Konut','Mobilität':'Ulaşım','Freizeit':'Boş zaman','Shopping':'Alışveriş','Gesundheit':'Sağlık','Sonstiges':'Diğer','Gehalt':'Maaş','Nebenjob':'Yan iş','Unterstützung':'Destek',
+'Wissen':'Bilgi','Bilder':'Resimler','Termine':'Randevular','Termin':'Randevu','Aufgabe':'Görev','Notiz':'Not','Liste':'Liste','Listen':'Listeler','Handschrift':'El yazısı','Handschriftlich':'El yazısıyla','Angepinnt':'Sabitlenmiş','Alle':'Tümü','Ordner':'Klasör',
+// Allgemein
+'Speichern':'Kaydet','Gespeichert':'Kaydedildi','Löschen':'Sil','Gelöscht':'Silindi','Bearbeiten':'Düzenle','Anpassen':'Özelleştir','Fertig':'Bitti','Abbrechen':'Vazgeç','Übernehmen':'Uygula','Entfernen':'Kaldır','Zurück':'Geri','Schließen':'Kapat','Hinzufügen':'Ekle','+ Hinzufügen':'+ Ekle','+ Neu':'+ Yeni','Neu':'Yeni','Suchen':'Ara','Keine Treffer.':'Sonuç yok.','Standard':'Varsayılan','Auto':'Otomatik','Keine':'Yok','Titel':'Başlık','Text':'Metin','Datum':'Tarih','Name':'İsim','Farbe':'Renk','Symbol':'Simge','Beginn':'Başlangıç','Ende':'Bitiş','Notiz bearbeiten':'Notu düzenle','Neue Notiz':'Yeni not','Zurücksetzen':'Sıfırla','Zurückgesetzt':'Sıfırlandı','Rückgängig':'Geri al','Rückgängig gemacht':'Geri alındı','Wiederherstellen':'Geri yükle','Wiederhergestellt':'Geri yüklendi','Verwerfen':'Vazgeç','Aktiv':'Aktif','Karte':'Kart','Vorschau':'Önizleme','optional':'isteğe bağlı','Senden':'Gönder','Zählen':'Say','Favorit':'Favori','Verschieben':'Taşı','Nach oben':'Yukarı','Nach unten':'Aşağı','Ein- oder ausblenden':'Göster veya gizle','Ziehen zum Verschieben':'Taşımak için sürükle','Am Griff ziehen zum Verschieben':'Taşımak için tutamaçtan sürükle',
+'Heute':'Bugün','Morgen':'Yarın','Gestern':'Dün','morgen':'yarın','Ganztag':'Tüm gün','Ganztägig':'Tüm gün','vorbei':'geçti','Als Nächstes':'Sıradaki','Jetzt':'Şimdi','frei':'boş',
+'Vorheriger Monat':'Önceki ay','Nächster Monat':'Sonraki ay','Vorheriger Tag':'Önceki gün','Nächster Tag':'Sonraki gün','Zurück zu heute':'Bugüne dön','Monat':'Ay','Tag':'Gün',
+// Startseite und Widgets
+'Startseite bearbeiten':'Ana sayfayı düzenle','+ Widget hinzufügen':'+ Widget ekle','Widget hinzufügen':'Widget ekle','Widget entfernt':'Widget kaldırıldı','Deine Startseite ist leer. Tippe auf den Stift, um Widgets hinzuzufügen.':'Ana sayfan boş. Widget eklemek için kaleme dokun.',
+'Uhr & Datum':'Saat & Tarih','Uhrzeit, Datum und Begrüßung':'Saat, tarih ve selamlama','Heute im Kalender':'Bugün takvimde','Termine und Lerneinheiten von heute':'Bugünün randevuları ve dersleri','Heute ist nichts geplant.':'Bugün plan yok.','Wer heute oder als Nächstes Geburtstag hat':'Bugün ya da sıradaki doğum günü','Noch keine eingetragen.':'Henüz kayıt yok.','To-Do-Liste':'Yapılacaklar','To-Dos':'Yapılacaklar','Offene Aufgaben, auch pro Gruppe':'Açık görevler, gruba göre de','Alles erledigt.':'Hepsi tamam.','Alles erledigt':'Hepsi tamam','Zitat':'Alıntı','Ein Zitat aus deiner Sammlung, Tippen für das nächste':'Koleksiyonundan bir alıntı, sonraki için dokun','Füge in deiner Zitate-Sammlung dein erstes Zitat hinzu.':'Alıntı koleksiyonuna ilk alıntını ekle.','Foto':'Fotoğraf','Ein Bild deiner Wahl':'Seçtiğin bir resim','Bild hinzufügen':'Resim ekle','Fotostreifen':'Fotoğraf şeridi','Drei Bilder nebeneinander':'Yan yana üç resim','Moodboard-Auszug':'Moodboard seçkisi','Zufällige Bilder aus deinem Moodboard':'Moodboard\'undan rastgele resimler','Speichere Bilder im Moodboard, dann erscheinen sie hier.':'Moodboard\'a resim kaydet, burada görünsün.','Nächste Prüfung und Lernen heute':'Sıradaki sınav ve bugünkü çalışma','Keine Prüfung in Sicht.':'Yakında sınav yok.','Monatsübersicht':'Aylık özet','übrig':'kaldı','über dem Budget':'bütçenin üzerinde','Saldo':'Bakiye','Textfeld':'Metin alanı','Freier Text oder Erinnerung':'Serbest metin ya da hatırlatma','Erinnerung':'Hatırlatma','Schreib hier etwas hin.':'Buraya bir şey yaz.','Gebetszeiten':'Namaz vakitleri','Nächstes Gebet mit Countdown, nach deinem Standort':'Konumuna göre sıradaki namaz ve geri sayım','Tippe hier, um deinen Standort für die Gebetszeiten festzulegen.':'Namaz vakitleri için konumunu belirlemek üzere buraya dokun.','Für diesen Ort gibt es gerade keine Zeiten.':'Bu yer için şu an vakit yok.','Namaz-Tracker':'Namaz takibi','Die fünf Gebete von heute abhaken':'Bugünkü beş vakti işaretle','Namaz heute':'Bugün namaz','Zähler zum Antippen direkt auf der Startseite':'Ana sayfada dokunarak sayaç','Schnellzugriff':'Hızlı erişim','Termin, Aufgabe, Ausgabe oder Notiz anlegen':'Randevu, görev, harcama ya da not ekle','Ausgabe':'Harcama','Größe':'Boyut','Stil':'Stil','Klein':'Küçük','Breit':'Geniş','Groß':'Büyük','Schwarz':'Siyah','Hell':'Açık','Milchglas':'Buzlu cam','Transparent':'Şeffaf','Akzent':'Vurgu','Sekunden anzeigen':'Saniyeleri göster','Welche Aufgaben?':'Hangi görevler?','Wie viele zeigen?':'Kaç tane gösterilsin?','Nur anzeigen, wenn heute jemand Geburtstag hat':'Sadece bugün doğum günü varsa göster','Bild wählen':'Resim seç','Anzahl Bilder':'Resim sayısı','Dieses Widget braucht keine weiteren Einstellungen.':'Bu widget başka ayar gerektirmez.','Beschriftung (optional)':'Açıklama (isteğe bağlı)',
+// Kalender
+'Neuer Termin':'Yeni randevu','Termin bearbeiten':'Randevuyu düzenle','Kategorien anpassen':'Kategorileri düzenle','Assistent fragen':'Asistana sor','Noch nichts geplant. Tippe den Tag noch einmal an, um direkt einen Termin anzulegen.':'Henüz plan yok. Hemen randevu eklemek için güne tekrar dokun.','Nichts geplant. Tippe auf das Plus, um einen Termin einzutragen.':'Plan yok. Randevu eklemek için artıya dokun.','Geburtstag':'Doğum günü','Ort (optional)':'Yer (isteğe bağlı)','Wiederholen':'Tekrarla','Nie':'Asla','Täglich':'Her gün','Montag bis Freitag':'Pazartesiden cumaya','Jede Woche':'Her hafta','Alle 2 Wochen':'2 haftada bir','Wiederholen bis (optional)':'Şu tarihe kadar tekrarla (isteğe bağlı)','Standard aus den Einstellungen':'Ayarlardaki varsayılan','Keine Erinnerung':'Hatırlatma yok','Zum Beginn':'Başlangıçta','5 Minuten vorher':'5 dakika önce','15 Minuten vorher':'15 dakika önce','30 Minuten vorher':'30 dakika önce','1 Stunde vorher':'1 saat önce','1 Tag vorher':'1 gün önce','Ganze Serie löschen':'Tüm seriyi sil','Bitte einen Titel eingeben':'Lütfen bir başlık gir','Bitte ein Datum wählen':'Lütfen bir tarih seç','z. B. Statistik Vorlesung':'ör. İstatistik dersi','z. B. Hörsaal 3':'ör. Amfi 3','Kalender-Kategorien':'Takvim kategorileri','Lege fest, welche Arten von Terminen du hast, welche Farbe sie bekommen und in welcher Reihenfolge sie erscheinen.':'Hangi tür randevuların olduğunu, renklerini ve sıralarını belirle.','Mindestens ein Eintrag wird gebraucht':'En az bir kayıt gerekli',
+// Aufgaben
+'Neue Aufgabe':'Yeni görev','Aufgabe bearbeiten':'Görevi düzenle','Was ist zu tun?':'Ne yapılacak?','Gruppe':'Grup','Priorität':'Öncelik','Fällig am (optional)':'Son tarih (isteğe bağlı)','In einer Woche':'Bir hafta sonra','Kein Datum':'Tarih yok','Gruppen anpassen':'Grupları düzenle','Prioritäten anpassen':'Öncelikleri düzenle','Erledigt':'Tamamlandı','Erledigte löschen':'Tamamlananları sil','Erledigte gelöscht':'Tamamlananlar silindi','Noch nichts abgehakt.':'Henüz işaretlenen yok.','Keine offenen Aufgaben. Gönn dir eine Pause.':'Açık görev yok. Biraz dinlen.','Keine offenen Aufgaben.':'Açık görev yok.','Bitte eine Aufgabe eingeben':'Lütfen bir görev gir','Neue Aufgabe eingeben und Enter drücken':'Yeni görevi yaz ve Enter\'a bas','Gruppen für Aufgaben':'Görev grupları','Zum Beispiel Uni, Arbeit oder Haushalt. Die Reihenfolge bestimmst du mit den Pfeilen.':'Örneğin üniversite, iş ya da ev işleri. Sırayı oklarla belirlersin.','Prioritäten':'Öncelikler','Fünf Stufen, die du selbst benennst und einfärbst. Stufe 1 steht in der Liste ganz oben.':'Kendin adlandırıp renklendirdiğin beş seviye. Seviye 1 listenin en üstünde.','Aufgaben-Gruppen':'Görev grupları','Erledigt':'Tamamlandı',
+// Geburtstage
+'Neuer Geburtstag':'Yeni doğum günü','Geburtstag bearbeiten':'Doğum gününü düzenle','Monat':'Ay','Geburtsjahr (optional, für das Alter)':'Doğum yılı (isteğe bağlı, yaş için)','Notiz (optional)':'Not (isteğe bağlı)','z. B. Mama':'ör. Annem','z. B. Lieblingskuchen':'ör. En sevdiği pasta','z. B. 1998':'ör. 1998','Trage hier alle Geburtstage ein':'Tüm doğum günlerini buraya ekle','Noch keine Geburtstage. Tippe auf das Plus.':'Henüz doğum günü yok. Artıya dokun.','🎂 Heute ist der große Tag':'🎂 Bugün büyük gün',
+// Lernen
+'Fächer, Prüfungen und feste Lernzeiten':'Dersler, sınavlar ve sabit çalışma saatleri','So startest du':'Böyle başlarsın','Lege ein Fach mit Prüfungsdatum an, wähle deine Lerntage und die Dauer pro Einheit. Der Plan wird automatisch bis zur Prüfung erstellt und erscheint im Kalender.':'Sınav tarihiyle bir ders ekle, çalışma günlerini ve oturum süresini seç. Plan sınava kadar otomatik oluşur ve takvimde görünür.','Erstes Fach anlegen':'İlk dersi ekle','Kein Prüfungsdatum':'Sınav tarihi yok','Noch keine Lerneinheiten geplant':'Henüz ders planlanmadı','Einheit hinzufügen':'Oturum ekle','Nachzuholen':'Telafi edilecek','Diese Woche':'Bu hafta','Keine Lerneinheiten in den nächsten 7 Tagen.':'Önümüzdeki 7 günde ders yok.','Neues Fach':'Yeni ders','Fach bearbeiten':'Dersi düzenle','Name des Fachs':'Dersin adı','Prüfungsdatum':'Sınav tarihi','An diesen Tagen lernen':'Bu günlerde çalış','Minuten pro Einheit':'Oturum başına dakika','Lernplan automatisch erstellen':'Çalışma planını otomatik oluştur','Lernplan neu erstellen (ersetzt offene automatische Einheiten)':'Planı yeniden oluştur (açık otomatik oturumların yerine geçer)','Der Plan läuft ab heute bis zum Tag vor der Prüfung. Ohne Datum plant die App 4 Wochen.':'Plan bugünden sınavdan önceki güne kadar sürer. Tarih yoksa 4 hafta planlanır.','Fach samt Plan löschen':'Dersi planıyla birlikte sil','Lerneinheit':'Çalışma oturumu','Neue Lerneinheit':'Yeni çalışma oturumu','Fach':'Ders','Dauer in Minuten':'Süre (dakika)','Thema (optional)':'Konu (isteğe bağlı)','Lege zuerst ein Fach an':'Önce bir ders ekle','z. B. Mikroökonomie':'ör. Mikroekonomi','z. B. Kapitel 4 wiederholen':'ör. 4. bölümü tekrar et',
+// Budget
+'Einnahmen':'Gelirler','Ausgaben':'Harcamalar','Einnahme':'Gelir','Monatsbudget':'Aylık bütçe','Monatsbudget festlegen':'Aylık bütçe belirle','Ausgaben nach Kategorie':'Kategoriye göre harcamalar','Buchungen':'Kayıtlar','Noch keine Buchungen in diesem Monat. Tippe auf das Plus.':'Bu ay henüz kayıt yok. Artıya dokun.','Neue Buchung':'Yeni kayıt','Buchung bearbeiten':'Kaydı düzenle','Betrag in Euro':'Tutar (Euro)','Beschreibung (optional)':'Açıklama (isteğe bağlı)','Jeden Monat wiederholen (z. B. Miete)':'Her ay tekrarla (ör. kira)','Bitte einen Betrag eingeben':'Lütfen bir tutar gir','Wie viel willst du pro Monat höchstens ausgeben?':'Ayda en fazla ne kadar harcamak istiyorsun?','z. B. 600':'ör. 600','z. B. Mensa':'ör. Yemekhane','Saldo dieser Kategorie':'Bu kategorinin bakiyesi','Noch keine Buchungen.':'Henüz kayıt yok.',
+// Notizen
+'Listen, Infos und alles, was du nicht vergessen willst':'Listeler, bilgiler ve unutmak istemediğin her şey','Notizen':'Notlar','Art':'Tür','Schreib hier los':'Yazmaya başla','Einträge':'Kayıtlar','+ Eintrag hinzufügen':'+ Kayıt ekle','Abgehakte entfernen':'İşaretlileri kaldır','Eintrag':'Kayıt','Oben anpinnen':'Üste sabitle','Die Notiz ist noch leer':'Not henüz boş','z. B. Einkaufsliste':'ör. Alışveriş listesi','Noch keine Notizen. Lege eine Einkaufsliste oder eine wichtige Info an.':'Henüz not yok. Bir alışveriş listesi ya da önemli bir bilgi ekle.','Noch keine Notizen in dieser Kategorie.':'Bu kategoride henüz not yok.','Abhaken':'İşaretle','Ohne Titel':'Başlıksız',
+// Gedankenpalast
+'Recherchen, Fakten und Quellen, die du dir merken willst':'Aklında tutmak istediğin araştırmalar, bilgiler ve kaynaklar','Noch leer. Halte hier fest, was du bei Recherchen herausfindest, samt Quelle und Bildern.':'Henüz boş. Araştırırken bulduklarını kaynak ve resimleriyle burada sakla.','Neuer Eintrag':'Yeni kayıt','Eintrag bearbeiten':'Kaydı düzenle','Was willst du dir merken?':'Neyi hatırlamak istiyorsun?','Quelle oder Link (optional)':'Kaynak ya da bağlantı (isteğe bağlı)','Stichworte, mit Komma getrennt':'Etiketler, virgülle ayrılmış','z. B. Psychologie, Klausur':'ör. Psikoloji, sınav','+ Bilder hinzufügen':'+ Resim ekle','Noch keine Bilder.':'Henüz resim yok.','Quelle':'Kaynak','Worum geht es?':'Konu ne?','Noch nichts festgehalten.':'Henüz bir şey kaydedilmedi.',
+// Zitate
+'Sammle Sätze, die dich begleiten':'Sana eşlik eden cümleleri topla','Noch keine Zitate. Tippe auf das Plus.':'Henüz alıntı yok. Artıya dokun.','Noch keine Zitate.':'Henüz alıntı yok.','Neues Zitat':'Yeni alıntı','Zitat bearbeiten':'Alıntıyı düzenle','Von (optional)':'Kimden (isteğe bağlı)','Der Satz, der dich begleitet. Mit Enter beginnst du eine neue Zeile.':'Sana eşlik eden cümle. Enter ile yeni satıra geçersin.','Bitte ein Zitat eingeben':'Lütfen bir alıntı gir','z. B. Maya Angelou':'ör. Mevlana','Zitat gespeichert':'Alıntı kaydedildi',
+// Moodboard
+'Bilder und Inspiration, zum Beispiel von Pinterest':'Resimler ve ilham, örneğin Pinterest\'ten','Tipp: Speichere ein Bild bei Pinterest in deine Fotos und füge es hier mit dem Plus hinzu.':'İpucu: Pinterest\'teki bir resmi fotoğraflarına kaydet ve buraya artıyla ekle.','Noch keine Bilder. Tippe auf das Plus.':'Henüz resim yok. Artıya dokun.','Board (z. B. Outfits, Zimmer, Reisen)':'Pano (ör. kombinler, oda, seyahat)','Wohin gehört das Bild?':'Resim nereye ait?','Auf die Startseite legen':'Ana sayfaya koy','Als Foto-Widget auf der Startseite':'Ana sayfada fotoğraf widget\'ı olarak',
+// Blog
+'Mein Blog':'Blogum','Nur für mich.':'Sadece benim için.','Was beschäftigt dich gerade? Mit #Hashtags kannst du Posts ordnen.':'Şu an aklında ne var? #Etiketlerle gönderileri düzenleyebilirsin.','Posten':'Paylaş','Fotos':'Fotoğraflar','Videos':'Videolar','Favoriten':'Favoriler','Keine passenden Posts.':'Uygun gönderi yok.','Dein erster Post wartet. Schreib etwas oder füge ein Bild hinzu.':'İlk gönderin seni bekliyor. Bir şey yaz ya da resim ekle.','Schreib etwas oder füge ein Bild hinzu':'Bir şey yaz ya da resim ekle','Gepostet':'Paylaşıldı','Post bearbeiten':'Gönderiyi düzenle','Post löschen':'Gönderiyi sil','Post gelöscht':'Gönderi silindi','Medien':'Medya','Stimmung':'Ruh hali','Standort':'Konum','Video':'Video','Blog anpassen':'Blogu özelleştir','Name des Blogs':'Blogun adı','Beschreibung':'Açıklama','Profilbild':'Profil resmi','Titelbild':'Kapak resmi','Wie fühlst du dich?':'Nasıl hissediyorsun?','Emoji':'Emoji','Begriff':'Kelime','z. B. fröhlich':'ör. mutlu','Stimmung entfernen':'Ruh halini kaldır','Wo bist du?':'Neredesin?','z. B. Café am Markt':'ör. Çarşıdaki kafe','Aktuellen Standort einfügen':'Mevcut konumu ekle','Standort entfernen':'Konumu kaldır','Schrift':'Yazı tipi',
+'fröhlich':'mutlu','verliebt':'aşık','entspannt':'rahat','begeistert':'heyecanlı','müde':'yorgun','traurig':'üzgün','genervt':'sinirli','gestresst':'stresli','feierlaune':'kutlama modunda','nachdenklich':'düşünceli','motiviert':'motive','cool':'havalı',
+// Namaz
+'Wo bist du gerade?':'Şu an neredesin?','Die Gebetszeiten hängen von deinem Ort ab. Erlaube den Standort, dann stellt sich alles automatisch auf deinen Ort ein. Oder wähle eine Stadt.':'Namaz vakitleri bulunduğun yere bağlıdır. Bir şehir seç ya da konumunu kullan.','Standort verwenden':'Konumu kullan','Stadt wählen':'Şehir seç','Stadt':'Şehir','Aktualisieren':'Güncelle','Mein Standort':'Konumum','automatisch per GPS':'GPS ile otomatik','manuell gewählt':'elle seçildi','Einmal tippen: verrichtet. Zweimal: nachgeholt (Kaza, K). Dreimal: zurücksetzen.':'Bir dokunuş: kılındı. İki: kaza (K). Üç: sıfırla.','Zusätzliche Gebete':'Ek namazlar','Deine Woche':'Haftan','Serie mit allen 5 Gebeten':'5 vaktin tamamıyla seri','Maşallah, heute sind alle fünf Gebete eingetragen.':'Maşallah, bugün beş vaktin hepsi işaretlendi.','Kıble':'Kıble','Richtung zur Kaaba, von Norden aus gemessen':'Kâbe yönü, kuzeyden ölçülmüş','Zeiten und Tracker anpassen':'Vakitleri ve takibi ayarla','Zeiten und Tracker':'Vakitler ve takip','Berechnet nach der Methode des Diyanet (İmsak 18°, Yatsı 17°, mit den üblichen Sicherheitsminuten). Die Zeiten können um ein bis zwei Minuten von den offiziellen Tabellen abweichen. Mit der Zeitkorrektur gleichst du sie an deine Moschee an.':'Diyanet yöntemiyle hesaplanır (İmsak 18°, Yatsı 17°, temkin dakikalarıyla). Vakitler resmî takvimden bir iki dakika farklı olabilir. Vakit düzeltmesiyle camine uyarlayabilirsin.','Für diesen Ort kann ich gerade keine Zeiten berechnen. Wähle bitte eine andere Stadt.':'Bu yer için şu an vakit hesaplanamıyor. Lütfen başka bir şehir seç.','Die App rechnet nach der Diyanet-Methode. Weicht eine Zeit bei dir um ein, zwei Minuten von deiner Moschee oder der Diyanet-App ab, kannst du sie hier verschieben. Plus bedeutet später, Minus früher.':'Uygulama Diyanet yöntemiyle hesaplar. Bir vakit camindeki ya da Diyanet uygulamasındakinden bir iki dakika farklıysa buradan kaydırabilirsin. Artı daha geç, eksi daha erken demek.','İkindi nach Hanefi (später)':'İkindi Hanefi\'ye göre (daha geç)','Hidschri-Datum':'Hicri tarih','Einen Tag früher':'Bir gün önce','Einen Tag später':'Bir gün sonra','Zusätzliche Gebete im Tracker':'Takipteki ek namazlar','Gebet eintragen':'Namazı işaretle','Keine Stadt gefunden.':'Şehir bulunamadı.','Suchen, z. B. Hamburg oder Amed':'Ara, ör. Hamburg ya da Amed','Hayırlı Cumalar!':'Hayırlı Cumalar!','Standort aktualisiert':'Konum güncellendi','Standort ist hier nicht verfügbar':'Konum burada kullanılamıyor','Standort nicht verfügbar. Wähle eine Stadt.':'Konum kullanılamıyor. Bir şehir seç.','Standort nicht verfügbar. Gib ihn von Hand ein.':'Konum kullanılamıyor. Elle gir.','Eingefügt, du kannst den Ort noch umbenennen':'Eklendi, yeri yeniden adlandırabilirsin','Maşallah! Alle 5 Gebete eingetragen 🤲':'Maşallah! 5 vaktin hepsi işaretlendi 🤲','Lege zuerst unter Namaz einen Ort fest':'Önce Namaz bölümünde bir yer belirle','Morgengebet (Sabah)':'Sabah namazı','Sonnenaufgang':'Güneşin doğuşu','Mittagsgebet':'Öğle namazı','Nachmittagsgebet':'İkindi namazı','Abendgebet':'Akşam namazı','Nachtgebet':'Yatsı namazı',
+'Türkei':'Türkiye','Deutschland':'Almanya','Österreich':'Avusturya','Schweiz':'İsviçre','Niederlande':'Hollanda','Belgien':'Belçika','Frankreich':'Fransa','Großbritannien':'Birleşik Krallık','Schweden':'İsveç','Saudi-Arabien':'Suudi Arabistan','Irak (Kurdistan)':'Irak (Kürdistan)','Mekka':'Mekke','Medina':'Medine','Köln':'Köln','München':'Münih','Wien':'Viyana','Zürich':'Zürih','Genf':'Cenevre','Brüssel':'Brüksel','Straßburg':'Strazburg',
+// Zikirmatik
+'Tippe auf den großen Kreis, um zu zählen. Ist das Ziel erreicht, beginnt eine neue Runde.':'Saymak için büyük daireye dokun. Hedefe ulaşınca yeni tur başlar.','Eins zurück':'Bir geri','Wirklich?':'Emin misin?','Neues Zikir':'Yeni zikir','Zikir bearbeiten':'Zikri düzenle','Arabischer Text (optional)':'Arapça metin (isteğe bağlı)','Bedeutung (optional)':'Anlamı (isteğe bağlı)','Ziel pro Runde (0 = ohne Ziel)':'Tur başına hedef (0 = hedefsiz)','Dieser Ablauf zählt nacheinander 33× Sübhanallah, 33× Elhamdülillah und 33× Allahu Ekber.':'Bu akış sırayla 33 Sübhanallah, 33 Elhamdülillah ve 33 Allahu Ekber sayar.','Ein Zikir muss bleiben':'En az bir zikir kalmalı','ohne Ziel':'hedefsiz','Maşallah! Tesbihat ist vollständig 🤲':'Maşallah! Tesbihat tamamlandı 🤲','Tesbihat nach dem Namaz':'Namaz sonrası tesbihat','z. B. Estağfirullah':'ör. Estağfirullah',
+'Gepriesen sei Allah':'Allah her türlü noksanlıktan münezzehtir','Alles Lob gebührt Allah':'Hamd Allah\'a mahsustur','Allah ist am größten':'Allah en büyüktür','Es gibt keinen Gott außer Allah':'Allah\'tan başka ilah yoktur','Ich bitte Allah um Vergebung':'Allah\'tan bağışlanma dilerim','O Allah, sende Segen auf Muhammad':'Allah\'ım, Muhammed\'e salat eyle','Allah genügt uns, er ist der beste Sachwalter':'Allah bize yeter, O ne güzel vekildir','Es gibt keine Macht und Kraft außer bei Allah':'Güç ve kuvvet ancak Allah\'tandır',
+// Assistent
+'Kennt deine Termine, Aufgaben, Gebetszeiten und Notizen und kann für dich eintragen':'Randevularını, görevlerini, namaz vakitlerini ve notlarını bilir, senin için kayıt ekleyebilir','Neuer Chat':'Yeni sohbet','Frag mich etwas oder sag, was ich eintragen soll':'Bana bir şey sor ya da neyi ekleyeceğimi söyle','Denke nach …':'Düşünüyorum …','Abgebrochen.':'İptal edildi.','Das geht nur direkt nach dem Eintragen':'Bu sadece ekledikten hemen sonra mümkün','Antwort gekürzt':'Yanıt kısaltıldı',
+'Der Assistent läuft nur, wenn du die App in Claude (claude.ai oder die Claude-App) geöffnet hast und angemeldet bist.':'Asistan yalnızca uygulamayı Claude\'da (claude.ai ya da Claude uygulaması) açıp giriş yaptığında çalışır.','Du hast den Assistenten nicht erlaubt. Du kannst es in den Berechtigungen der Seite ändern.':'Asistana izin vermedin. Sayfanın izinlerinden değiştirebilirsin.','Gerade sind zu viele Anfragen. Versuch es in einer Minute noch einmal.':'Şu an çok fazla istek var. Bir dakika sonra tekrar dene.','Dein Nutzungslimit ist erreicht.':'Kullanım sınırına ulaştın.','Das hat nicht geklappt. Versuch es bitte noch einmal.':'Olmadı. Lütfen tekrar dene.',
+// Einstellungen
+'Nur auf diesem Gerät':'Sadece bu cihazda','Wird synchronisiert …':'Eşitleniyor …','Synchronisiert':'Eşitlendi','Sync unterbrochen, neuer Versuch läuft':'Eşitleme kesildi, tekrar deneniyor','Speicher voll: lösche alte Bilder oder Posts':'Depolama dolu: eski resimleri ya da gönderileri sil',
+'Öffne diesen Link auf Handy, Tablet und Laptop, jeweils angemeldet mit deinem Claude-Konto. Alles, was du einträgst, erscheint auf allen Geräten. Bilder und Videos werden mit übertragen.':'Bu bağlantıyı telefon, tablet ve dizüstünde Claude hesabınla açık olarak aç. Eklediğin her şey tüm cihazlarda görünür. Resim ve videolar da aktarılır.',
+'Aussehen':'Görünüm','Design-Studio':'Tasarım stüdyosu','Alle Farben wählen':'Tüm renkleri seç','Logo & App-Symbol':'Logo & uygulama simgesi','Startanimation beim Öffnen':'Açılışta başlangıç animasyonu','Animation ansehen':'Animasyonu izle','Profil':'Profil','Dein Name':'Adın','Wie soll die App dich nennen?':'Uygulama sana nasıl hitap etsin?','Begrüßung auf der Startseite':'Ana sayfada selamlama','Bunt gemischt':'Karışık','App-Sprache':'Uygulama dili',
+'Kategorien':'Kategoriler','Eigene Bereiche mit den Bausteinen, die du brauchst. Du kannst jede Kategorie umbenennen, ausblenden oder löschen.':'İhtiyacın olan yapı taşlarıyla kendi bölümlerin. Her kategoriyi yeniden adlandırabilir, gizleyebilir ya da silebilirsin.','Neue Kategorie':'Yeni kategori','Kategorien verwalten':'Kategorileri yönet','Neue Kategorie erstellen':'Yeni kategori oluştur','Sortiere die Leiste mit den Pfeilen oder am Griff, benenne um, blende aus oder lösche. Eigene Kategorien bearbeitest du mit dem Zahnrad.':'Çubuğu oklarla ya da tutamaçla sırala, yeniden adlandır, gizle ya da sil. Kendi kategorilerini çark simgesiyle düzenlersin.','Gelöschte Kategorien':'Silinen kategoriler','Kategorie bearbeiten':'Kategoriyi düzenle','Kategorie erstellen':'Kategori oluştur','Ändere Namen, Aussehen und Bausteine.':'Adını, görünümünü ve yapı taşlarını değiştir.','Zum Beispiel „Hochzeit“, „Umzug“ oder „Ramadan“. Wähle aus, was die Kategorie können soll. Sie erscheint danach in der Leiste.':'Örneğin „Düğün“, „Taşınma“ ya da „Ramazan“. Kategorinin neler yapabileceğini seç. Sonra çubukta görünür.','Kurze Beschreibung (optional)':'Kısa açıklama (isteğe bağlı)','z. B. Hochzeit':'ör. Düğün','z. B. Alles für den 12. Juni':'ör. 12 Haziran için her şey','Was soll sie können?':'Neler yapabilsin?','Farbe in der Leiste':'Çubuktaki renk','Kategorie löschen':'Kategoriyi sil','Behältst du die Einträge, findest du sie danach in den normalen Bereichen wie Aufgaben oder Notizen.':'Kayıtları tutarsan, onları sonra Görevler ya da Notlar gibi normal bölümlerde bulursun.','Löschen, Einträge behalten':'Sil, kayıtları tut','Löschen samt allen Einträgen':'Tüm kayıtlarıyla sil','Diese Kategorie hat noch keine Bausteine.':'Bu kategorinin henüz yapı taşı yok.','Bausteine wählen':'Yapı taşlarını seç','Wähle mindestens einen Baustein':'En az bir yapı taşı seç','Bitte einen Namen eingeben':'Lütfen bir isim gir','Keine anstehenden Termine. Tippe auf das Plus.':'Yaklaşan randevu yok. Artıya dokun.','Kategorie bearbeiten':'Kategoriyi düzenle','Bearbeiten':'Düzenle','Löschen':'Sil',
+'Mein Schreibstil':'Yazı stilim','Gilt für alle Texte, die du schreibst: Zitate, Notizen, Gedankenpalast, Blog und Textfelder. Bei jedem einzelnen Text kannst du es zusätzlich anders einstellen.':'Yazdığın tüm metinler için geçerli: alıntılar, notlar, fikir sarayı, blog ve metin alanları. Her metinde ayrıca farklı ayarlayabilirsin.','Wie die App':'Uygulama gibi','Mein Standard':'Varsayılanım','Dicke':'Kalınlık','Halbfett':'Yarı kalın','Fett':'Kalın','Kursiv':'İtalik','Gerade':'Düz','Unterstrichen':'Altı çizili','Sehr groß':'Çok büyük','Ausrichtung':'Hizalama','Links':'Sol','Mitte':'Orta','Rechts':'Sağ','Markiertes':'Seçili','Wort im Text markieren, dann tippen':'Metinde kelimeyi seç, sonra dokun','Markiere zuerst ein Wort oder eine Zeile im Text':'Önce metinde bir kelime ya da satır seç','Standardfarbe':'Varsayılan renk',
+'Erinnerungen':'Hatırlatmalar','Erscheinen als Hinweis mit Ton, solange die App offen ist. Für Mitteilungen bei geschlossener App: Termine und Gebetszeiten an Apple Kalender senden.':'Uygulama açıkken sesli bildirim olarak görünür. Uygulama kapalıyken bildirim için: randevuları ve namaz vakitlerini Apple Takvim\'e gönder.','An Termine erinnern':'Randevuları hatırlat','Standard-Vorlauf für Termine':'Randevular için varsayılan süre','An Gebetszeiten erinnern':'Namaz vakitlerini hatırlat','Welche Gebete?':'Hangi vakitler?','Vorlauf für Gebete':'Namazlar için ön süre','Zur Zeit':'Vaktinde','Ton abspielen':'Ses çal','Test-Hinweis':'Deneme bildirimi','Systemmitteilungen':'Sistem bildirimleri','Mitteilungen erlaubt':'Bildirimlere izin verildi','Nicht erlaubt':'İzin verilmedi','So sieht eine Erinnerung aus':'Bir hatırlatma böyle görünür','Dieses Gerät unterstützt hier keine Systemmitteilungen':'Bu cihaz burada sistem bildirimlerini desteklemiyor','In dieser Ansicht nicht möglich. Nutze den Export an Apple Kalender.':'Bu görünümde mümkün değil. Apple Takvim\'e aktarmayı kullan.',
+'Kalender & Planung':'Takvim & planlama','In diesem Zeitfenster sucht die App (und der Assistent) nach freier Zeit.':'Uygulama (ve asistan) bu zaman aralığında boş zaman arar.','Tag beginnt':'Gün başlar','Tag endet':'Gün biter',
+'Backup & Umzug':'Yedek & taşıma','Kommst du von der alten Version? Dort unter Einstellungen „Backup kopieren“ tippen und hier einfügen. Bilder aus der alten Version müssen neu hinzugefügt werden.':'Eski sürümden mi geliyorsun? Orada Ayarlar\'da „Backup kopieren“e dokun ve buraya yapıştır. Eski sürümdeki resimleri yeniden eklemelisin.','Backup kopieren':'Yedeği kopyala','Backup einfügen':'Yedeği yapıştır','Backup-Text hier einfügen':'Yedek metnini buraya yapıştır','Alle Daten löschen':'Tüm verileri sil','Wirklich alles löschen? Nochmal tippen':'Gerçekten her şey silinsin mi? Tekrar dokun','Alle Daten gelöscht':'Tüm veriler silindi','Backup kopiert':'Yedek kopyalandı','Backup wiederhergestellt':'Yedek geri yüklendi','Das Backup ist ungültig':'Yedek geçersiz','Text markiert, bitte kopieren':'Metin seçildi, lütfen kopyala','Leiste: Reihenfolge, Namen, Farben':'Çubuk: sıra, isimler, renkler',
+// Design-Studio
+'Vorlagen als Startpunkt':'Başlangıç şablonları','Hintergrund':'Arka plan','Eigenes Bild':'Kendi resmin','Anderes Bild wählen':'Başka resim seç','Abdunkeln':'Karart','Weichzeichnen':'Bulanıklaştır','Karten und Farben':'Kartlar ve renkler','Kartenstil':'Kart stili','Dunkel':'Koyu','Deckkraft der Karten':'Kart opaklığı','Rundung der Ecken':'Köşe yuvarlaklığı','Akzentfarbe':'Vurgu rengi','Textfarbe auf dem Hintergrund':'Arka plandaki yazı rengi','Eigene':'Özel','Überschriften':'Başlıklar','Schriftgröße':'Yazı boyutu','Alle Farben selbst wählen':'Tüm renkleri kendin seç','Tippe auf ein Farbfeld. Leere Felder folgen automatisch der Vorlage.':'Bir renk kutusuna dokun. Boş kutular otomatik olarak şablonu izler.','Alle eigenen Farben zurücksetzen':'Tüm özel renkleri sıfırla','Alles wird sofort angezeigt. Mit Speichern übernimmst du das Design, mit Verwerfen kehrst du zum letzten gespeicherten Stand zurück. Du kannst es jederzeit wieder ändern.':'Her şey hemen görünür. Kaydet ile tasarımı uygularsın, Vazgeç ile son kaydedilen hâline dönersin. İstediğin zaman yeniden değiştirebilirsin.','Design gespeichert':'Tasarım kaydedildi',
+'Fläche hinter allem':'Her şeyin arkasındaki alan','Text auf dem Hintergrund':'Arka plandaki yazı','Überschriften und Untertitel':'Başlıklar ve alt başlıklar','Karten':'Kartlar','Widgets, Listen, Beiträge':'Widget\'lar, listeler, gönderiler','Text auf Karten':'Kartlardaki yazı','Buttons, aktive Tabs, Häkchen':'Düğmeler, aktif sekmeler, onay işaretleri','Text auf dem Akzent':'Vurgu üzerindeki yazı','Navigation':'Gezinme','Leiste unten oder Seitenleiste':'Alt çubuk ya da kenar çubuğu','Text der Navigation':'Gezinme yazısı','Fenster':'Pencereler','Eingaben und Einstellungen':'Girdiler ve ayarlar','Text in Fenstern':'Pencerelerdeki yazı','Eingabefelder':'Giriş alanları','Flächen und Chips':'Alanlar ve etiketler','Filter, Markierungen':'Filtreler, işaretler','Linien und Rahmen':'Çizgiler ve çerçeveler','Erfolg und Einnahmen':'Başarı ve gelirler','Warnung':'Uyarı','Löschen und Fehler':'Silme ve hatalar',
+'Akzentfarbe dieser Kategorie':'Bu kategorinin vurgu rengi','Hintergrundfarbe dieser Kategorie':'Bu kategorinin arka plan rengi','Schrift der Überschrift':'Başlık yazı tipi','So sieht die Kategorie aus':'Kategori böyle görünür','Symbol als Emoji (optional, ersetzt das Symbol unten)':'Emoji simge (isteğe bağlı, alttaki simgenin yerine geçer)','Kein Emoji':'Emoji yok','Salbei':'Adaçayı','Vanille':'Vanilya','Papier':'Kağıt',
+// Apple Kalender
+'Termine aus Apple holen':'Apple\'dan randevuları al','Einen Live-Abgleich mit iCloud kann diese App nicht herstellen, weil sie keine fremden Server abrufen darf. Es geht aber in beide Richtungen über Kalenderdateien (.ics).':'Bu uygulama yabancı sunuculara erişemediği için iCloud ile canlı eşitleme yapamaz. Ama takvim dosyalarıyla (.ics) iki yönde de çalışır.','Mac:':'Mac:','Kalender-App, Kalender links anklicken, dann Ablage → Exportieren → Exportieren …':'Takvim uygulaması, soldan takvimi seç, sonra Dosya → Dışa aktar → Dışa aktar …','iPhone/iPad:':'iPhone/iPad:','auf icloud.com/calendar beim Kalender auf Teilen tippen, „Öffentlicher Kalender“ einschalten, den Link in Safari öffnen (webcal:// durch https:// ersetzen) und die Datei sichern.':'icloud.com/calendar\'da takvimde Paylaş\'a dokun, „Genel Takvim“i aç, bağlantıyı Safari\'de aç (webcal:// yerine https:// yaz) ve dosyayı kaydet.','Erneutes Importieren aktualisiert bereits übernommene Termine, statt sie doppelt anzulegen.':'Yeniden içe aktarma, alınmış randevuları çoğaltmak yerine günceller.','.ics-Datei wählen':'.ics dosyası seç','Importierte Termine entfernen':'İçe aktarılan randevuları kaldır','An Apple Kalender senden':'Apple Takvim\'e gönder','Erzeugt eine Datei mit Erinnerungen. Öffnest du sie auf dem iPhone oder iPad, landen die Einträge im Apple Kalender und du bekommst dort echte Mitteilungen, auch wenn diese App geschlossen ist.':'Hatırlatmalı bir dosya oluşturur. iPhone ya da iPad\'de açarsan kayıtlar Apple Takvim\'e eklenir ve uygulama kapalıyken bile gerçek bildirimler alırsın.','Meine Termine (mit Erinnerung)':'Randevularım (hatırlatmalı)','Geburtstage (jährlich)':'Doğum günleri (yıllık)','Gebetszeiten der nächsten 30 Tage':'Önümüzdeki 30 günün namaz vakitleri','Kalenderdatei erstellen':'Takvim dosyası oluştur','Apple Kalender: importieren & senden':'Apple Takvim: içe aktar & gönder','In der Datei waren keine Termine':'Dosyada randevu yoktu','Importierte Termine entfernt':'İçe aktarılan randevular kaldırıldı','Datei erstellt. Öffne sie, um sie in Apple Kalender zu übernehmen.':'Dosya oluşturuldu. Apple Takvim\'e eklemek için aç.','Wähle mindestens eine Sache aus':'En az bir şey seç','Speichern ist hier nicht verfügbar':'Kaydetme burada kullanılamıyor','Die Datei konnte nicht gespeichert werden':'Dosya kaydedilemedi',
+// Handschrift
+'Titel der Notiz':'Notun başlığı','Stift':'Kalem','Textmarker':'Fosforlu kalem','Radierer':'Silgi','Strichstärke':'Çizgi kalınlığı','Nur mit Stift schreiben, Finger scrollt':'Sadece kalemle yaz, parmak kaydırır','Papier wechseln':'Kağıdı değiştir','Notiz löschen':'Notu sil','Mit Finger oder Stift schreiben. Tipp: Die Hand-Taste lässt nur den Apple Pencil schreiben.':'Parmakla ya da kalemle yaz. İpucu: El tuşu sadece Apple Pencil\'ın yazmasını sağlar.','Nur der Stift schreibt, mit dem Finger scrollst du.':'Sadece kalem yazar, parmakla kaydırırsın.','Nur der Stift schreibt':'Sadece kalem yazar','Finger und Stift schreiben':'Parmak ve kalem yazar','Nochmal tippen zum Löschen':'Silmek için tekrar dokun',
+// Medien
+'Bild wird gespeichert…':'Resim kaydediliyor…','Bilder werden gespeichert…':'Resimler kaydediliyor…','Bild hinzugefügt':'Resim eklendi','Das Bild konnte nicht gespeichert werden':'Resim kaydedilemedi','Ein Bild konnte nicht gespeichert werden':'Bir resim kaydedilemedi','Video wird gespeichert…':'Video kaydediliyor…','Das Video konnte nicht gespeichert werden':'Video kaydedilemedi','Video ist nur auf diesem Gerät gespeichert':'Video sadece bu cihazda kayıtlı',
+// Sprache
+'Wörter':'Kelimeler','Wort':'Kelime','Übersetzung':'Çeviri','Beispielsatz (optional)':'Örnek cümle (isteğe bağlı)','Neues Wort':'Yeni kelime','Wort bearbeiten':'Kelimeyi düzenle','Sprache hinzufügen':'Dil ekle','Neue Sprache':'Yeni dil','Welche Sprache willst du lernen?':'Hangi dili öğrenmek istiyorsun?','Eigene Sprache':'Başka bir dil','Name der Sprache':'Dilin adı','Sprachcode für die Aussprache (z. B. en, ar, es)':'Telaffuz için dil kodu (ör. en, ar, es)','Karteikarten':'Kartlar','Quiz':'Quiz','Schreiben':'Yazma','Fällig':'Sırası gelen','Gelernt':'Öğrenildi','Serie':'Seri','Antippen zum Umdrehen':'Çevirmek için dokun','Nochmal':'Tekrar','Schwer':'Zor','Gewusst':'Bildim','Heute alles wiederholt. Super!':'Bugünkü tekrarlar bitti. Harika!','Trotzdem üben':'Yine de çalış','Richtung':'Yön','Weiter':'Devam','Richtig!':'Doğru!','Leider falsch.':'Maalesef yanlış.','Für ein Quiz brauchst du mindestens 4 Wörter.':'Quiz için en az 4 kelime gerekir.','Mit KI Wörter vorschlagen':'Yapay zekâyla kelime öner','Thema':'Konu','Niveau':'Seviye','Anfänger':'Başlangıç','Mittel':'Orta','Fortgeschritten':'İleri','Vorschläge holen':'Öneri al','Ausgewählte übernehmen':'Seçilenleri ekle','Satz prüfen':'Cümleyi kontrol et','Schreib einen Satz in der Sprache, die du lernst. Die KI verbessert ihn und erklärt kurz die Fehler.':'Öğrendiğin dilde bir cümle yaz. Yapay zekâ düzeltir ve hataları kısaca açıklar.','Dein Satz':'Cümlen','Prüfe …':'Kontrol ediliyor …','Anhören':'Dinle','Sprache bearbeiten':'Dili düzenle','Sprache löschen samt Wörtern':'Dili kelimeleriyle sil','Noch keine Wörter. Tippe auf das Plus oder lass dir Wörter vorschlagen.':'Henüz kelime yok. Artıya dokun ya da kelime önerisi al.','Englisch':'İngilizce','Arabisch':'Arapça','Kurdisch':'Kürtçe','Spanisch':'İspanyolca','Französisch':'Fransızca','Italienisch':'İtalyanca','Russisch':'Rusça','Koreanisch':'Korece','Japanisch':'Japonca','Persisch':'Farsça','Deutsch':'Almanca','Türkisch':'Türkçe','Wörter lernen, wiederholen und üben':'Kelime öğren, tekrarla ve çalış','Wortschatz-Trainer mit Karteikarten und Quiz':'Kartlı ve quizli kelime çalıştırıcı','Sprachen lernen':'Dil öğren','Sprache lernen':'Dil öğren','1 Sofort':'1 Hemen','2 Wichtig':'2 Önemli','3 Normal':'3 Normal','4 Später':'4 Sonra','5 Irgendwann':'5 Bir ara','Weiß':'Beyaz','Rosa':'Açık pembe','Pink':'Pembe','Vorlesen ist auf diesem Gerät nicht verfügbar':'Sesli okuma bu cihazda yok','Bitte Wort und Übersetzung eingeben':'Lütfen kelime ve çeviri gir','Die KI ist hier nicht verfügbar':'Yapay zekâ burada kullanılamıyor','Ich konnte gerade keine Vorschläge holen. Versuch es noch einmal.':'Şu an öneri alınamadı. Tekrar dene.','Muttersprache → Fremdsprache':'Ana dil → yabancı dil','Fremdsprache → Muttersprache':'Yabancı dil → ana dil',
+};
+/* Muster für zusammengesetzte Texte. Reihenfolge ist wichtig. */
+const TRX = [
+  [/(\d+)\. (Oca|Şub|Mar|Nis|May|Haz|Tem|Ağu|Eyl|Eki|Kas|Ara|Ocak|Şubat|Mart|Nisan|Mayıs|Haziran|Temmuz|Ağustos|Eylül|Ekim|Kasım|Aralık)\b/g, '$1 $2'],
+  [/^(Pazartesi|Salı|Çarşamba|Perşembe|Cuma|Cumartesi|Pazar), (\d+ \S+)/, '$2 $1'],
+  [/\bum (\d\d:\d\d) Uhr/g, 'saat $1'],
+  [/(\d\d:\d\d) Uhr/g, '$1'],
+  [/\bin (\d+) Std\. (\d+) Min\./g, '$1 sa. $2 dk. sonra'],
+  [/\bin (\d+) Min\. (\d+) Sek\./g, '$1 dk. $2 sn. sonra'],
+  [/\bin (\d+) Tagen\b/g, '$1 gün sonra'],
+  [/\bin (\d+) Tg\./g, '$1 gün'],
+  [/\bin (\d+) Min\./gi, '$1 dk. sonra'],
+  [/(\d+) Min\. vorher/g, '$1 dk. önce'],
+  [/([\d,]+) Std\./g, '$1 sa.'],
+  [/(\d+) Min\./g, '$1 dk.'],
+  [/Seit (\d+) Tagen überfällig/, '$1 gündür gecikmiş'],
+  [/^Heute, /, 'Bugün, '], [/^Heute /, 'Bugün '], [/^Jetzt, /, 'Şimdi, '], [/^Morgen, /, 'Yarın, '], [/^morgen, /, 'yarın, '],
+  [/(\d+) offene Aufgaben?/, '$1 açık görev'],
+  [/^Neue Aufgabe in (.+) eingeben und Enter drücken$/, '$1 için yeni görev yaz ve Enter\'a bas'],
+  [/^Offen \((\d+)\)$/, 'Açık ($1)'], [/^Erledigt \((\d+)\)$/, 'Tamamlandı ($1)'],
+  [/(\d+) Geburtstage?\b/, '$1 doğum günü'],
+  [/, wird (\d+)/g, ', $1 yaşına giriyor'], [/^wird (\d+)$/, '$1 yaşına giriyor'],
+  [/(\S+) hat Geburtstag/, '$1\'in doğum günü'],
+  [/^Prüfung am (.+)$/, 'Sınav: $1'], [/ Prüfung$/, ' sınavı'],
+  [/^(.+) von (.+) geschafft$/, '$1 / $2 tamamlandı'],
+  [/^Nächste Einheit: /, 'Sonraki oturum: '],
+  [/(\d+) Lerneinheiten? geplant/, '$1 oturum planlandı'],
+  [/ heute$/, ' bugün'],
+  [/^Lernen: /, 'Çalışma: '],
+  [/^Noch (.+) übrig$/, '$1 kaldı'], [/^(.+) über dem Budget$/, 'Bütçenin $1 üzerinde'],
+  [/, monatlich$/, ', aylık'], [/, wiederholt$/, ', tekrarlanan'],
+  [/^und (\d+) weitere$/, 've $1 tane daha'],
+  [/(\d+) (Eintrag|Einträge)$/, '$1 kayıt'],
+  [/^(\d+) von (\d+)$/, '$1 / $2'], [/^von (\d+)$/, '/ $1'],
+  [/^Nur den (.+) löschen$/, 'Sadece $1 tarihini sil'],
+  [/^Gesamt (\d+), Runden (\d+)$/, 'Toplam $1, tur $2'],
+  [/^Heute (\d+) Zikir$/, 'Bugün $1 zikir'],
+  [/^Maşallah! (\d+) geschafft ✨$/, 'Maşallah! $1 tamamlandı ✨'],
+  [/^Geschafft, weiter mit (.+)$/, 'Tamam, sırada $1'],
+  [/^(\d+) von 35$/, '35 vakitten $1'],
+  [/^diese Woche, davon (\d+) nachgeholt$/, 'bu hafta, $1 tanesi kaza'], [/^diese Woche$/, 'bu hafta'],
+  [/^(\d+) Tage?$/, '$1 gün'],
+  [/^(\d+) Zitate?, eines davon erscheint auf deiner Startseite$/, '$1 alıntı, biri ana sayfanda görünür'],
+  [/^(\d+) Posts?$/, '$1 gönderi'],
+  [/^(\d+) Bilder? hinzugefügt$/, '$1 resim eklendi'],
+  [/^(\d+) Termine? aus Apple Kalender übernommen$/, '$1 randevu Apple Takvim\'den alındı'],
+  [/^(\d+) (Termin stammt|Termine stammen) aus Apple Kalender\.$/, '$1 randevu Apple Takvim\'den geliyor.'],
+  [/^Kategorie „(.+)“ erstellt$/, '„$1“ kategorisi oluşturuldu'],
+  [/^„(.+)“ gelöscht\. Deine Einträge bleiben erhalten\.$/, '„$1“ silindi. Kayıtların duruyor.'],
+  [/^„(.+)“ gelöscht$/, '„$1“ silindi'],
+  [/^Standort: /, 'Konum: '], [/^Logo: /, 'Logo: '], [/^Design: /, 'Tasarım: '],
+  [/^Zeit für das (.+?), /, '$1 vakti, '],
+  [/^Wirklich (alles )?löschen\? Nochmal tippen$/, 'Gerçekten silinsin mi? Tekrar dokun'],
+  [/^Wirklich entfernen\? Nochmal tippen$/, 'Gerçekten kaldırılsın mı? Tekrar dokun'],
+  [/^Termin: /, 'Randevu: '], [/^Aufgabe: /, 'Görev: '], [/^Erledigt: /, 'Tamamlandı: '], [/^Geändert: /, 'Değiştirildi: '], [/^Gelöscht: /, 'Silindi: '], [/^Notiz: /, 'Not: '], [/^Wort: /, 'Kelime: '],
+  [/^Freie Zeiten zwischen (.+) und (.+)$/, '$1 ile $2 arası boş zamanlar'],
+  [/^(\d+) Wörter?$/, '$1 kelime'], [/^(\d+) Wörter? übernommen$/, '$1 kelime eklendi'],
+  [/^(\d+) richtig von (\d+)$/, '$2 sorudan $1 doğru'],
+  [/^Fach nicht gefunden\. /, 'Ders bulunamadı. '],
+  [/^Wie sieht mein (.+) aus, und wann habe ich Zeit\?$/, '$1 nasıl görünüyor ve ne zaman boş vaktim var?'],
+  [/^Morgen$/, 'Yarın'],
+  [/^frei (\S+)$/, 'boş $1'],
+  [/, Korrektur in Minuten$/, ', düzeltme (dakika)'],
+  [/^(\S+) (fröhlich|verliebt|entspannt|begeistert|müde|traurig|genervt|gestresst|feierlaune|nachdenklich|motiviert|cool)$/, (m, e, w) => e + ' ' + TR[w]],
+];
+const AI_SUGG_TR = ['Bu hafta 2 saat ders çalışmak için ne zaman boş vaktim var?', 'Yarın saat 14\'te diş hekimi randevusu ekle', 'Bugün neler var?', 'Bu ay ne kadar harcadım?', 'Yarınki görevlerimi namaz vakitlerinin arasına planla'];
+
+
+/* ================= Sprache der App (Deutsch / Türkçe) ================= */
+const isTr = () => { try { return S.settings.lang === 'tr'; } catch(e) { return false; } };
+const L2 = (de, tr) => isTr() ? tr : de;
+const DATES = {
+  de:{M:['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'], MS:['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'], WD:['Mo','Di','Mi','Do','Fr','Sa','So'], WDL:['Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag','Sonntag']},
+  tr:{M:['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'], MS:['Oca','Şub','Mar','Nis','May','Haz','Tem','Ağu','Eyl','Eki','Kas','Ara'], WD:['Pt','Sa','Ça','Pe','Cu','Ct','Pz'], WDL:['Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi','Pazar']}
+};
+const PNAMES_L = {
+  de:{fajr:'Morgengebet (Sabah)', sunrise:'Sonnenaufgang', dhuhr:'Mittagsgebet', asr:'Nachmittagsgebet', maghrib:'Abendgebet', isha:'Nachtgebet'},
+  tr:{fajr:'Sabah namazı', sunrise:'Güneşin doğuşu', dhuhr:'Öğle namazı', asr:'İkindi namazı', maghrib:'Akşam namazı', isha:'Yatsı namazı'}
+};
+function setLangArrays(){
+  const d = DATES[isTr() ? 'tr' : 'de'];
+  MONTHS = d.M; MS = d.MS; WD = d.WD; WDL = d.WDL;
+  const p = PNAMES_L[isTr() ? 'tr' : 'de']; Object.keys(p).forEach(k => PNAMES[k][1] = p[k]);
+  document.documentElement.lang = isTr() ? 'tr' : 'de';
+}
+/* Übersetzung: feste Texte über das Wörterbuch, zusammengesetzte über Muster. */
+const TL = s => { if (!isTr() || s == null) return s; const k = String(s).trim(); return TR[k] || trPat(String(s)); };
+const MSRX = '(Oca|Şub|Mar|Nis|May|Haz|Tem|Ağu|Eyl|Eki|Kas|Ara|Ocak|Şubat|Mart|Nisan|Mayıs|Haziran|Temmuz|Ağustos|Eylül|Ekim|Kasım|Aralık)';
+function trPat(s){
+  let o = s;
+  for (const [r, v] of TRX) o = o.replace(r, v);
+  return o;
+}
+function trNode(n){
+  const v = n.nodeValue; if (!v || !/[A-Za-zÄÖÜäöüß]/.test(v)) return;
+  const k = v.trim(); let out;
+  if (TR[k]) out = v.replace(k, TR[k]); else out = trPat(v);
+  if (out !== v) n.nodeValue = out;
+}
+const TR_ATTRS = ['placeholder', 'aria-label', 'title'];
+function trEl(el){
+  for (const a of TR_ATTRS){ const v = el.getAttribute && el.getAttribute(a); if (v){ const t = TR[v.trim()] || trPat(v); if (t !== v) el.setAttribute(a, t); } }
+}
+const skipTr = n => { const p = n.nodeType === 1 ? n : n.parentElement; return !p || !!p.closest('script,style,textarea,.ut,[data-nt],input'); };
+function translate(root){
+  if (!isTr() || !root) return;
+  if (root.nodeType === 3){ if (!skipTr(root)) trNode(root); return; }
+  if (root.nodeType !== 1) return;
+  if (!skipTr(root)) trEl(root);
+  root.querySelectorAll('[placeholder],[aria-label],[title]').forEach(el => { if (!skipTr(el)) trEl(el); });
+  const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+  let n; while ((n = w.nextNode())) if (!skipTr(n)) trNode(n);
+}
+new MutationObserver(ms => {
+  if (!isTr()) return;
+  for (const m of ms){
+    if (m.type === 'characterData') { if (!skipTr(m.target)) trNode(m.target); }
+    else m.addedNodes.forEach(translate);
+  }
+}).observe(document.documentElement, {childList:true, subtree:true, characterData:true});
+
 /* ================= Icons ================= */
 const I = {
+  globe:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>',
   folder:'<svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>',
   trash:'<svg viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></svg>',
   spark:'<svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>',
@@ -576,7 +791,7 @@ const I = {
 /* ================= Constants ================= */
 const TOOLDEF = {
   home:{n:'Start',i:'home'}, ai:{n:'Assistent',i:'spark'}, cal:{n:'Kalender',i:'cal'}, todo:{n:'Aufgaben',i:'todo'}, bday:{n:'Geburtstage',i:'gift'},
-  study:{n:'Lernen',i:'study'}, budget:{n:'Budget',i:'budget'}, notes:{n:'Notizen',i:'notes'}, know:{n:'Gedankenpalast',i:'bulb'},
+  study:{n:'Lernen',i:'study'}, vocab:{n:'Sprache',i:'globe'}, budget:{n:'Budget',i:'budget'}, notes:{n:'Notizen',i:'notes'}, know:{n:'Gedankenpalast',i:'bulb'},
   quotes:{n:'Zitate',i:'quote'}, board:{n:'Moodboard',i:'image'}, blog:{n:'Blog',i:'pen'},
   prayer:{n:'Namaz',i:'moon'}, zikir:{n:'Zikirmatik',i:'beads'}
 };
@@ -588,7 +803,7 @@ const MODS = [{k:'todo', n:'Aufgaben', i:'todo'}, {k:'notes', n:'Notizen', i:'no
 const FONTS = [
   {n:'Plus Jakarta Sans',g:'sans-serif'},{n:'DM Sans',g:'sans-serif'},{n:'Space Grotesk',g:'sans-serif'},{n:'Bricolage Grotesque',g:'sans-serif'},
   {n:'Playfair Display',g:'serif'},{n:'DM Serif Display',g:'serif'},{n:'Cormorant Garamond',g:'serif'},{n:'Fraunces',g:'serif'},{n:'Lora',g:'serif'},
-  {n:'Caveat',g:'cursive'},{n:'Dancing Script',g:'cursive'},{n:'Special Elite',g:'monospace'}
+  {n:'Amiri',g:'serif'},{n:'Caveat',g:'cursive'},{n:'Dancing Script',g:'cursive'},{n:'Special Elite',g:'monospace'}
 ];
 const fam = n => { const f = FONTS.find(x => x.n === n) || FONTS[0]; return `'${f.n}',${f.g}`; };
 const PRESETS = {
@@ -678,8 +893,9 @@ const defaults = () => ({
   pray:{loc:null, adj:{fajr:0, sunrise:0, dhuhr:0, asr:0, maghrib:0, isha:0}, hanafi:false, extras:[], log:{}, hijri:0},
   zikir:{sel:'z_subhan', items:clone(ZK_PRESETS), log:{}},
   ink:{},
+  vocab:{langs:[], cards:[], log:{}, sel:'', dir:'f', mode:'learn'},
   theme:baseTheme(),
-  settings:{name:'', budget:0, greet:'mix', logo:'dunkel', splash:true, notify:{events:true, evMin:15, prayers:true, prMin:0, which:['fajr','dhuhr','asr','maghrib','isha'], sound:true}, dayStart:'08:00', dayEnd:'22:00'}
+  settings:{name:'', budget:0, greet:'mix', lang:'de', logo:'dunkel', splash:true, notify:{events:true, evMin:15, prayers:true, prMin:0, which:['fajr','dhuhr','asr','maghrib','isha'], sound:true}, dayStart:'08:00', dayEnd:'22:00'}
 });
 function load(){
   try { const r = localStorage.getItem(KEY); if (r) return normalize(JSON.parse(r)); } catch(e) {}
@@ -705,7 +921,7 @@ function normalize(o){
       s.zikir = Object.assign(dd.zikir, o.zikir || {}); if (!s.zikir.items || !s.zikir.items.length) s.zikir.items = clone(ZK_PRESETS);
       const have = new Set((s.tools || []).map(t => t.id));
       s.tools = [...(s.tools || [])];
-      Object.keys(TOOLDEF).filter(id => !have.has(id)).forEach(id => { const t = {id, label:TOOLDEF[id].n, on:true, emoji:'', accent:'', bg:'', fh:''}; id === 'ai' ? s.tools.splice(Math.min(1, s.tools.length), 0, t) : s.tools.push(t); });
+      Object.keys(TOOLDEF).filter(id => !have.has(id)).forEach(id => { const t = {id, label:TOOLDEF[id].n, on:true, emoji:'', accent:'', bg:'', fh:''}; if (id === 'ai') s.tools.splice(Math.min(1, s.tools.length), 0, t); else if (id === 'vocab'){ const si = s.tools.findIndex(x => x.id === 'study'); s.tools.splice(si >= 0 ? si + 1 : s.tools.length, 0, t); } else s.tools.push(t); });
       if (!s.ink || typeof s.ink !== 'object') s.ink = {};
       return s;
     }
@@ -1010,14 +1226,14 @@ function evRow(e){
   const time = e.start ? `<b>${e.start}</b>${e.end ? `<span>${e.end}</span>` : ''}` : '<b>Ganztag</b>';
   const act = e.bday ? 'editBd' : e.derived ? 'editSub' : 'editEv';
   const id = e.bday ? e.bid : e.derived ? e.sid : e.id;
-  const label = e.bday ? 'Geburtstag' : catOf(e.type).name;
+  const label = e.bday ? 'Geburtstag' : TL(catOf(e.type).name);
   return `<button class="row" style="--c:${colorOf(e)}" data-act="${act}" data-id="${id}" data-d="${e.vd}">
     <span class="bar"></span><span class="rtime">${e.bday ? '<b>🎂</b>' : time}</span>
     <span class="rbody"><span class="rt">${esc(e.title)}</span><span class="rs">${esc(label)}${e.place ? ', ' + esc(e.place) : ''}${e.repeat && e.repeat !== 'none' ? ', wiederholt' : ''}</span></span></button>`;
 }
 function todoRow(x, showGroup){
   const od = x.due && x.due < today() && !x.done, p = prioOf(x.prio), g = x.group ? grpOf(x.group) : null;
-  const sub = [x.due ? `<span class="${od ? 'bad' : ''}">${dueLabel(x.due)}</span>` : '', showGroup && g ? esc(g.name) : ''].filter(Boolean).join(', ');
+  const sub = [x.due ? `<span class="${od ? 'bad' : ''}">${dueLabel(x.due)}</span>` : '', showGroup && g ? esc(TL(g.name)) : ''].filter(Boolean).join(', ');
   return `<div class="row"><button class="chk ${x.done ? 'on' : ''}" data-act="tgTodo" data-id="${x.id}" aria-label="Erledigt">${I.check}</button>
     <button class="rbody" data-act="editTodo" data-id="${x.id}"><span class="rt wrap ${x.done ? 'done' : ''}">${esc(x.title)}</span>${sub ? `<span class="rs">${sub}</span>` : ''}</button>
     ${p ? `<span class="pb" style="--c:${p.color}" title="${esc(p.name)}">${p.lvl}</span>` : ''}</div>`;
@@ -1062,7 +1278,7 @@ const WT = {
     r:w => {
       if (!S.quotes.length) return `<button class="qt" data-act="tab" data-v="quotes">Füge in deiner Zitate-Sammlung dein erstes Zitat hinzu.</button>`;
       const q = S.quotes[Math.abs(daySeed() + V.qoff) % S.quotes.length];
-      return `<button class="qt" data-act="qNext">${esc(q.text)}</button>${q.author ? `<span class="qa">${esc(q.author)}</span>` : ''}`;
+      return `<button class="qt" data-act="qNext" style="${fmtCss(q.fmt)}">${fmtText(q.text)}</button>${q.author ? `<span class="qa">${esc(q.author)}</span>` : ''}`;
     }},
   photo:{n:'Foto', d:'Ein Bild deiner Wahl', size:'M', style:'dark', cfg:{mid:'', caption:''},
     r:w => `<button class="ph" ${w.cfg.mid ? `data-mid="${w.cfg.mid}" data-act="none"` : `data-act="wCfg" data-id="${w.id}"`}>${w.cfg.mid ? '' : '<span>Bild hinzufügen</span>'}${w.cfg.caption ? `<em class="cap">${esc(w.cfg.caption)}</em>` : ''}</button>`},
@@ -1088,7 +1304,7 @@ const WT = {
         : `<div class="bd"><b>${fmtE(inc - out)}</b><span class="rs">Saldo</span></div>`);
     }},
   text:{n:'Textfeld', d:'Freier Text oder Erinnerung', size:'M', style:'card', cfg:{title:'Erinnerung', body:'Schreib hier etwas hin.'},
-    r:w => `<div class="whead"><span>${esc(w.cfg.title)}</span></div><div style="white-space:pre-wrap">${esc(w.cfg.body)}</div>`},
+    r:w => `<div class="whead"><span>${esc(w.cfg.title)}</span></div><div class="ut" style="${fmtCss(w.cfg.fmt)}">${fmtText(w.cfg.body)}</div>`},
   prayer:{n:'Gebetszeiten', d:'Nächstes Gebet mit Countdown, nach deinem Standort', size:'M', style:'dark', cfg:{},
     r:w => {
       const L = getLoc();
@@ -1108,6 +1324,8 @@ const WT = {
       const z = zkCur(), df = zkDef(z);
       return wHead('zikir', esc(df.name), '') + (w.size !== 'S' && df.ar ? `<div class="ar sm">${df.ar}</div>` : '') + `<button class="zbtn mini" data-zk aria-label="Zählen"><b data-zkc>${z.count || 0}</b><small>${df.target > 0 ? 'von ' + df.target : 'ohne Ziel'}</small></button>`;
     }},
+  vocab:{n:'Sprache lernen', d:'Wortschatz-Trainer mit Karteikarten und Quiz', size:'S', style:'card', cfg:{},
+    r:w => { const l = vLang(); if (!l) return wHead('vocab', TL('Sprache'), '') + `<button class="rs" data-act="tab" data-v="vocab">${TL('Welche Sprache willst du lernen?')}</button>`; const due = vDue(l).length; return wHead('vocab', `${esc(l.flag || '')} ${esc(TL(l.name))}`, due) + `<div class="rs">${TL('Fällig')}</div><button class="chip on" style="margin-top:10px" data-act="tab" data-v="vocab">${TL('Karteikarten')}</button>`; }},
   quick:{n:'Schnellzugriff', d:'Termin, Aufgabe, Ausgabe oder Notiz anlegen', size:'M', style:'card', cfg:{},
     r:w => `<div class="chips"><button class="chip on" data-act="qEv">${I.cal} Termin</button><button class="chip on" data-act="qTodo">${I.todo} Aufgabe</button><button class="chip on" data-act="qTx">${I.budget} Ausgabe</button><button class="chip on" data-act="qNote">${I.notes} Notiz</button><button class="chip on" data-act="inkNew">${I.ink} Handschrift</button><button class="chip on" data-act="tab" data-v="ai">${I.spark} Assistent</button></div>`}
 };
@@ -1129,7 +1347,7 @@ function tick(){
   document.querySelectorAll('[data-clock]').forEach(el => {
     const k = el.dataset.clock;
     if (k === 'time') el.textContent = `${pad(n.getHours())}:${pad(n.getMinutes())}` + (el.dataset.s ? `:${pad(n.getSeconds())}` : '');
-    else if (k === 'date') el.textContent = `${WDL[wdIdx(n)]}, ${n.getDate()}. ${MONTHS[n.getMonth()]} ${n.getFullYear()}`;
+    else if (k === 'date') el.textContent = isTr() ? `${n.getDate()} ${MONTHS[n.getMonth()]} ${n.getFullYear()} ${WDL[wdIdx(n)]}` : `${WDL[wdIdx(n)]}, ${n.getDate()}. ${MONTHS[n.getMonth()]} ${n.getFullYear()}`;
     else el.textContent = greeting();
   });
   const now = Date.now(); let expired = false;
@@ -1307,12 +1525,13 @@ function noteCard(n){
     body = its.slice(0, 6).map((it, i) => `<div class="it"><button class="chk sm ${it.done ? 'on' : ''}" data-act="cardTg" data-id="${n.id}" data-i="${i}" aria-label="Abhaken">${I.check}</button><span class="${it.done ? 'done' : ''}">${esc(it.t)}</span></div>`).join('')
       + (its.length > 6 ? `<div class="rs">und ${its.length - 6} weitere</div>` : '') + `<div class="meta">${dn} von ${its.length}</div>`;
   } else if (n.kind === 'ink') body = `<img class="ink-prev" alt="Handschrift" data-ink="${n.id}"><div class="meta">${fmtTs(n.ts)}</div>`;
-  else body = `<p>${esc(n.body)}</p>`;
+  else body = `<p class="ut" style="${fmtCss(n.fmt)}">${fmtText(n.body)}</p>`;
+  if (n.kind === 'list') body = `<div style="${fmtCss(n.fmt)}">${body}</div>`;
   const pc = NOTE_PASTEL[n.color || 0];
   return `<div class="nc ${pc ? 'pastel' : ''}" style="${pc ? '--nbg:' + pc : ''}" data-act="editNote" data-id="${n.id}"><h4>${n.pin ? I.pin + ' ' : ''}${esc(n.title)}</h4>${body}</div>`;
 }
-const knowCard = k => `<button class="card kc" data-act="viewKnow" data-id="${k.id}"><h4>${k.pin ? I.pin + ' ' : ''}${esc(k.title)}</h4>${k.body ? `<p>${esc(k.body)}</p>` : ''}${thumbs((k.imgs || []).slice(0, 4))}${(k.tags || []).length ? `<div class="tags">${k.tags.map(t => `<span class="tg">#${esc(t)}</span>`).join('')}</div>` : ''}</button>`;
-const quoteCard = q => `<button class="card qc" data-act="editQuote" data-id="${q.id}"><q>${esc(q.text)}</q>${q.author ? `<span>${esc(q.author)}</span>` : ''}</button>`;
+const knowCard = k => `<button class="card kc" data-act="viewKnow" data-id="${k.id}"><h4>${k.pin ? I.pin + ' ' : ''}${esc(k.title)}</h4>${k.body ? `<p class="ut" style="${fmtCss(k.fmt)}">${fmtText(k.body)}</p>` : ''}${thumbs((k.imgs || []).slice(0, 4))}${(k.tags || []).length ? `<div class="tags">${k.tags.map(t => `<span class="tg">#${esc(t)}</span>`).join('')}</div>` : ''}</button>`;
+const quoteCard = q => `<button class="card qc" data-act="editQuote" data-id="${q.id}"><q class="ut" style="${fmtCss(q.fmt)}">${fmtText(q.text)}</q>${q.author ? `<span>${esc(q.author)}</span>` : ''}</button>`;
 const boardTile = b => `<button class="mp" data-act="boardOpen" data-id="${b.id}"><span class="ph" style="--ar:${b.ar || 1}" data-mid="${b.mid}"></span>${b.cap ? `<em>${esc(b.cap)}</em>` : ''}</button>`;
 const txRow = t => `<button class="row" style="--c:${catColor(t.cat)}" data-act="editTx" data-id="${t.id}"><span class="sw"></span><span class="rbody"><span class="rt">${esc(t.title || t.cat)}</span><span class="rs">${esc(t.cat)}${t.monthly ? ', monatlich' : ''}</span></span><span class="amt ${t.type}">${t.type === 'in' ? '+' : '−'}${fmtE(Number(t.amount))}</span></button>`;
 
@@ -1387,13 +1606,13 @@ function vKnow(){
   let html = head('know', 'Recherchen, Fakten und Quellen, die du dir merken willst') + `<input class="search" data-q="kq" type="search" placeholder="Im ${esc(tl('know'))} suchen" value="${esc(V.kq)}">`;
   if (alltags.length) html += `<div class="chips" style="margin-bottom:14px"><button class="chip ${!V.kt ? 'on' : ''}" data-act="kTag" data-v="">Alle</button>${alltags.map(t => `<button class="chip ${V.kt === t ? 'on' : ''}" data-act="kTag" data-v="${esc(t)}">#${esc(t)}</button>`).join('')}</div>`;
   if (!arr.length) return html + `<div class="empty">${S.know.length ? 'Keine Treffer.' : 'Noch leer. Halte hier fest, was du bei Recherchen herausfindest, samt Quelle und Bildern.'}</div>`;
-  return html + arr.map(k => `<button class="card kc" data-act="viewKnow" data-id="${k.id}"><h4>${k.pin ? I.pin + ' ' : ''}${esc(k.title)}</h4>${k.body ? `<p>${esc(k.body)}</p>` : ''}${thumbs((k.imgs || []).slice(0, 4))}${(k.tags || []).length ? `<div class="tags">${k.tags.map(t => `<span class="tg">#${esc(t)}</span>`).join('')}</div>` : ''}</button>`).join('');
+  return html + arr.map(k => `<button class="card kc" data-act="viewKnow" data-id="${k.id}"><h4>${k.pin ? I.pin + ' ' : ''}${esc(k.title)}</h4>${k.body ? `<p class="ut" style="${fmtCss(k.fmt)}">${fmtText(k.body)}</p>` : ''}${thumbs((k.imgs || []).slice(0, 4))}${(k.tags || []).length ? `<div class="tags">${k.tags.map(t => `<span class="tg">#${esc(t)}</span>`).join('')}</div>` : ''}</button>`).join('');
 }
 
 function vQuotes(){
   let html = head('quotes', S.quotes.length ? plural(S.quotes.length, 'Zitat', 'Zitate') + ', eines davon erscheint auf deiner Startseite' : 'Sammle Sätze, die dich begleiten');
   if (!S.quotes.length) return html + '<div class="empty">Noch keine Zitate. Tippe auf das Plus.</div>';
-  return html + `<div style="margin-top:14px">` + S.quotes.map(q => `<button class="card qc" data-act="editQuote" data-id="${q.id}"><q>${esc(q.text)}</q>${q.author ? `<span>${esc(q.author)}</span>` : ''}</button>`).join('') + `</div>`;
+  return html + `<div style="margin-top:14px">` + S.quotes.map(q => `<button class="card qc" data-act="editQuote" data-id="${q.id}"><q class="ut" style="${fmtCss(q.fmt)}">${fmtText(q.text)}</q>${q.author ? `<span>${esc(q.author)}</span>` : ''}</button>`).join('') + `</div>`;
 }
 
 function vBoard(){
@@ -1406,7 +1625,7 @@ function vBoard(){
 }
 
 function richText(t){
-  let h = esc(t);
+  let h = fmtText(t);
   h = h.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>');
   h = h.replace(/(^|[\s>])#([\p{L}\d_]+)/gu, '$1<button class="tag" data-act="blogTag" data-t="$2">#$2</button>');
   return h;
@@ -1420,16 +1639,17 @@ function vBlog(){
   const av = (extra = '') => `<span class="av" ${B.avatar ? `data-mid="${B.avatar}"` : ''} style="${extra}">${B.avatar ? '' : esc((B.title || 'B').slice(0,1).toUpperCase())}</span>`;
   let html = `<div class="bhead"><div class="bban" ${B.banner ? `data-mid="${B.banner}"` : ''}></div><div class="bmeta">${av()}
       <div class="top"><div><h2>${esc(B.title)}</h2><div class="rs">${esc(B.desc)}</div><div class="rs" style="margin-top:4px">${plural(B.posts.length, 'Post', 'Posts')}</div></div><button class="chip" data-act="blogSet" style="margin-top:8px">Anpassen</button></div></div></div>
-    <div class="card comp"><div class="comp-r">${av('width:42px;height:42px;font-size:17px;border:0')}<textarea class="cta" data-d="text" placeholder="Was beschäftigt dich gerade? Mit #Hashtags kannst du Posts ordnen.">${esc(d.text)}</textarea></div>
+    <div class="card comp"><div class="comp-r">${av('width:42px;height:42px;font-size:17px;border:0')}<textarea class="cta" data-d="text" data-fmtta="draft.fmt" style="${fmtCss(d.fmt)}" placeholder="Was beschäftigt dich gerade? Mit #Hashtags kannst du Posts ordnen.">${esc(d.text)}</textarea></div>
       ${d.media.length ? `<div class="att">${d.media.map((m, i) => `<div class="ph" ${m.kind === 'image' ? `data-mid="${m.id}"` : 'style="display:grid;place-items:center"'}>${m.kind === 'video' ? I.video : ''}<button data-act="dmDel" data-i="${i}" aria-label="Entfernen">${I.x}</button></div>`).join('')}</div>` : ''}
       ${d.mood || d.loc ? `<div class="pmeta" style="padding:0 0 6px">${d.mood ? `<span class="pm">${esc(d.mood.e)} ${esc(d.mood.w)}</span>` : ''}${d.loc ? `<span class="pm">${I.mappin}${esc(d.loc)}</span>` : ''}</div>` : ''}
-      <div class="comp-b"><div class="tools"><button data-act="dmPhoto" aria-label="Foto">${I.image}</button><button data-act="dmVideo" aria-label="Video">${I.video}</button><button class="${d.mood ? 'on' : ''}" data-act="dmMood" aria-label="Stimmung">${I.smile}</button><button class="${d.loc ? 'on' : ''}" data-act="dmLoc" aria-label="Standort">${I.mappin}</button></div><button class="btn sm" data-act="post">Posten</button></div></div>
+      ${V.fmtOpen ? fmtBar('draft.fmt') : ''}
+      <div class="comp-b"><div class="tools"><button data-act="dmPhoto" aria-label="Foto">${I.image}</button><button data-act="dmVideo" aria-label="Video">${I.video}</button><button class="${d.mood ? 'on' : ''}" data-act="dmMood" aria-label="Stimmung">${I.smile}</button><button class="${d.loc ? 'on' : ''}" data-act="dmLoc" aria-label="Standort">${I.mappin}</button><button class="${V.fmtOpen ? 'on' : ''}" data-act="fmtToggle" aria-label="Schrift" style="font-family:var(--fh);font-weight:700;font-size:17px">Aa</button></div><button class="btn sm" data-act="post">Posten</button></div></div>
     <div class="chips" style="margin-top:14px">${f('all','Alle')}${f('photo','Fotos')}${f('video','Videos')}${f('fav','Favoriten')}${V.btag ? `<button class="chip on" data-act="blogTag" data-t="">#${esc(V.btag)} ${I.x}</button>` : ''}</div>`;
   if (!posts.length) return html + `<div class="empty">${B.posts.length ? 'Keine passenden Posts.' : 'Dein erster Post wartet. Schreib etwas oder füge ein Bild hinzu.'}</div>`;
   return html + posts.map(p => {
     const media = p.media.length ? `<div class="pmedia ${p.media.length > 1 ? 'multi' : ''}">${p.media.map(m => m.kind === 'video' ? `<video controls playsinline preload="metadata" data-mid="${m.id}"></video>` : `<img alt="" data-mid="${m.id}">`).join('')}</div>` : '';
     return `<article class="card post"><header>${av('width:40px;height:40px;font-size:16px;border:0')}<div><b>${esc(B.title)}</b><span class="rs">${fmtTs(p.ts)}</span></div></header>${media}
-      ${p.text ? `<div class="ptxt">${richText(p.text)}</div>` : ''}
+      ${p.text ? `<div class="ptxt" style="${fmtCss(p.fmt)}">${richText(p.text)}</div>` : ''}
       ${p.mood || p.loc ? `<div class="pmeta">${p.mood ? `<span class="pm">${esc(p.mood.e)} ${esc(p.mood.w)}</span>` : ''}${p.loc ? `<span class="pm">${I.mappin}${esc(p.loc)}</span>` : ''}</div>` : ''}
       <footer><span></span><div class="ac"><button class="${p.fav ? 'fav' : ''}" data-act="favPost" data-id="${p.id}" aria-label="Favorit">${I.heart}</button><button data-act="editPost" data-id="${p.id}" aria-label="Bearbeiten">${I.pen}</button></div></footer></article>`;
   }).join('');
@@ -1649,7 +1869,7 @@ function checkReminders(){
 /* ================= Apple Kalender (.ics) ================= */
 function icsUnesc(v){ return v.replace(/\\n/gi, '\n').replace(/\\([,;\\])/g, '$1'); }
 function icsDate(val, params){
-  const m = val.match(/^(\d{4})(\d{2})(\d{2})(?:T(\d{2})(\d{2})(\d{2})?(Z?))?/); if (!m) return null;
+  const m = val.match(/^(\d{4})(\d{2})(\d{2})(?:TL(\d{2})(\d{2})(\d{2})?(Z?))?/); if (!m) return null;
   if (!m[4] || /VALUE=DATE(?!-)/.test(params)) return {date:`${m[1]}-${m[2]}-${m[3]}`, time:''};
   if (m[7] === 'Z'){ const d = new Date(Date.UTC(+m[1], m[2] - 1, +m[3], +m[4], +m[5])); return {date:ds(d), time:`${pad(d.getHours())}:${pad(d.getMinutes())}`}; }
   return {date:`${m[1]}-${m[2]}-${m[3]}`, time:`${m[4]}:${m[5]}`};
@@ -1843,6 +2063,180 @@ function inkSave(){
 }
 addEventListener('resize', () => { if ($('#ink').classList.contains('open')) inkResize(); });
 
+/* ================= Schrift für eigene Texte ================= */
+const FW = [[400, 'Normal'], [600, 'Halbfett'], [800, 'Fett']];
+const FS = [[.85, 'Klein'], [1, 'Normal'], [1.2, 'Groß'], [1.45, 'Sehr groß']];
+const FC = ['', '#E94B8A', '#1F5EFF', '#2FA36B', '#B7791F', '#8A4F6B', '#E5484D', '#6B7280'];
+const getP = path => path.startsWith('draft.') ? path.slice(6).split('.').reduce((o, k) => o == null ? o : o[k], V.draft) : getF(path);
+function setP(path, v){
+  if (path.startsWith('draft.')){ const a = path.slice(6).split('.'); let o = V.draft; while (a.length > 1){ const k = a.shift(); if (!o[k] || typeof o[k] !== 'object') o[k] = {}; o = o[k]; } o[a[0]] = v; }
+  else { const a = path.split('.'); let o = F; while (a.length > 1){ const k = a.shift(); if (!o[k] || typeof o[k] !== 'object') o[k] = {}; o = o[k]; } o[a[0]] = v; }
+}
+function fmtCss(f, own){
+  const e = own ? (f || {}) : {...(S.settings.fmt || {}), ...(f || {})}, out = [];
+  if (e.f && FONTS.some(x => x.n === e.f)) out.push(`font-family:${fam(e.f)}`);
+  if (e.w) out.push(`font-weight:${Number(e.w)}`);
+  if (e.i === 1 || e.i === 0) out.push(`font-style:${e.i ? 'italic' : 'normal'}`);
+  if (e.u) out.push('text-decoration:underline');
+  if (e.s && e.s !== 1) out.push(`font-size:${Number(e.s)}em`);
+  if (['left', 'center', 'right'].includes(e.a)) out.push(`text-align:${e.a}`);
+  if (e.c && /^#[0-9a-f]{6}$/i.test(e.c)) out.push(`color:${e.c}`);
+  return out.join(';');
+}
+function fmtText(t){
+  return esc(t).replace(/\*\*([\s\S]+?)\*\*/g, '<b>$1</b>').replace(/__([\s\S]+?)__/g, '<u>$1</u>').replace(/(^|[^*])\*([^*\n]+?)\*/g, '$1<i>$2</i>');
+}
+function fmtBar(path, own){
+  const f = getP(path) || {}, b = (k, v, label, extra = '') => `<button type="button" class="fb-b ${String(f[k] ?? '') === String(v) ? 'on' : ''}" data-act="fmtSet" data-p="${path}" data-k="${k}" data-v="${v}" ${extra}>${label}</button>`;
+  return `<div class="fbar" data-fb="${path}" data-own="${own ? 1 : ''}">
+    <div class="fb-row"><span class="lbl">Schrift</span><select class="fld" data-fp="${path}.f"><option value="">${own ? 'Wie die App' : 'Mein Standard'}</option>${FONTS.map(x => `<option value="${x.n}" ${f.f === x.n ? 'selected' : ''} style="font-family:${fam(x.n)}">${x.n}</option>`).join('')}</select></div>
+    <div class="fb-row"><span class="lbl">Dicke</span>${FW.map(([v, n]) => b('w', v, n, `style="font-weight:${v}"`)).join('')}</div>
+    <div class="fb-row"><span class="lbl">Stil</span><button type="button" class="fb-b ${f.i ? 'on' : ''}" data-act="fmtSet" data-p="${path}" data-k="i" data-v="${f.i ? '' : 1}"><i>Kursiv</i></button><button type="button" class="fb-b ${f.i === 0 ? 'on' : ''}" data-act="fmtSet" data-p="${path}" data-k="i0" data-v="1">Gerade</button><button type="button" class="fb-b ${f.u ? 'on' : ''}" data-act="fmtSet" data-p="${path}" data-k="u" data-v="${f.u ? '' : 1}"><u>Unterstrichen</u></button></div>
+    <div class="fb-row"><span class="lbl">Größe</span>${FS.map(([v, n]) => b('s', v, n)).join('')}</div>
+    <div class="fb-row"><span class="lbl">Ausrichtung</span>${b('a', 'left', 'Links')}${b('a', 'center', 'Mitte')}${b('a', 'right', 'Rechts')}</div>
+    <div class="fb-row"><span class="lbl">Farbe</span>${FC.map(c => `<button type="button" class="fb-c ${(f.c || '') === c ? 'on' : ''}" style="--cc:${c || 'var(--cardInk)'}" data-act="fmtSet" data-p="${path}" data-k="c" data-v="${c}" aria-label="${c ? 'Farbe' : 'Standardfarbe'}"></button>`).join('')}</div>
+    ${own ? '' : `<div class="fb-row"><span class="lbl">Markiertes</span><button type="button" class="fb-b" data-act="fmtWrap" data-p="${path}" data-m="**"><b>F</b></button><button type="button" class="fb-b" data-act="fmtWrap" data-p="${path}" data-m="*"><i>K</i></button><button type="button" class="fb-b" data-act="fmtWrap" data-p="${path}" data-m="__"><u>U</u></button><span class="hint" style="margin:0;font-size:12px">Wort im Text markieren, dann tippen</span></div>`}
+  </div>`;
+}
+const fmtPv = (path, text) => `<div class="fpv-l">Vorschau</div><div class="fpv ut" data-fmtpv="${path}" style="${fmtCss(getP(path))}">${fmtText(text || '')}</div>`;
+function refreshFmt(path){
+  const own = !!(document.querySelector(`[data-fb="${path}"]`) || {dataset:{}}).dataset.own, css = fmtCss(getP(path), own);
+  document.querySelectorAll(`[data-fb="${path}"]`).forEach(el => { el.outerHTML = fmtBar(path, own); });
+  document.querySelectorAll(`[data-fmtta="${path}"]`).forEach(el => { el.style.cssText = css; if (el.classList.contains('cta')) autosize(el); });
+  document.querySelectorAll(`[data-fmtpv="${path}"]`).forEach(el => { el.style.cssText = css; const ta = document.querySelector(`[data-fmtta="${path}"]`); if (ta) el.innerHTML = fmtText(ta.value); });
+}
+
+/* ================= Sprache lernen ================= */
+const VLANGS = [
+  {n:'Englisch', code:'en', flag:'🇬🇧'}, {n:'Arabisch', code:'ar', flag:'🇸🇦'}, {n:'Kurdisch', code:'ku', flag:'☀️'}, {n:'Spanisch', code:'es', flag:'🇪🇸'},
+  {n:'Französisch', code:'fr', flag:'🇫🇷'}, {n:'Italienisch', code:'it', flag:'🇮🇹'}, {n:'Russisch', code:'ru', flag:'🇷🇺'}, {n:'Koreanisch', code:'ko', flag:'🇰🇷'},
+  {n:'Japanisch', code:'ja', flag:'🇯🇵'}, {n:'Persisch', code:'fa', flag:'🇮🇷'}, {n:'Deutsch', code:'de', flag:'🇩🇪'}, {n:'Türkisch', code:'tr', flag:'🇹🇷'}
+];
+const BOX_DAYS = [0, 1, 2, 4, 8, 16, 32];
+const VQ = {flip:false, cur:null, quiz:null, score:[0, 0], extra:false, sug:null, busy:false, check:''};
+const vS = () => { if (!S.vocab || typeof S.vocab !== 'object') S.vocab = {langs:[], cards:[], log:{}, sel:'', dir:'f', mode:'learn'}; return S.vocab; };
+const vLang = () => { const v = vS(); return v.langs.find(l => l.id === v.sel) || v.langs[0]; };
+const vCards = l => vS().cards.filter(c => c.lid === (l || {}).id);
+const vDue = l => vCards(l).filter(c => !c.due || c.due <= today());
+function vStreak(){ const lg = vS().log; let n = 0; for (let i = 0; i < 400; i++){ const d = addDays(today(), -i); if (lg[d]) n++; else if (i === 0) continue; else break; } return n; }
+const rtlCode = c => ['ar', 'fa', 'ur', 'he', 'ku-ar'].includes(c);
+function speak(text, code){
+  try { if (!('speechSynthesis' in window)) return toast(L2('Vorlesen ist auf diesem Gerät nicht verfügbar', 'Sesli okuma bu cihazda yok')); const u = new SpeechSynthesisUtterance(text); u.lang = code || 'en'; u.rate = .9; speechSynthesis.cancel(); speechSynthesis.speak(u); } catch(e) {}
+}
+function vCardFace(c, l, back){
+  const v = vS(), fwd = v.dir !== 'r', q = fwd ? c.front : c.back, a = fwd ? c.back : c.front;
+  const fl = `dir="${rtlCode(l.code) ? 'rtl' : 'auto'}" lang="${esc(l.code || '')}"`;
+  return `<div class="vcard ${back ? 'back' : ''}" data-act="vFlip">
+    <div class="vq" ${fwd ? fl : ''}>${esc(q)}</div>
+    ${back ? `<div class="va" ${fwd ? '' : fl}>${esc(a)}</div>${c.ex ? `<div class="vex ut" ${fl}>${esc(c.ex)}</div>` : ''}` : `<div class="rs">Antippen zum Umdrehen</div>`}
+    <button class="vspk" data-act="vSpeak" data-id="${c.id}" aria-label="Anhören">🔊</button></div>`;
+}
+function vVocab(){
+  const v = vS(), l = vLang();
+  let html = head('vocab', 'Wörter lernen, wiederholen und üben');
+  if (!l) return html + `<div class="card" style="margin-top:16px"><p style="margin:0 0 6px;font-weight:650;font-size:17px">Welche Sprache willst du lernen?</p>
+    <div class="chips" style="margin-top:12px">${VLANGS.map(x => `<button class="chip" data-act="vAddLang" data-code="${x.code}">${x.flag} ${esc(x.n)}</button>`).join('')}<button class="chip on" data-act="vLangSheet">Eigene Sprache</button></div></div>`;
+  const cards = vCards(l), due = vDue(l), learned = cards.filter(c => (c.box || 0) >= 4).length;
+  html += `<div class="nowrap" style="margin-top:14px">${v.langs.map(x => `<button class="chip ${x.id === l.id ? 'on' : ''}" data-act="vSel" data-id="${x.id}">${esc(x.flag || '')} ${esc(TL(x.name))}</button>`).join('')}<button class="chip" data-act="vLangSheet">+ Neu</button></div>
+    <div class="card vstats"><div><b>${cards.length}</b><span>Wörter</span></div><div><b>${due.length}</b><span>Fällig</span></div><div><b>${learned}</b><span>Gelernt</span></div><div><b>${vStreak()}</b><span>Serie</span></div></div>
+    <div class="seg">${[['learn', 'Karteikarten'], ['quiz', 'Quiz'], ['write', 'Schreiben'], ['list', 'Wörter']].map(([k, n]) => `<button class="${v.mode === k ? 'on' : ''}" data-act="vMode" data-v="${k}">${n}</button>`).join('')}</div>`;
+  if (v.mode === 'list'){
+    html += `<div class="chips" style="margin-bottom:12px"><button class="chip on" data-act="vNew">${I.plus} Neues Wort</button><button class="chip on" data-act="vSuggest">${I.spark} Mit KI Wörter vorschlagen</button><button class="chip" data-act="vLangSheet" data-id="${l.id}">${I.gear} Sprache bearbeiten</button></div>`;
+    if (!cards.length) return html + `<div class="empty">Noch keine Wörter. Tippe auf das Plus oder lass dir Wörter vorschlagen.</div>`;
+    return html + cards.slice().sort((a, b) => (b.ts || 0) - (a.ts || 0)).map(c => `<button class="row" data-act="vEdit" data-id="${c.id}"><span class="vbox" title="Box ${c.box || 0}">${'●'.repeat(Math.min(5, c.box || 0)) + '○'.repeat(5 - Math.min(5, c.box || 0))}</span><span class="rbody"><span class="rt" dir="auto" data-nt>${esc(c.front)}</span><span class="rs" data-nt>${esc(c.back)}</span></span></button>`).join('');
+  }
+  if (!cards.length) return html + `<div class="empty">Noch keine Wörter. Tippe auf das Plus oder lass dir Wörter vorschlagen.</div><div class="chips" style="justify-content:center"><button class="chip on" data-act="vNew">${I.plus} Neues Wort</button><button class="chip on" data-act="vSuggest">${I.spark} Mit KI Wörter vorschlagen</button></div>`;
+  const dirBtn = `<div class="chips" style="margin-bottom:12px"><button class="chip" data-act="vDir">${I.redo} ${v.dir === 'r' ? 'Muttersprache → Fremdsprache' : 'Fremdsprache → Muttersprache'}</button></div>`;
+  if (v.mode === 'learn'){
+    const pool = VQ.extra ? cards : due;
+    if (!pool.length) return html + `<div class="card" style="text-align:center;padding:28px 18px"><div style="font-size:40px">🎉</div><p style="font-weight:650;font-size:17px;margin:8px 0 14px">Heute alles wiederholt. Super!</p><button class="btn ghost" style="margin:0" data-act="vExtra">Trotzdem üben</button></div>`;
+    if (!VQ.cur || !pool.some(c => c.id === VQ.cur)){ VQ.cur = pool.slice().sort((a, b) => (a.box || 0) - (b.box || 0) || Math.random() - .5)[0].id; VQ.flip = false; }
+    const c = cards.find(x => x.id === VQ.cur);
+    return html + dirBtn + vCardFace(c, l, VQ.flip) + (VQ.flip ? `<div class="vrate"><button class="btn ghost" data-act="vRate" data-r="0">Nochmal</button><button class="btn ghost" data-act="vRate" data-r="1">Schwer</button><button class="btn" data-act="vRate" data-r="2">Gewusst</button></div>` : '') + `<p class="hint" style="text-align:center;margin-top:10px;color:var(--pageInk2)">${VQ.extra ? '' : plural(pool.length, 'Wort', 'Wörter')}</p>`;
+  }
+  if (v.mode === 'quiz'){
+    if (cards.length < 4) return html + `<div class="empty">Für ein Quiz brauchst du mindestens 4 Wörter.</div>`;
+    if (!VQ.quiz) vNextQuiz(cards);
+    const q = VQ.quiz, fwd = v.dir !== 'r', c = cards.find(x => x.id === q.id) || cards[0];
+    return html + dirBtn + `<div class="card vcard"><div class="vq" dir="auto">${esc(fwd ? c.front : c.back)}</div><button class="vspk" data-act="vSpeak" data-id="${c.id}" aria-label="Anhören">🔊</button></div>
+      <div class="vopts">${q.opts.map((o, i) => { const oc = cards.find(x => x.id === o); const st = q.pick == null ? '' : o === q.id ? 'ok' : i === q.pick ? 'bad' : ''; return `<button class="row vopt ${st}" data-act="vPick" data-i="${i}" ${q.pick != null ? 'disabled' : ''}><span class="rbody"><span class="rt wrap" dir="auto" data-nt>${esc(fwd ? oc.back : oc.front)}</span></span></button>`; }).join('')}</div>
+      ${q.pick != null ? `<p class="hint" style="text-align:center;font-weight:700;color:${q.opts[q.pick] === q.id ? 'var(--ok)' : 'var(--danger)'}">${q.opts[q.pick] === q.id ? 'Richtig!' : 'Leider falsch.'}</p><button class="btn" data-act="vNextQ">Weiter</button>` : ''}
+      <p class="hint" style="text-align:center;margin-top:10px;color:var(--pageInk2)">${VQ.score[0]} richtig von ${VQ.score[1]}</p>`;
+  }
+  // Schreiben
+  return html + `<div class="card"><p class="hint" style="margin-top:0">Schreib einen Satz in der Sprache, die du lernst. Die KI verbessert ihn und erklärt kurz die Fehler.</p>
+    <textarea class="fld" id="vsent" rows="3" dir="auto" placeholder="Dein Satz" style="background:var(--chip)"></textarea>
+    <button class="btn" data-act="vCheck">${VQ.busy ? 'Prüfe …' : 'Satz prüfen'}</button>
+    ${VQ.check ? `<div class="msg a ut" style="max-width:100%;margin-top:14px;box-shadow:none;background:var(--chip)">${fmtAi(VQ.check)}</div>` : ''}</div>`;
+}
+function vNextQuiz(cards){
+  const pick = cards.slice().sort((a, b) => (a.box || 0) - (b.box || 0) + (Math.random() - .5) * 3)[0];
+  const others = seeded(cards.filter(c => c.id !== pick.id), Date.now() % 9973).slice(0, 3).map(c => c.id);
+  VQ.quiz = {id:pick.id, opts:seeded([pick.id, ...others], Date.now() % 7919 + 1), pick:null};
+}
+function vRate(c, r){
+  const v = vS();
+  if (r === 0){ c.box = 1; c.due = today(); }
+  else if (r === 1){ c.box = Math.max(1, c.box || 1); c.due = addDays(today(), 1); }
+  else { c.box = Math.min(6, (c.box || 0) + 1); c.due = addDays(today(), BOX_DAYS[c.box]); }
+  v.log[today()] = (v.log[today()] || 0) + 1; save();
+}
+function vCardSheet(id){
+  const c = id ? vS().cards.find(x => x.id === id) : null, l = vLang();
+  F = c ? {...c} : {front:'', back:'', ex:''};
+  sheet(`<h2 class="sh">${c ? 'Wort bearbeiten' : 'Neues Wort'}</h2>
+    ${field('front', `${TL('Wort')} (${esc(TL(l.name))})`, 'text', `dir="auto" lang="${esc(l.code || '')}"`)}
+    ${field('back', 'Übersetzung', 'text')}
+    <label class="lab">Beispielsatz (optional)</label><textarea class="fld" rows="2" dir="auto" data-f="ex">${esc(F.ex || '')}</textarea>
+    <button class="btn" data-act="vSave" style="margin-top:20px">Speichern</button>
+    ${c ? `<button class="btn danger" data-act="vDel">Löschen</button>` : ''}`);
+}
+function vLangSheet(id){
+  const l = id ? vS().langs.find(x => x.id === id) : null;
+  F = l ? {...l} : {name:'', code:'', flag:'🌍'};
+  sheet(`<h2 class="sh">${l ? 'Sprache bearbeiten' : 'Neue Sprache'}</h2>
+    ${l ? '' : `<div class="chips" style="margin:6px 0 4px">${VLANGS.map(x => `<button class="chip" data-act="vAddLang" data-code="${x.code}">${x.flag} ${esc(x.n)}</button>`).join('')}</div><h3 class="sh2">Eigene Sprache</h3>`}
+    ${field('name', 'Name der Sprache', 'text', 'placeholder="z. B. Zazaki"')}
+    ${field('code', 'Sprachcode für die Aussprache (z. B. en, ar, es)', 'text', 'autocapitalize="off" maxlength="8"')}
+    ${field('flag', 'Symbol', 'text', 'maxlength="8"')}
+    <button class="btn" data-act="vLangSave" style="margin-top:20px">Speichern</button>
+    ${l ? `<button class="btn danger" data-act="vLangDel">Sprache löschen samt Wörtern</button>` : ''}`);
+}
+function vSuggestSheet(){
+  const l = vLang(); F = {topic:'', level:'Anfänger'};
+  sheet(`<h2 class="sh">Mit KI Wörter vorschlagen</h2>
+    ${field('topic', 'Thema', 'text', `placeholder="${esc(L2('z. B. Essen, Reisen, Uni', 'ör. yemek, seyahat, üniversite'))}"`)}
+    <label class="lab">Niveau</label>${chips('level', ['Anfänger', 'Mittel', 'Fortgeschritten'].map(x => ({v:x, n:x})))}
+    <button class="btn" data-act="vSugGo" style="margin-top:18px">${I.spark} Vorschläge holen</button>
+    <div id="vsug"></div>`);
+}
+async function vSuggestGo(){
+  const l = vLang(), sample = window.claude && window.claude.use ? await claude.use('sample') : null;
+  if (!sample) return toast(TL('Die KI ist hier nicht verfügbar'));
+  const box = $('#vsug'); box.innerHTML = `<p class="hint" style="margin-top:14px">${TL('Denke nach …')}</p>`;
+  const mother = isTr() ? 'Türkisch' : 'Deutsch';
+  try {
+    const have = vCards(l).map(c => c.front).slice(0, 200).join(', ');
+    const res = await sample.json(`Erstelle 12 nützliche Vokabeln in der Sprache "${l.name}" (Sprachcode ${l.code || '?'}) zum Thema "${F.topic || 'Alltag'}" für das Niveau "${F.level}". Übersetzung auf ${mother}. Ein kurzer, einfacher Beispielsatz in ${l.name}. Lass diese Wörter weg: ${have || 'keine'}. Antworte NUR mit JSON: {"words":[{"front":"Wort in ${l.name}","back":"Übersetzung","ex":"Beispielsatz"}]}`, {modelTier:'quick'});
+    const words = (res && Array.isArray(res.words) ? res.words : []).filter(w => w && w.front && w.back).slice(0, 20);
+    if (!words.length) throw 0;
+    VQ.sug = words.map(w => ({front:String(w.front).slice(0, 120), back:String(w.back).slice(0, 160), ex:String(w.ex || '').slice(0, 300), on:true}));
+    box.innerHTML = `<div style="margin-top:14px">${VQ.sug.map((w, i) => `<button class="row" data-act="vSugTg" data-i="${i}"><span class="chk ${w.on ? 'on' : ''}">${I.check}</span><span class="rbody"><span class="rt wrap" dir="auto" data-nt>${esc(w.front)}</span><span class="rs" data-nt>${esc(w.back)}</span></span></button>`).join('')}</div><button class="btn" data-act="vSugAdd">${TL('Ausgewählte übernehmen')}</button>`;
+  } catch(e) { box.innerHTML = `<p class="hint bad" style="margin-top:14px">${TL('Ich konnte gerade keine Vorschläge holen. Versuch es noch einmal.')}</p>`; }
+}
+async function vCheckGo(){
+  const ta = $('#vsent'), txt = (ta && ta.value || '').trim(); if (!txt || VQ.busy) return;
+  const l = vLang(), sample = window.claude && window.claude.use ? await claude.use('sample') : null;
+  if (!sample) return toast(TL('Die KI ist hier nicht verfügbar'));
+  VQ.busy = true; VQ.check = ''; render();
+  try {
+    const r = await sample(`Ich lerne ${l.name}. Prüfe diesen Satz: "${txt}". Gib zuerst die korrigierte Fassung, dann in 1 bis 3 kurzen Sätzen auf ${isTr() ? 'Türkisch' : 'Deutsch'}, was falsch war und warum. Wenn alles stimmt, lobe kurz und nenne eine natürlichere Alternative. Keine Überschriften.`, {modelTier:'quick', cache:false});
+    VQ.check = r.text;
+  } catch(e) { VQ.check = TL('Das hat nicht geklappt. Versuch es bitte noch einmal.'); }
+  VQ.busy = false; render();
+  const t2 = $('#vsent'); if (t2) t2.value = txt;
+}
+
 /* ================= Assistent ================= */
 const AI = {busy:false, ctl:null, chat:lsGet('koesem.chat') || []};
 const saveChat = () => lsSet('koesem.chat', AI.chat.slice(-40));
@@ -1850,7 +2244,7 @@ const AI_SUGG = ['Wann habe ich diese Woche Zeit für 2 Stunden Lernen?', 'Trag 
 function vAi(){
   const msgs = AI.chat.map((m, i) => `<div class="msg ${m.r}${m.busy ? ' busy' : ''}" ${m.busy ? 'id="aibusy"' : ''}>${m.r === 'a' ? fmtAi(m.t) : esc(m.t)}${(m.acts || []).length ? `<div class="did">${m.acts.map(a => `<span>${esc(a)}</span>`).join('')}${m.undone ? '<span>Rückgängig gemacht</span>' : `<button data-act="aiUndo" data-i="${i}">Rückgängig</button>`}</div>` : ''}</div>`).join('');
   return head('ai', 'Kennt deine Termine, Aufgaben, Gebetszeiten und Notizen und kann für dich eintragen', AI.chat.length ? `<button class="chip" data-act="aiClear">Neuer Chat</button>` : '')
-    + (AI.chat.length ? '' : `<div class="sugg">${AI_SUGG.map(q => `<button data-act="aiAsk" data-q="${esc(q)}">${esc(q)}</button>`).join('')}</div>`)
+    + (AI.chat.length ? '' : `<div class="sugg">${(isTr() ? AI_SUGG_TR : AI_SUGG).map(q => `<button data-act="aiAsk" data-q="${esc(q)}">${esc(q)}</button>`).join('')}</div>`)
     + `<div class="chat" id="chat">${msgs}</div>
     <form class="composer" data-ai><textarea id="aiq" rows="1" placeholder="Frag mich etwas oder sag, was ich eintragen soll" enterkeyhint="send"></textarea><button class="send" type="submit" aria-label="Senden">${AI.busy ? I.x : I.send}</button></form>`;
 }
@@ -1859,7 +2253,7 @@ function aiContext(){
   const t = today(), n = new Date(), L = getLoc();
   const days = Array.from({length:7}, (_, i) => addDays(t, i)).map(d => `- ${longDate(d)} (${d}): ` + (dayItems(d, true).map(e => `${e.start ? e.start + (e.end ? '–' + e.end : '') : 'ganztägig'} ${e.title}`).join('; ') || 'nichts eingetragen'));
   const open = S.todos.filter(x => !x.done).sort(todoSort).slice(0, 15).map(x => `- ${x.title}${x.due ? ' (fällig ' + x.due + ')' : ''}${x.prio ? ', Prio ' + x.prio : ''}${x.group ? ', ' + grpOf(x.group).name : ''}`);
-  return `Du bist der Assistent in der persönlichen App „Benim Köşem“ von ${S.settings.name || 'der Nutzerin'}. Antworte in der Sprache der Nachricht (meist Deutsch, auch Türkisch oder Kurdisch), kurz, warm und konkret. Keine Markdown-Überschriften, keine Tabellen.
+  return `Du bist der Assistent in der persönlichen App „Benim Köşem“ von ${S.settings.name || 'der Nutzerin'}. Antworte ${isTr() ? 'auf Türkisch, außer die Nachricht ist in einer anderen Sprache' : 'in der Sprache der Nachricht (meist Deutsch, auch Türkisch oder Kurdisch)'}, kurz, warm und konkret. Keine Markdown-Überschriften, keine Tabellen.
 Jetzt: ${longDate(t)}, ${pad(n.getHours())}:${pad(n.getMinutes())} Uhr (${t}). Wochentage: Montag bis Sonntag.
 Nutze die Werkzeuge, um Daten zu lesen und Einträge anzulegen oder zu ändern. Datumsformat YYYY-MM-DD, Uhrzeit HH:MM. Wenn eine Angabe fehlt (z. B. Uhrzeit), nimm einen sinnvollen Wert und sag ihn dazu. Erfinde keine Termine. Für „wann habe ich Zeit“ nutze find_free_time. Bestätige am Ende in einem Satz, was du eingetragen hast.
 Kalender-Kategorien (id: Name): ${S.cats.map(c => c.id + ': ' + c.name).join(', ')}. Aufgaben-Gruppen: ${S.groups.map(g => g.id + ': ' + g.name).join(', ')}. Prioritäten: ${S.prios.map(p => p.lvl + ' ' + p.name).join(', ')}.
@@ -1914,13 +2308,14 @@ function aiTools(){
     {name:'complete_todo', description:'Hakt eine offene Aufgabe ab. Sucht nach dem Titel (Teiltext reicht).',
       inputSchema:{type:'object', properties:{title:{type:'string'}}, required:['title']},
       execute(i){ const q = str(i.title).toLowerCase(), x = S.todos.find(t => !t.done && t.title.toLowerCase().includes(q)); if (!x) throw new Error('Keine passende offene Aufgabe'); x.done = true; save(); track(`Erledigt: ${x.title}`, () => { x.done = false; }); return {ok:true, title:x.title}; }},
-    {name:'add_item', description:'Legt etwas anderes an. kind: note (title, text oder items-Liste), birthday (name, day, month, year), expense oder income (amount in Euro, title, category, date, monthly), quote (text, author), study (subject, date, minutes, topic).',
-      inputSchema:{type:'object', properties:{kind:{type:'string'}, title:{type:'string'}, text:{type:'string'}, items:{type:'array', items:{type:'string'}}, name:{type:'string'}, day:{type:'number'}, month:{type:'number'}, year:{type:'number'}, amount:{type:'number'}, category:{type:'string'}, date:{type:'string'}, monthly:{type:'boolean'}, author:{type:'string'}, subject:{type:'string'}, minutes:{type:'number'}, topic:{type:'string'}, space:{type:'string'}}, required:['kind']},
+    {name:'add_item', description:'Legt etwas anderes an. kind: note (title, text oder items-Liste), birthday (name, day, month, year), expense oder income (amount in Euro, title, category, date, monthly), quote (text, author), study (subject, date, minutes, topic), vocab (language, front = Wort in der Fremdsprache, back = Übersetzung, text = Beispielsatz).',
+      inputSchema:{type:'object', properties:{kind:{type:'string'}, title:{type:'string'}, text:{type:'string'}, items:{type:'array', items:{type:'string'}}, name:{type:'string'}, day:{type:'number'}, month:{type:'number'}, year:{type:'number'}, amount:{type:'number'}, category:{type:'string'}, date:{type:'string'}, monthly:{type:'boolean'}, author:{type:'string'}, subject:{type:'string'}, minutes:{type:'number'}, topic:{type:'string'}, space:{type:'string'}, language:{type:'string'}, front:{type:'string'}, back:{type:'string'}}, required:['kind']},
       execute(i){
         const k = str(i.kind);
         if (k === 'note'){ const its = (Array.isArray(i.items) ? i.items : []).map(str).filter(Boolean); const o = {id:uid(), kind:its.length ? 'list' : 'note', title:str(i.title) || 'Notiz', body:its.length ? '' : str(i.text), items:its.map(t => ({t, done:false})), color:0, pin:false, ts:Date.now(), ...spIn(i)}; S.notes.push(o); save(); track(`Notiz: ${o.title}`, () => { S.notes = S.notes.filter(x => x.id !== o.id); }); return {ok:true}; }
         if (k === 'birthday'){ const d = Number(i.day), m = Number(i.month); if (!str(i.name) || !(d >= 1 && d <= 31 && m >= 1 && m <= 12)) throw new Error('name, day, month nötig'); const o = {id:uid(), name:str(i.name), d, m, y:Number(i.year) || '', note:''}; S.bdays.push(o); save(); track(`Geburtstag: ${o.name}`, () => { S.bdays = S.bdays.filter(x => x.id !== o.id); }); return {ok:true}; }
         if (k === 'expense' || k === 'income'){ const a = Number(i.amount); if (!(a > 0)) throw new Error('amount > 0 nötig'); const cats = k === 'income' ? CATS_IN : CATS_OUT; const cat = (cats.find(c => c.n.toLowerCase() === str(i.category).toLowerCase()) || cats[cats.length - 1]).n; const o = {id:uid(), type:k === 'income' ? 'in' : 'out', amount:a, title:str(i.title), cat, date:okDate(i.date) || today(), monthly:!!i.monthly, ...spIn(i)}; S.tx.push(o); save(); track(`${k === 'income' ? 'Einnahme' : 'Ausgabe'}: ${fmtE(a)}`, () => { S.tx = S.tx.filter(x => x.id !== o.id); }); return {ok:true, categories_available:cats.map(c => c.n)}; }
+        if (k === 'vocab'){ const v = vS(); let l = v.langs.find(x => x.name.toLowerCase() === str(i.language).toLowerCase() || x.code === str(i.language).toLowerCase()) || vLang(); if (!l) throw new Error('Keine Sprache angelegt'); if (!str(i.front) || !str(i.back)) throw new Error('front und back nötig'); const o = {id:uid(), lid:l.id, front:str(i.front), back:str(i.back), ex:str(i.text), box:0, due:'', ts:Date.now()}; v.cards.push(o); save(); track(`Wort: ${o.front}`, () => { v.cards = v.cards.filter(x => x.id !== o.id); }); return {ok:true}; }
         if (k === 'quote'){ if (!str(i.text)) throw new Error('text nötig'); const o = {id:uid(), text:str(i.text), author:str(i.author)}; S.quotes.push(o); save(); track('Zitat gespeichert', () => { S.quotes = S.quotes.filter(x => x.id !== o.id); }); return {ok:true}; }
         if (k === 'study'){ const sub = S.subjects.find(x => x.name.toLowerCase().includes(str(i.subject).toLowerCase())); if (!sub) throw new Error('Fach nicht gefunden. Fächer: ' + S.subjects.map(x => x.name).join(', ')); const o = {id:uid(), sid:sub.id, date:okDate(i.date) || today(), min:Number(i.minutes) || 60, topic:str(i.topic), done:false, auto:false}; S.sessions.push(o); save(); track(`Lernen: ${sub.name}, ${shortDate(o.date)}`, () => { S.sessions = S.sessions.filter(x => x.id !== o.id); }); return {ok:true}; }
         throw new Error('Unbekannte kind');
@@ -1973,7 +2368,7 @@ async function aiSend(text){
 }
 const scrollChat = () => { const c = $('#chat'); if (c && c.lastElementChild) c.lastElementChild.scrollIntoView({block:'end', behavior:'smooth'}); };
 
-const views = {ai:vAi, prayer:vPrayer, zikir:vZikir, home:vHome, cal:vCal, todo:vTodo, bday:vBday, study:vStudy, budget:vBudget, notes:vNotes, know:vKnow, quotes:vQuotes, board:vBoard, blog:vBlog};
+const views = {vocab:vVocab, ai:vAi, prayer:vPrayer, zikir:vZikir, home:vHome, cal:vCal, todo:vTodo, bday:vBday, study:vStudy, budget:vBudget, notes:vNotes, know:vKnow, quotes:vQuotes, board:vBoard, blog:vBlog};
 function effTheme(){
   const t = {...S.theme}, o = S.tools.find(x => x.id === V.view);
   if (o){ if (o.accent) t.accent = o.accent; if (o.bg){ t.bg = o.bg; t.bgImg = ''; } if (o.fh) t.fh = o.fh; }
@@ -2121,7 +2516,7 @@ function limitSheet(){
     <button class="btn" data-act="saveLimit" style="margin-top:20px">Speichern</button>`);
 }
 function noteBody(){
-  if (F.kind === 'note') return `<label class="lab">Text</label><textarea class="fld" rows="9" data-f="body" placeholder="Schreib hier los">${esc(F.body || '')}</textarea>`;
+  if (F.kind === 'note') return `<label class="lab">Text</label><textarea class="fld" rows="9" data-f="body" data-fmtta="fmt" style="${fmtCss(F.fmt)}" placeholder="Schreib hier los">${esc(F.body || '')}</textarea>${fmtBar('fmt')}`;
   return `<label class="lab">Einträge</label>` + F.items.map((it, i) => `<div class="li"><button class="chk ${it.done ? 'on' : ''}" data-act="liTg" data-i="${i}" aria-label="Abhaken">${I.check}</button><input class="li-in" data-li="${i}" value="${esc(it.t)}" placeholder="Eintrag" enterkeyhint="next"><button class="x" data-act="liDel" data-i="${i}" aria-label="Entfernen">${I.x}</button></div>`).join('')
     + `<button class="addli" data-act="liAdd">+ Eintrag hinzufügen</button>${F.items.some(i => i.done) ? `<button class="addli" style="color:var(--cardInk2)" data-act="liClean">Abgehakte entfernen</button>` : ''}`;
 }
@@ -2147,7 +2542,7 @@ function knowSheet(id){
   F = k ? {...clone(k), tagStr:(k.tags || []).join(', ')} : {title:'', body:'', source:'', tagStr:'', imgs:[], pin:false};
   sheet(`<h2 class="sh">${k ? 'Eintrag bearbeiten' : 'Neuer Eintrag'}</h2>
     ${field('title','Titel','text','placeholder="Worum geht es?"')}
-    <label class="lab">Was willst du dir merken?</label><textarea class="fld" rows="8" data-f="body">${esc(F.body || '')}</textarea>
+    <label class="lab">Was willst du dir merken?</label><textarea class="fld" rows="8" data-f="body" data-fmtta="fmt" style="${fmtCss(F.fmt)}">${esc(F.body || '')}</textarea>${fmtBar('fmt')}
     ${field('source','Quelle oder Link (optional)','text','placeholder="https://…" autocapitalize="off"')}
     ${field('tagStr','Stichworte, mit Komma getrennt','text','placeholder="z. B. Psychologie, Klausur"')}
     <label class="lab">Bilder</label><div id="kimgs">${kImgs()}</div>
@@ -2162,7 +2557,7 @@ function viewKnow(id){
   const link = /^https?:\/\//i.test(k.source || '');
   sheet(`<h2 class="sh">${esc(k.title)}</h2>
     ${(k.imgs || []).map(m => `<img class="bigimg" alt="" data-mid="${m}">`).join('')}
-    <div style="white-space:pre-wrap;word-break:break-word;font-size:16px;line-height:1.55;color:var(--sink)">${esc(k.body)}</div>
+    <div class="ut" style="font-size:16px;line-height:1.55;color:var(--sink);${fmtCss(k.fmt)}">${fmtText(k.body)}</div>
     ${k.source ? `<div class="lab">Quelle</div>${link ? `<a style="color:var(--accent);word-break:break-all" href="${esc(k.source)}" target="_blank" rel="noopener noreferrer">${esc(k.source)}</a>` : `<div>${esc(k.source)}</div>`}` : ''}
     ${(k.tags || []).length ? `<div class="tags">${k.tags.map(t => `<span class="tg">#${esc(t)}</span>`).join('')}</div>` : ''}
     <button class="btn ghost" style="margin-top:18px" data-act="editKnow" data-id="${k.id}">Bearbeiten</button>`);
@@ -2171,7 +2566,8 @@ function quoteSheet(id){
   const q = id ? S.quotes.find(x => x.id === id) : null;
   F = q ? {...q} : {text:'', author:''};
   sheet(`<h2 class="sh">${q ? 'Zitat bearbeiten' : 'Neues Zitat'}</h2>
-    <label class="lab">Zitat</label><textarea class="fld" rows="5" data-f="text" placeholder="Der Satz, der dich begleitet">${esc(F.text)}</textarea>
+    <label class="lab">Zitat</label><textarea class="fld" rows="6" data-f="text" data-fmtta="fmt" style="${fmtCss(F.fmt)}" placeholder="Der Satz, der dich begleitet. Mit Enter beginnst du eine neue Zeile.">${esc(F.text)}</textarea>
+    ${fmtBar('fmt')}${fmtPv('fmt', F.text)}
     ${field('author','Von (optional)','text','placeholder="z. B. Maya Angelou"')}
     <button class="btn" data-act="saveQuote" style="margin-top:20px">Speichern</button>
     ${q ? `<button class="btn danger" data-act="delQuote">Löschen</button>` : ''}`);
@@ -2212,7 +2608,7 @@ function wCfg(){
     case 'photo': return `<label class="lab">Bild</label>${imgSlot('cfg.mid', 'Bild wählen')}${field('cfg.caption', 'Beschriftung (optional)', 'text')}`;
     case 'strip': return `<label class="lab">Bilder</label>${[0,1,2].map(i => imgSlot('cfg.mids.' + i, `Bild ${i+1} wählen`)).join('')}`;
     case 'mood': return `<label class="lab">Anzahl Bilder</label>${chips('cfg.count',[3,4,6].map(n => ({v:n, n:String(n)})))}`;
-    case 'text': return `${field('cfg.title','Titel','text')}<label class="lab">Text</label><textarea class="fld" rows="5" data-f="cfg.body">${esc(c.body || '')}</textarea>`;
+    case 'text': return `${field('cfg.title','Titel','text')}<label class="lab">Text</label><textarea class="fld" rows="5" data-f="cfg.body" data-fmtta="cfg.fmt" style="${fmtCss(c.fmt)}">${esc(c.body || '')}</textarea>${fmtBar('cfg.fmt')}`;
     default: return '<p class="hint" style="margin-top:14px">Dieses Widget braucht keine weiteren Einstellungen.</p>';
   }
 }
@@ -2220,7 +2616,7 @@ function wAddSheet(){
   sheet(`<h2 class="sh">Widget hinzufügen</h2>` + Object.entries(WT).map(([k, w]) => `<button class="row" data-act="wNew" data-v="${k}"><span class="rbody"><span class="rt">${esc(w.n)}</span><span class="rs">${esc(w.d)}</span></span>${I.plus}</button>`).join(''));
 }
 const visTools = () => F.tools.filter(t => !t.del);
-const toolRows = () => { const vis = visTools(); return vis.map((t, i) => `<div class="trow" data-wid="${t.id}"><button class="grip" data-grip aria-label="Ziehen zum Verschieben">${I.grip}</button><input class="li-in" data-tl="${t.id}" value="${esc(t.label)}">
+const toolRows = () => { const vis = visTools(); return vis.map((t, i) => `<div class="trow" data-wid="${t.id}"><button class="grip" data-grip aria-label="Ziehen zum Verschieben">${I.grip}</button><input class="li-in" data-tl="${t.id}" value="${esc(TL(t.label))}">
   <button class="x" data-act="toolMove" data-id="${t.id}" data-dir="-1" aria-label="Nach oben" ${i === 0 ? 'style="opacity:.25"' : ''}>${I.up}</button><button class="x" data-act="toolMove" data-id="${t.id}" data-dir="1" aria-label="Nach unten" ${i === vis.length - 1 ? 'style="opacity:.25"' : ''}>${I.down}</button><button class="x" data-act="${isSpace(t.id) ? 'catEdit' : 'toolDesign'}" data-id="${t.id}" aria-label="Bearbeiten">${isSpace(t.id) ? I.gear : I.palette}</button>
   ${t.id === 'home' ? '<span style="width:84px;flex:none"></span>' : `<button class="x" data-act="toolDel" data-id="${t.id}" aria-label="Löschen">${I.trash}</button><button class="tgl ${t.on ? 'on' : ''}" style="width:auto;padding:0" data-act="toolOn" data-id="${t.id}" aria-label="Ein- oder ausblenden"><span class="sw2"></span></button>`}</div>`).join(''); };
 const toolRest = () => { const d = F.tools.filter(t => t.del); return d.length ? `<h3 class="sh2">Gelöschte Kategorien</h3>` + d.map(t => `<div class="li"><span class="li-in" style="opacity:.7">${esc(t.label)}</span><button class="chip" data-act="toolRestore" data-id="${t.id}">Wiederherstellen</button></div>`).join('') : ''; };
@@ -2234,11 +2630,13 @@ function toolsSheet(){
   initSort($('#toolist'), '.trow', ids => { F.tools = [...ids.map(id => F.tools.find(t => t.id === id)), ...F.tools.filter(t => t.del)]; $('#toolist').innerHTML = toolRows(); });
 }
 function settingsSheet(){
-  F = {name:S.settings.name, greet:S.settings.greet || 'mix', splash:S.settings.splash !== false, notify:clone(S.settings.notify), dayStart:S.settings.dayStart, dayEnd:S.settings.dayEnd};
+  F = {sfmt:clone(S.settings.fmt || {}), name:S.settings.name, greet:S.settings.greet || 'mix', splash:S.settings.splash !== false, notify:clone(S.settings.notify), dayStart:S.settings.dayStart, dayEnd:S.settings.dayEnd};
   const perm = 'Notification' in window ? Notification.permission : 'unsupported';
   sheet(`<h2 class="sh">Einstellungen</h2>
     <div class="card" style="margin:10px 0 4px;padding:14px 16px"><div class="rt" data-sync style="display:flex;gap:8px;align-items:center"></div>
       <p class="hint" style="margin:6px 0 0">Öffne diesen Link auf Handy, Tablet und Laptop, jeweils angemeldet mit deinem Claude-Konto. Alles, was du einträgst, erscheint auf allen Geräten. Bilder und Videos werden mit übertragen.</p></div>
+    <label class="lab">App-Sprache · Uygulama dili</label>
+    <div class="seg" style="margin:0"><button class="${!isTr() ? 'on' : ''}" data-act="appLang" data-v="de">🇩🇪 Deutsch</button><button class="${isTr() ? 'on' : ''}" data-act="appLang" data-v="tr">🇹🇷 Türkçe</button></div>
     <h3 class="sh2">Aussehen</h3>
     <button class="btn" data-act="homeEditGo">${I.pen} Startseite bearbeiten</button>
     <div class="grid2"><button class="btn ghost" data-act="studio">Design-Studio</button><button class="btn ghost" data-act="studioColors">Alle Farben wählen</button></div>
@@ -2250,6 +2648,9 @@ function settingsSheet(){
     <div class="lgrid">${Object.keys(LG).map(k => `<button class="lopt ${k === lgKey() ? 'on' : ''}" data-act="logoPick" data-v="${k}">${lgTile(k)}<span>${LG[k].n}</span><i class="ck">${I.check}</i></button>`).join('')}</div>
     ${toggle('splash', 'Startanimation beim Öffnen', F.splash)}
     <button class="btn ghost" style="margin-top:0" data-act="logoPlay">Animation ansehen</button>
+    <h3 class="sh2">Mein Schreibstil</h3>
+    <p class="hint">Gilt für alle Texte, die du schreibst: Zitate, Notizen, Gedankenpalast, Blog und Textfelder. Bei jedem einzelnen Text kannst du es zusätzlich anders einstellen.</p>
+    ${fmtBar('sfmt', true)}<div class="fpv-l">Vorschau</div><div class="fpv ut" data-fmtpv="sfmt" style="${fmtCss(F.sfmt, true)}">${isTr() ? 'Sabreden derviş muradına ermiş.' : 'Wer geduldig ist, gewinnt.'}</div>
     <h3 class="sh2">Profil</h3>
     ${field('name','Dein Name','text','placeholder="Wie soll die App dich nennen?"')}
     <label class="lab">Begrüßung auf der Startseite</label>${chips('greet',[{v:'de',n:'Deutsch'},{v:'tr',n:'Türkçe'},{v:'ku',n:'Kurdî'},{v:'mix',n:'Bunt gemischt'}])}
@@ -2294,7 +2695,7 @@ function postSheet(id){
   const p = S.blog.posts.find(x => x.id === id); if (!p) return;
   F = {...clone(p), me:p.mood?.e || '', mw:p.mood?.w || ''};
   sheet(`<h2 class="sh">Post bearbeiten</h2>
-    <label class="lab">Text</label><textarea class="fld" rows="6" data-f="text">${esc(F.text)}</textarea>
+    <label class="lab">Text</label><textarea class="fld" rows="6" data-f="text" data-fmtta="fmt" style="${fmtCss(F.fmt)}">${esc(F.text)}</textarea>${fmtBar('fmt')}
     ${moodPicker()}${field('loc','Standort','text','placeholder="optional"')}
     ${F.media.length ? `<label class="lab">Medien</label><div class="att" id="pmedia">${pmediaHTML()}</div>` : ''}
     <button class="btn" data-act="savePost" style="margin-top:20px">Speichern</button>
@@ -2390,7 +2791,7 @@ const A = {
   close(){ closeSheet(); },
   none(){},
   tab(d){ V.view = d.v; V.edit = false; if (d.v === 'prayer'){ V.pd = ''; autoLoc(); } render(); scrollTo(0, 0); },
-  fab(){ if (isSpace(V.view)){ const m = spCur(); return ({todo:() => todoSheet(), notes:() => noteSheet(), cal:() => evSheet(null, today()), budget:() => txSheet(), know:() => knowSheet(), quotes:() => quoteSheet(), board:() => A.boardAdd()})[m]?.(); } ({cal:() => evSheet(null, V.sel), todo:() => todoSheet(), bday:() => bdSheet(), study:() => subSheet(), budget:() => txSheet(), notes:() => noteSheet(), know:() => knowSheet(), quotes:() => quoteSheet(), board:() => A.boardAdd(), zikir:() => zikirSheet()})[V.view]?.(); },
+  fab(){ if (V.view === 'vocab') return vLang() ? vCardSheet() : vLangSheet(); if (isSpace(V.view)){ const m = spCur(); return ({todo:() => todoSheet(), notes:() => noteSheet(), cal:() => evSheet(null, today()), budget:() => txSheet(), know:() => knowSheet(), quotes:() => quoteSheet(), board:() => A.boardAdd()})[m]?.(); } ({cal:() => evSheet(null, V.sel), todo:() => todoSheet(), bday:() => bdSheet(), study:() => subSheet(), budget:() => txSheet(), notes:() => noteSheet(), know:() => knowSheet(), quotes:() => quoteSheet(), board:() => A.boardAdd(), zikir:() => zikirSheet()})[V.view]?.(); },
   chip(d, el){
     if (d.m){ const a = getF(d.f) || []; const i = a.indexOf(d.v); i >= 0 ? a.splice(i, 1) : a.push(d.v); setF(d.f, a); el.classList.toggle('on'); }
     else {
@@ -2443,7 +2844,7 @@ const A = {
   /* Kalender */
   selDay(d){ if (V.sel === d.d) return evSheet(null, d.d); V.sel = d.d; render(); },
   dayNew(d){ if (d.k === 'ev') evSheet(null, V.sel); else if (d.k === 'todo'){ todoSheet(); F.due = V.sel; const i = $('[data-f=due]'); if (i) i.value = V.sel; } else { sesSheet(); if (F.sid){ F.date = V.sel; const i = $('[data-f=date]'); if (i) i.value = V.sel; } } },
-  dayAsk(){ V.view = 'ai'; render(); const q = $('#aiq'); if (q){ q.value = `Wie sieht mein ${V.sel === today() ? 'heutiger Tag' : longDate(V.sel)} aus, und wann habe ich Zeit?`; q.focus(); } },
+  dayAsk(){ V.view = 'ai'; render(); const q = $('#aiq'); if (q){ q.value = isTr() ? `${V.sel === today() ? 'Bugünüm' : longDate(V.sel)} nasıl görünüyor ve ne zaman boş vaktim var?` : `Wie sieht mein ${V.sel === today() ? 'heutiger Tag' : longDate(V.sel)} aus, und wann habe ich Zeit?`; q.focus(); } },
   prevM(){ V.cm = new Date(V.cm.getFullYear(), V.cm.getMonth() - 1, 1); A._fix(); },
   nextM(){ V.cm = new Date(V.cm.getFullYear(), V.cm.getMonth() + 1, 1); A._fix(); },
   _fix(){ const t = today(); V.sel = t.slice(0, 7) === ds(V.cm).slice(0, 7) ? t : ds(V.cm); render(); },
@@ -2535,7 +2936,7 @@ const A = {
     if (F.kind === 'list' && !title) title = 'Liste';
     if (F.kind === 'note' && !title) title = (F.body || '').trim().split('\n')[0].slice(0, 40);
     if (!title && !(F.body || '').trim() && !items.length) return toast('Die Notiz ist noch leer');
-    upsert(S.notes, {id:F.id || uid(), kind:F.kind, title:title || 'Ohne Titel', body:F.kind === 'note' ? (F.body || '') : '', items:F.kind === 'list' ? items : [], color:F.color || 0, pin:!!F.pin, ts:Date.now(), ...(spOf() ? {sp:spOf()} : {})});
+    upsert(S.notes, {id:F.id || uid(), kind:F.kind, title:title || 'Ohne Titel', body:F.kind === 'note' ? (F.body || '') : '', items:F.kind === 'list' ? items : [], color:F.color || 0, pin:!!F.pin, ts:Date.now(), ...(F.fmt && Object.keys(F.fmt).length ? {fmt:F.fmt} : {}), ...(spOf() ? {sp:spOf()} : {})});
     save(); closeSheet(); render(); toast('Gespeichert');
   },
   delNote(){ delete S.ink[F.id]; S.notes = S.notes.filter(x => x.id !== F.id); save(); closeSheet(); render(); toast('Gelöscht'); },
@@ -2552,7 +2953,7 @@ const A = {
   saveKnow(){
     if (!(F.title || '').trim()) return toast('Bitte einen Titel eingeben');
     const tags = [...new Set((F.tagStr || '').split(/[,\s]+/).map(t => t.replace(/^#/, '').trim()).filter(Boolean))];
-    upsert(S.know, {id:F.id || uid(), title:F.title.trim(), body:F.body || '', source:(F.source || '').trim(), tags, imgs:F.imgs || [], pin:!!F.pin, ts:F.ts || Date.now(), ...(spOf() ? {sp:spOf()} : {})});
+    upsert(S.know, {id:F.id || uid(), title:F.title.trim(), body:F.body || '', source:(F.source || '').trim(), tags, imgs:F.imgs || [], pin:!!F.pin, ts:F.ts || Date.now(), ...(F.fmt && Object.keys(F.fmt).length ? {fmt:F.fmt} : {}), ...(spOf() ? {sp:spOf()} : {})});
     save(); closeSheet(); render(); toast('Gespeichert');
   },
   delKnow(){ S.know = S.know.filter(x => x.id !== F.id); save(); closeSheet(); render(); toast('Gelöscht'); },
@@ -2560,7 +2961,7 @@ const A = {
   editQuote(d){ quoteSheet(d.id); },
   saveQuote(){
     if (!(F.text || '').trim()) return toast('Bitte ein Zitat eingeben');
-    upsert(S.quotes, {id:F.id || uid(), text:F.text.trim(), author:(F.author || '').trim(), ...(spOf() ? {sp:spOf()} : {})}); save(); closeSheet(); render(); toast('Gespeichert');
+    upsert(S.quotes, {id:F.id || uid(), text:F.text.replace(/^\s*\n|\s+$/g, ''), author:(F.author || '').trim(), ...(F.fmt && Object.keys(F.fmt).length ? {fmt:F.fmt} : {}), ...(spOf() ? {sp:spOf()} : {})}); save(); closeSheet(); render(); toast('Gespeichert');
   },
   delQuote(){ S.quotes = S.quotes.filter(x => x.id !== F.id); save(); closeSheet(); render(); toast('Gelöscht'); },
   /* Moodboard */
@@ -2605,15 +3006,15 @@ const A = {
   post(){
     const d = V.draft;
     if (!d.text.trim() && !d.media.length) return toast('Schreib etwas oder füge ein Bild hinzu');
-    S.blog.posts.unshift({id:uid(), text:d.text.trim(), media:d.media, mood:d.mood, loc:d.loc, ts:Date.now(), fav:false});
-    V.draft = {text:'', media:[], mood:null, loc:''}; save(); render(); toast('Gepostet');
+    S.blog.posts.unshift({id:uid(), text:d.text.replace(/^\s*\n|\s+$/g, ''), media:d.media, mood:d.mood, loc:d.loc, ts:Date.now(), fav:false, ...(d.fmt && Object.keys(d.fmt).length ? {fmt:clone(d.fmt)} : {})});
+    V.draft = {text:'', media:[], mood:null, loc:'', fmt:d.fmt || {}}; save(); render(); toast('Gepostet');
   },
   favPost(d){ const p = S.blog.posts.find(x => x.id === d.id); if (p){ p.fav = !p.fav; save(); render(); } },
   editPost(d){ postSheet(d.id); },
   pmDel(d){ const m = F.media.splice(Number(d.i), 1)[0]; if (m) mDel(m.id); const p = S.blog.posts.find(x => x.id === F.id); if (p){ p.media = clone(F.media); save(); } const box = $('#pmedia'); if (box){ box.innerHTML = pmediaHTML(); hydrate(box); } },
   savePost(){
     const p = S.blog.posts.find(x => x.id === F.id); if (!p) return;
-    p.text = (F.text || '').trim(); p.loc = (F.loc || '').trim(); p.mood = (F.me || F.mw) ? {e:F.me || '🙂', w:(F.mw || '').trim()} : null;
+    p.text = (F.text || '').replace(/^\s*\n|\s+$/g, ''); p.fmt = F.fmt && Object.keys(F.fmt).length ? F.fmt : undefined; p.loc = (F.loc || '').trim(); p.mood = (F.me || F.mw) ? {e:F.me || '🙂', w:(F.mw || '').trim()} : null;
     save(); closeSheet(); render(); toast('Gespeichert');
   },
   delPost(){ const p = S.blog.posts.find(x => x.id === F.id); if (p) p.media.forEach(m => mDel(m.id)); S.blog.posts = S.blog.posts.filter(x => x.id !== F.id); save(); closeSheet(); render(); toast('Post gelöscht'); },
@@ -2662,6 +3063,37 @@ const A = {
     Object.assign(t, {label:(F.label || '').trim() || tdef(t.id).n, emoji:(F.emoji || '').trim(), accent:F.accent || '', bg:F.bg || '', fh:F.fh || ''});
     save(); render(); toolsSheet(); toast('Design gespeichert');
   },
+  /* Sprache lernen */
+  vAddLang(d){ const x = VLANGS.find(l => l.code === d.code), v = vS(); if (!x) return; let l = v.langs.find(y => y.code === x.code); if (!l){ l = {id:'l_' + uid(), name:x.n, code:x.code, flag:x.flag}; v.langs.push(l); } v.sel = l.id; v.mode = 'list'; save(); closeSheet(); render(); },
+  vLangSheet(d){ vLangSheet(d && d.id); },
+  vLangSave(){ const v = vS(), name = (F.name || '').trim(); if (!name) return toast(TL('Bitte einen Namen eingeben')); const o = {id:F.id || 'l_' + uid(), name, code:(F.code || '').trim().toLowerCase(), flag:(F.flag || '').trim() || '🌍'}; upsert(v.langs, o); v.sel = o.id; save(); closeSheet(); render(); toast(TL('Gespeichert')); },
+  vLangDel(d, el){ if (!el.dataset.arm){ el.dataset.arm = '1'; el.textContent = TL('Wirklich löschen? Nochmal tippen'); return; } const v = vS(); v.cards = v.cards.filter(c => c.lid !== F.id); v.langs = v.langs.filter(l => l.id !== F.id); v.sel = (v.langs[0] || {}).id || ''; save(); closeSheet(); render(); toast(TL('Gelöscht')); },
+  vSel(d){ vS().sel = d.id; VQ.cur = null; VQ.quiz = null; VQ.extra = false; save(); render(); },
+  vMode(d){ vS().mode = d.v; VQ.quiz = null; VQ.flip = false; save(); render(); },
+  vNew(){ vCardSheet(); }, vEdit(d){ vCardSheet(d.id); },
+  vSave(){ if (!(F.front || '').trim() || !(F.back || '').trim()) return toast(TL('Bitte Wort und Übersetzung eingeben')); const v = vS(), l = vLang(); upsert(v.cards, {id:F.id || uid(), lid:F.lid || l.id, front:F.front.trim(), back:F.back.trim(), ex:(F.ex || '').trim(), box:F.box || 0, due:F.due || '', ts:F.ts || Date.now()}); save(); closeSheet(); render(); toast(TL('Gespeichert')); },
+  vDel(){ const v = vS(); v.cards = v.cards.filter(c => c.id !== F.id); save(); closeSheet(); render(); toast(TL('Gelöscht')); },
+  vFlip(d, el, e){ if (e && e.target.closest('[data-act=vSpeak]')) return; VQ.flip = !VQ.flip; render(); },
+  vRate(d){ const c = vS().cards.find(x => x.id === VQ.cur); if (c) vRate(c, Number(d.r)); VQ.cur = null; VQ.flip = false; render(); },
+  vSpeak(d){ const c = vS().cards.find(x => x.id === d.id), l = vLang(); if (c) speak(c.front, l && l.code); },
+  vExtra(){ VQ.extra = true; VQ.cur = null; render(); },
+  vDir(){ const v = vS(); v.dir = v.dir === 'r' ? 'f' : 'r'; VQ.flip = false; save(); render(); },
+  vPick(d){ const q = VQ.quiz; if (!q || q.pick != null) return; q.pick = Number(d.i); VQ.score[1]++; const c = vS().cards.find(x => x.id === q.id); if (q.opts[q.pick] === q.id){ VQ.score[0]++; if (c) vRate(c, 2); } else if (c) vRate(c, 0); render(); },
+  vNextQ(){ VQ.quiz = null; render(); },
+  vSuggest(){ vSuggestSheet(); }, vSugGo(){ vSuggestGo(); },
+  vSugTg(d, el){ const w = VQ.sug && VQ.sug[Number(d.i)]; if (w){ w.on = !w.on; el.querySelector('.chk').classList.toggle('on', w.on); } },
+  vSugAdd(){ const v = vS(), l = vLang(), add = (VQ.sug || []).filter(w => w.on); add.forEach((w, i) => v.cards.push({id:uid(), lid:l.id, front:w.front, back:w.back, ex:w.ex, box:0, due:'', ts:Date.now() + i})); VQ.sug = null; save(); closeSheet(); render(); toast(TL(`${add.length} ${add.length === 1 ? 'Wort' : 'Wörter'} übernommen`)); },
+  vCheck(){ vCheckGo(); },
+  appLang(d){ S.settings.lang = d.v; setLangArrays(); save(); closeSheet(); render(); renderDock(); settingsSheet(); },
+  /* Schrift */
+  fmtSet(d){ if (d.k === 'i0'){ const c = getP(d.p + '.i'); setP(d.p + '.i', c === 0 ? '' : 0); refreshFmt(d.p); return; } const v = d.k === 'c' || d.k === 'a' ? d.v : d.v === '' ? '' : Number(d.v); const cur = getP(d.p + '.' + d.k); setP(d.p + '.' + d.k, (d.k === 'i' || d.k === 'u') ? (v ? 1 : '') : (String(cur) === String(v) && d.k !== 'c' ? '' : v)); refreshFmt(d.p); },
+  fmtWrap(d){
+    const ta = document.querySelector(`[data-fmtta="${d.p}"]`); if (!ta) return;
+    const a = ta.selectionStart, b = ta.selectionEnd; if (a === b){ toast('Markiere zuerst ein Wort oder eine Zeile im Text'); ta.focus(); return; }
+    const m = d.m; ta.value = ta.value.slice(0, a) + m + ta.value.slice(a, b) + m + ta.value.slice(b);
+    ta.dispatchEvent(new Event('input', {bubbles:true})); ta.focus(); ta.setSelectionRange(a + m.length, b + m.length);
+  },
+  fmtToggle(){ V.fmtOpen = !V.fmtOpen; render(); },
   /* Eigene Kategorien */
   catNew(){ catSheet(null); },
   catEdit(d){ catSheet(d.id); },
@@ -2734,12 +3166,12 @@ const A = {
     toast('Logo: ' + LG[d.v].n);
   },
   logoPlay(){ playSplash(); },
-  saveSettings(){ S.settings.name = (F.name || '').trim(); S.settings.greet = F.greet || 'mix'; S.settings.splash = F.splash !== false; S.settings.notify = clone(F.notify); if (F.dayStart && F.dayEnd && F.dayStart < F.dayEnd){ S.settings.dayStart = F.dayStart; S.settings.dayEnd = F.dayEnd; } document.documentElement.dataset.splash = S.settings.splash ? '1' : '0'; save(); closeSheet(); render(); toast('Gespeichert'); },
+  saveSettings(){ S.settings.name = (F.name || '').trim(); S.settings.greet = F.greet || 'mix'; S.settings.splash = F.splash !== false; S.settings.fmt = clone(F.sfmt || {}); S.settings.notify = clone(F.notify); if (F.dayStart && F.dayEnd && F.dayStart < F.dayEnd){ S.settings.dayStart = F.dayStart; S.settings.dayEnd = F.dayEnd; } document.documentElement.dataset.splash = S.settings.splash ? '1' : '0'; save(); closeSheet(); render(); toast('Gespeichert'); },
   tools(){ toolsSheet(); },
   toolMove(d){ const vis = visTools(), i = vis.findIndex(t => t.id === d.id), j = i + Number(d.dir); if (j < 0 || j >= vis.length) return; [vis[i], vis[j]] = [vis[j], vis[i]]; F.tools = [...vis, ...F.tools.filter(t => t.del)]; $('#toolist').innerHTML = toolRows(); },
   mMove(d){ const i = Number(d.i), j = i + Number(d.dir); if (j < 0 || j >= F.items.length) return; [F.items[i], F.items[j]] = [F.items[j], F.items[i]]; $('#mlist').innerHTML = mlist(); },
   toolOn(d, el){ const t = F.tools.find(x => x.id === d.id); if (t){ t.on = !t.on; el.classList.toggle('on', t.on); } },
-  saveTools(){ F.tools.forEach(t => { if (!t.label.trim()) t.label = tdef(t.id).n; }); S.tools = F.tools; save(); closeSheet(); render(); toast('Gespeichert'); },
+  saveTools(){ F.tools.forEach(t => { if (!t.label.trim() || t.label === TL(tdef(t.id).n)) t.label = tdef(t.id).n; }); S.tools = F.tools; save(); closeSheet(); render(); toast('Gespeichert'); },
   async copyBackup(){
     const json = JSON.stringify(S);
     try { await navigator.clipboard.writeText(json); toast('Backup kopiert'); } catch(e) { const t = $('#imp'); t.value = json; t.select(); toast('Text markiert, bitte kopieren'); }
@@ -2769,6 +3201,8 @@ document.addEventListener('click', e => {
 });
 const onField = e => {
   const t = e.target;
+  if (t.dataset.fp){ const p_ = t.dataset.fp, base = p_.slice(0, p_.lastIndexOf('.')); setP(p_, t.value); refreshFmt(base); return; }
+  if (t.dataset.fmtta && e.type === 'input'){ const pv = document.querySelector(`[data-fmtpv="${t.dataset.fmtta}"]`); if (pv) pv.innerHTML = fmtText(t.value); }
   if (t.dataset.tc){ if (!T.colors) T.colors = {}; if (t.dataset.tc === 'bg') T.bg = t.value; else T.colors[t.dataset.tc] = t.value; applyTheme(T); const row = t.closest('.crow'); row.querySelector('.sw3').style.setProperty('--cc', t.value); row.querySelector('.hex').textContent = t.value.toUpperCase(); if (e.type === 'change') studioRender(); }
   else if (t.dataset.t){ T[t.dataset.t] = t.type === 'range' ? Number(t.value) : t.value; applyTheme(T); }
   else if (t.dataset.f){
@@ -2872,6 +3306,7 @@ function playSplash(enter){
 }
 
 /* ================= Start ================= */
+setLangArrays();
 $('#fab').innerHTML = I.plus;
 try { navigator.storage && navigator.storage.persist && navigator.storage.persist(); } catch(e) {}
 applyTheme(S.theme);
